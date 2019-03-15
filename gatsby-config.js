@@ -33,6 +33,9 @@ module.exports = {
               maxWidth: 1080,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`
+          }
         ],
       },
     },
@@ -57,6 +60,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-emotion`
+    `gatsby-plugin-emotion`,
   ],
 }
