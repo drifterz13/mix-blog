@@ -8,12 +8,23 @@ const stacks = ["React", "Node.js", "Gatsby.js", "Html", "CSS"]
 
 const NavItem = styled("li")`
   padding: 8px 10px;
-  margin: 0 ${rhythm(1)};
   height: 37px;
+  width: 120px;
   &:hover {
     border-bottom: 3px solid yellow;
     cursor: pointer;
   }
+  @media (max-width: 480px) {
+    margin: auto;
+  }
+`
+
+const LogoContainer = styled("div")`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-start;
+  margin-bottom: ${rhythm(1)};
 `
 
 const Header = () => (
@@ -34,27 +45,57 @@ const Header = () => (
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @media (max-width: 480px) {
+          width: 100%;
+        }
       `}
     >
-      <Link to="/">
+      <LogoContainer>
+        <div
+          css={css`
+            color: grey;
+            font-size: 50px;
+            font-weight: bold;
+          `}
+        >
+          {"<"}
+          <span
+            css={css`
+              color: salmon;
+              margin-left: 8px;
+            `}
+          >
+            {">"}
+          </span>
+        </div>
         <h1
           css={css`
             text-transform: uppercase;
-            margin-bottom: ${rhythm(1)};
+            margin: 0 0 0 ${rhythm(1)};
           `}
         >
-          HEADER
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+            `}
+          >
+            <span>CODE</span>
+            NOTHING
+          </div>
         </h1>
-      </Link>
+      </LogoContainer>
+
       <ul
         css={css`
           list-style: none;
           margin: 0;
           display: flex;
-          justify-content: center;
+          justify-content: left;
           align-items: center;
           width: 100%;
           height: 40px;
+          flex-flow: row wrap;
         `}
       >
         {stacks.map((stack, index) => (
