@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
@@ -10,7 +11,7 @@ const NavItem = styled("li")`
   margin: 0 ${rhythm(1)};
   height: 37px;
   &:hover {
-    border-bottom: 3px solid #2ec4b6;
+    border-bottom: 3px solid yellow;
     cursor: pointer;
   }
 `
@@ -18,9 +19,9 @@ const NavItem = styled("li")`
 const Header = () => (
   <header
     css={css`
-      background: #fdfffc;
-      height: 200px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.525);
+      background: #2a2a2a;
+      height: 300px;
+      color: #fafafa;
     `}
   >
     <div
@@ -35,14 +36,16 @@ const Header = () => (
         justify-content: center;
       `}
     >
-      <h1
-        css={css`
-          text-transform: uppercase;
-          margin-bottom: ${rhythm(1)};
-        `}
-      >
-        HEADER
-      </h1>
+      <Link to="/">
+        <h1
+          css={css`
+            text-transform: uppercase;
+            margin-bottom: ${rhythm(1)};
+          `}
+        >
+          HEADER
+        </h1>
+      </Link>
       <ul
         css={css`
           list-style: none;
@@ -54,8 +57,8 @@ const Header = () => (
           height: 40px;
         `}
       >
-        {stacks.map(stack => (
-          <NavItem>{stack}</NavItem>
+        {stacks.map((stack, index) => (
+          <NavItem key={index.toString()}>{stack}</NavItem>
         ))}
       </ul>
     </div>

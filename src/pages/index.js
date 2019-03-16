@@ -1,18 +1,39 @@
 import React from "react"
-import { css } from "@emotion/core"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
+import Blog from "../components/Blog"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
-    <div
-      css={css`
-        display: grid;
-      `}
-    >
-      <h1>Blog</h1>
-    </div>
+    {data.allMarkdownRemark.edges.map(({ node }) => (
+      <Blog
+        key={node.id}
+        title={node.frontmatter.title}
+        excerpt={node.excerpt}
+        slug={node.fields.slug}
+      />
+    ))}
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 200)
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY-MM-DD")
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

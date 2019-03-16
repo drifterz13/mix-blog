@@ -4,7 +4,7 @@ import sutroTheme from "typography-theme-sutro"
 
 sutroTheme.headerFontFamily = ["Open Sans", "sans-serif"]
 sutroTheme.bodyFontFamily = ["Merriweather", "sans-serif"]
-sutroTheme.baseFontSize = "14px"
+sutroTheme.baseFontSize = "18px"
 sutroTheme.googleFonts = [
   {
     name: "Open Sans",
