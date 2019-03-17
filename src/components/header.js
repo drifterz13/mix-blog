@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
+import { useWindowWidth } from "./useWindowWidth"
+import Hamburger from "./Hamburger"
 
 const stacks = ["React", "Node.js", "Javascript", "Html", "CSS"]
 
@@ -64,30 +66,38 @@ const NavItem = styled("li")`
   }
 `
 
-const Header = () => (
-  <header
-    css={css`
-      background: #fff;
-      height: 150px;
-      color: #2a2a2a;
-    `}
-  >
-    <Container>
-      <LogoContainer>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <LogoText>
-            CODE<span>NOTHING</span>
-          </LogoText>
-        </Link>
-      </LogoContainer>
+const Header = () => {
+  const width = useWindowWidth()
+  console.log(width)
+  return (
+    <header
+      css={css`
+        background: #fff;
+        height: 150px;
+        color: #2a2a2a;
+      `}
+    >
+      <Container>
+        <LogoContainer>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <LogoText>
+              CODE<span>NOTHING</span>
+            </LogoText>
+          </Link>
+        </LogoContainer>
 
-      <NavContainer>
-        {stacks.map((stack, index) => (
-          <NavItem key={index.toString()}>{stack}</NavItem>
-        ))}
-      </NavContainer>
-    </Container>
-  </header>
-)
+        {width > 480 ? (
+          <NavContainer>
+            {stacks.map((stack, index) => (
+              <NavItem key={index.toString()}>{stack}</NavItem>
+            ))}
+          </NavContainer>
+        ) : (
+          <Hamburger />
+        )}
+      </Container>
+    </header>
+  )
+}
 
 export default Header

@@ -10,7 +10,7 @@ export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout>
-      <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
+      {/* <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} /> */}
       <div
         css={css`
           max-width: 780px;
