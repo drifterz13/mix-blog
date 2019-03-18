@@ -66,37 +66,38 @@ const NavItem = styled("li")`
   }
 `
 
-const Header = () => {
+const Header = ({ isShowSideNav, onToggle }) => {
   const width = useWindowWidth()
-  console.log(width)
   return (
-    <header
-      css={css`
-        background: #fff;
-        height: 150px;
-        color: #2a2a2a;
-      `}
-    >
-      <Container>
-        <LogoContainer>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <LogoText>
-              CODE<span>NOTHING</span>
-            </LogoText>
-          </Link>
-        </LogoContainer>
+    <React.Fragment>
+      <header
+        css={css`
+          background: #fff;
+          height: 150px;
+          color: #2a2a2a;
+        `}
+      >
+        <Container>
+          <LogoContainer>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <LogoText>
+                CODE<span>NOTHING</span>
+              </LogoText>
+            </Link>
+          </LogoContainer>
 
-        {width > 480 ? (
-          <NavContainer>
-            {stacks.map((stack, index) => (
-              <NavItem key={index.toString()}>{stack}</NavItem>
-            ))}
-          </NavContainer>
-        ) : (
-          <Hamburger />
-        )}
-      </Container>
-    </header>
+          {width > 480 ? (
+            <NavContainer>
+              {stacks.map((stack, index) => (
+                <NavItem key={index.toString()}>{stack}</NavItem>
+              ))}
+            </NavContainer>
+          ) : (
+            <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
+          )}
+        </Container>
+      </header>
+    </React.Fragment>
   )
 }
 

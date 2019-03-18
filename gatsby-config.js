@@ -34,8 +34,8 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`
-          }
+            resolve: `gatsby-remark-prismjs`,
+          },
         ],
       },
     },
@@ -56,10 +56,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-portal`,
   ],
 }
