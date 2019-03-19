@@ -13,6 +13,8 @@ html {
 }
 body {
   background: #f9f9fa;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
   color: hsla(0, 0%, 0%, 0.8);
   height: 100%;
 }
