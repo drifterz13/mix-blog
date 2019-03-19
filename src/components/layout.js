@@ -11,7 +11,8 @@ import SideNav from "./SideNav"
 
 const Wrapper = styled("div")`
   position: relative;
-  overflow: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
+  overflow-x: hidden;
+  overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
   height: 100vh;
 `
 
