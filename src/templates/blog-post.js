@@ -14,7 +14,7 @@ export default ({ data }) => {
       <div
         css={css`
           max-width: 780px;
-          margin: ${rhythm(2)} auto;
+          margin: ${rhythm(2)} auto 0 auto;
         `}
       >
         <h1>{post.frontmatter.title}</h1>

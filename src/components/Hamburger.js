@@ -5,8 +5,8 @@ import { rhythm } from "../utils/typography"
 const Container = styled("div")`
   align-self: flex-start;
   display: inline-block;
-  width: 23px;
-  height: 23px;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
   transition: 0.4s ease all;
   position: absolute;
@@ -31,10 +31,10 @@ const Container = styled("div")`
 
 const Bar = styled("div")`
   display: block;
-  width: 23px;
+  width: 26px;
   height: 3px;
   background: #2a2a2a;
-  margin: 4px auto;
+  margin: 5px auto;
   transition: 0.4s ease all;
   will-change: transform;
 `

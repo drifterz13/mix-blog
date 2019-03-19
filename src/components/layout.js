@@ -8,17 +8,20 @@ import "./layout.css"
 import Portal from "./Portal"
 import DarkBackground from "./DarkBackground"
 import SideNav from "./SideNav"
+import Footer from "./Footer"
 
 const Wrapper = styled("div")`
   position: relative;
   overflow-x: hidden;
   overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
-  height: 100vh;
+  height: 100%;
 `
 
 const MainContainer = styled("div")`
   margin: ${rhythm(1)} auto;
-  max-width: 1080;
+  max-width: 1080px;
+  height: 100%;
+  min-height: 100vh;
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
 `
@@ -53,6 +56,7 @@ const Layout = ({ children }) => {
               <MainContainer>
                 <main>{children}</main>
               </MainContainer>
+              <Footer />
             </Wrapper>
           </Portal>
         </React.Fragment>

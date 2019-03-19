@@ -41,13 +41,15 @@ const NavContainer = styled("ul")`
   list-style: none;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
   height: 40px;
   flex-flow: row wrap;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 16px;
+  min-width: 650px;
   @media (max-width: 480px) {
     display: none;
   }
@@ -61,7 +63,7 @@ const NavItem = styled("li")`
     color: #f92301;
     cursor: pointer;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 780px) {
     margin: auto;
   }
 `
@@ -86,7 +88,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
             </Link>
           </LogoContainer>
 
-          {width > 480 ? (
+          {width > 780 ? (
             <NavContainer>
               {stacks.map((stack, index) => (
                 <NavItem key={index.toString()}>{stack}</NavItem>
