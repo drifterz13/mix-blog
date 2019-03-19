@@ -2,16 +2,16 @@ import Typography from "typography"
 
 import sutroTheme from "typography-theme-sutro"
 
-sutroTheme.headerFontFamily = ["Open Sans", "sans-serif"]
-sutroTheme.bodyFontFamily = ["Merriweather", "sans-serif"]
+sutroTheme.headerFontFamily = ["Source Sans Pro", "sans-serif"]
+sutroTheme.bodyFontFamily = ["Lato", "sans-serif"]
 sutroTheme.baseFontSize = "18px"
 sutroTheme.googleFonts = [
   {
-    name: "Open Sans",
+    name: "Source Sans Pro",
     styles: ["400", "700"],
   },
   {
-    name: "Merriweather",
+    name: "Lato",
     styles: ["400", "700"],
   },
 ]

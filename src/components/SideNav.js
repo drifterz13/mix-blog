@@ -14,7 +14,7 @@ const SideNavContainer = styled("div")`
   left: 30%;
   background-color: #f9f9f9;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.3s;
   padding-top: ${rhythm(2)};
 `
 
