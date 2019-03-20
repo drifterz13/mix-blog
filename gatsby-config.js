@@ -62,5 +62,6 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-portal`,
+    `gatsby-plugin-catch-links`,
   ],
 }
