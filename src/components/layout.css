@@ -18,17 +18,3 @@ body {
   color: hsla(0, 0%, 0%, 0.8);
   height: 100%;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 1.78rem 0;
-}
-
-ul,
-ol {
-  margin-left: 1.78rem;
-}

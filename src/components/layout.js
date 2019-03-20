@@ -14,7 +14,7 @@ const Wrapper = styled("div")`
   position: relative;
   overflow-x: hidden;
   overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
-  height: 100%;
+  height: ${props => (props.isShowSideNav ? `100vh` : `100%`)};
 `
 
 const MainContainer = styled("div")`
