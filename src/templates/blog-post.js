@@ -19,7 +19,7 @@ export default ({ data }) => {
       >
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <CommentBox postTitle={post.frontmatter.title} postId={post.id} />
+        <CommentBox title={post.frontmatter.title} slug={post.fields.slug} />
       </div>
     </Layout>
   )
@@ -30,6 +30,9 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       id
+      fields {
+        slug
+      }
       frontmatter {
         title
         thumbnail {

@@ -3,10 +3,10 @@ import { DiscussionEmbed } from "disqus-react"
 
 const DISQUS_SHORT_NAME = "codenothing"
 
-const CommentBox = ({ postId, postTitle }) => {
+const CommentBox = ({ title, slug }) => {
   const disqusConfig = {
-    identifier: postId,
-    title: postTitle,
+    identifier: slug,
+    title,
   }
   return <DiscussionEmbed shortname={DISQUS_SHORT_NAME} config={disqusConfig} />
 }
