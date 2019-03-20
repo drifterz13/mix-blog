@@ -1,16 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import CommentBox from "../components/CommentBox";
+import DisqusThread from "../components/DisqusThread"
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  // Add Gatsby Image if neccessary
   return (
     <Layout>
-      {/* <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} /> */}
       <div
         css={css`
           max-width: 780px;
@@ -19,7 +18,11 @@ export default ({ data }) => {
       >
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <CommentBox title={post.frontmatter.title} slug={post.fields.slug} />
+        <DisqusThread
+          id={post.id}
+          title={post.frontmatter.title}
+          path={post.fields.slug}
+        />
       </div>
     </Layout>
   )
