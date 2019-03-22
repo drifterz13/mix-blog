@@ -5,7 +5,6 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
-import Portal from "./Portal"
 import DarkBackground from "./DarkBackground"
 import SideNav from "./SideNav"
 import Footer from "./Footer"
@@ -41,7 +40,7 @@ const Layout = ({ children }) => {
       `}
       render={data => (
         <React.Fragment>
-          <Portal>
+          <div>
             <Wrapper isShowSideNav={isShowSideNav}>
               <DarkBackground
                 onClickOutside={toggle}
@@ -58,7 +57,7 @@ const Layout = ({ children }) => {
               </MainContainer>
               <Footer />
             </Wrapper>
-          </Portal>
+          </div>
         </React.Fragment>
       )}
     />
