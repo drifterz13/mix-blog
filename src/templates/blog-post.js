@@ -44,13 +44,6 @@ export const query = graphql`
       }
       frontmatter {
         title
-        thumbnail {
-          childImageSharp {
-            fluid(maxWidth: 1080, maxHeight: 500) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     }
   }
