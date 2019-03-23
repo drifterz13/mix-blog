@@ -36,6 +36,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
           },
+          {
+            resolve: "gatsby-remark-emoji", // <-- this adds emoji
+            options: {
+              // default emojiConversion --> shortnameToUnicode
+              emojiConversion: "shortnameToUnicode",
+            },
+          },
         ],
       },
     },
