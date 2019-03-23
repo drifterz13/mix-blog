@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import DisqusThread from "../components/DisqusThread"

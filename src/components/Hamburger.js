@@ -1,17 +1,20 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { rhythm } from "../utils/typography"
 
 const Container = styled("div")`
   align-self: flex-start;
-  display: inline-block;
+  display: none;
   width: 26px;
   height: 26px;
   cursor: pointer;
   transition: 0.4s ease all;
-  position: absolute;
-  right: ${rhythm(1)};
+  position: relative;
+  justify-content: right;
+  margin: 0;
   z-index: 999;
+  @media (max-width: 780px) {
+    display: inline-block;
+  }
   ${() => BarTop} {
     transform: ${props =>
       props.isShowSideNav

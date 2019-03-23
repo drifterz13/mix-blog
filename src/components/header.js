@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import { useWindowWidth } from "./useWindowWidth"
 import Hamburger from "./Hamburger"
 
 const stacks = ["React", "Node.js", "Javascript", "Html", "CSS"]
@@ -50,7 +49,7 @@ const NavContainer = styled("ul")`
   font-weight: bold;
   font-size: 16px;
   min-width: 650px;
-  @media (max-width: 480px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `
@@ -69,7 +68,6 @@ const NavItem = styled("li")`
 `
 
 const Header = ({ isShowSideNav, onToggle }) => {
-  const width = useWindowWidth()
   return (
     <React.Fragment>
       <header
@@ -87,16 +85,12 @@ const Header = ({ isShowSideNav, onToggle }) => {
               </LogoText>
             </Link>
           </LogoContainer>
-
-          {width > 780 ? (
-            <NavContainer>
-              {stacks.map((stack, index) => (
-                <NavItem key={index.toString()}>{stack}</NavItem>
-              ))}
-            </NavContainer>
-          ) : (
-            <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
-          )}
+          <NavContainer>
+            {stacks.map((stack, index) => (
+              <NavItem key={index.toString()}>{stack}</NavItem>
+            ))}
+          </NavContainer>
+          <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
         </Container>
       </header>
     </React.Fragment>
