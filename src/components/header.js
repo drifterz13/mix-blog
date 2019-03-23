@@ -59,7 +59,7 @@ const NavItem = styled("li")`
   height: 37px;
   margin: 0 ${rhythm(0.5)};
   &:hover {
-    color: #f92301;
+    color: #f34a4a;
     cursor: pointer;
   }
   @media (max-width: 780px) {
