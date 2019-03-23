@@ -2,7 +2,6 @@ import React from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { FaFacebook, FaTwitterSquare, FaInstagram } from "react-icons/fa"
-import SubscribeBox from "./SubscribeBox"
 
 const iconStyles = css`
   margin: 0 12px;
