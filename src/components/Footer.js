@@ -13,7 +13,7 @@ const Footer = () => {
       css={css`
         background: #639ee2;
         padding: ${rhythm(1)};
-        height: 170px;
+        height: 200px;
         color: #fff;
         display: flex;
         justify-content: space-around;
