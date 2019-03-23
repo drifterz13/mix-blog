@@ -19,13 +19,8 @@ const Footer = () => {
         justify-content: space-around;
         align-items: center;
         letter-spacing: 1.8px;
-        @media (max-width: 480px) {
-          height: 400px;
-          flex-direction: column;
-        }
       `}
     >
-      {/* <SubscribeBox /> */}
       <div>
         <p>@2019, CodeNothing</p>
         <div
