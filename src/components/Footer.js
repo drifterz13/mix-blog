@@ -14,7 +14,7 @@ const Footer = () => {
       css={css`
         background: #639ee2;
         padding: ${rhythm(1)};
-        height: 300px;
+        height: 170px;
         color: #fff;
         display: flex;
         justify-content: space-around;
@@ -26,7 +26,7 @@ const Footer = () => {
         }
       `}
     >
-      <SubscribeBox />
+      {/* <SubscribeBox /> */}
       <div>
         <p>@2019, CodeNothing</p>
         <div
