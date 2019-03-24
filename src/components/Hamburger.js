@@ -7,7 +7,7 @@ const Container = styled("div")`
   width: 26px;
   height: 26px;
   cursor: pointer;
-  transition: 0.4s ease all;
+  transition: 0.3s ease all;
   position: relative;
   justify-content: right;
   margin: 0;
@@ -38,7 +38,7 @@ const Bar = styled("div")`
   height: 3px;
   background: #2a2a2a;
   margin: 5px auto;
-  transition: 0.4s ease all;
+  transition: 0.3s ease all;
   will-change: transform;
 `
 
