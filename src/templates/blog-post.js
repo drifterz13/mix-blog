@@ -8,10 +8,10 @@ import {
   SocialShareDesktop,
   SocialShareMobile,
 } from "../components/SocialShare"
+import BlogPostMetadata from "../components/BlogPostMetadata"
 
 export default ({ data, location }) => {
   const post = data.markdownRemark
-  // Add Gatsby Image if neccessary
   return (
     <Layout>
       <SocialShareDesktop location={location} />
@@ -21,7 +21,18 @@ export default ({ data, location }) => {
           margin: ${rhythm(2)} auto 0 auto;
         `}
       >
-        <h1>{post.frontmatter.title}</h1>
+        <h1
+          css={css`
+            margin-bottom: 10px;
+          `}
+        >
+          {post.frontmatter.title}
+        </h1>
+        <BlogPostMetadata
+          tags={post.frontmatter.tags}
+          date={post.frontmatter.date}
+          timeToRead={post.timeToRead}
+        />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <SocialShareMobile location={location} />
         <DisqusThread
@@ -42,8 +53,11 @@ export const query = graphql`
       fields {
         slug
       }
+      timeToRead
       frontmatter {
         title
+        date(formatString: "YYYY-MM-DD")
+        tags
       }
     }
   }
