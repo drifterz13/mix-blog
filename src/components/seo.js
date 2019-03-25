@@ -1,9 +1,5 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import favicon16 from "../../favicon/favicon-16x16.png"
+import favicon32 from "../../favicon/favicon-32x32.png"
 
 import React from "react"
 import PropTypes from "prop-types"
@@ -67,6 +63,10 @@ function SEO({ description, lang, meta, keywords, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `theme-color`,
+          content: `#222`,
+        },
       ]
         .concat(
           keywords.length > 0
@@ -77,6 +77,10 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
+      link={[
+        { rel: "icon", type: "image/png", size: "16x16", href: `${favicon16}` },
+        { rel: "icon", type: "image/png", size: "32x32", href: `${favicon32}` },
+      ]}
     />
   )
 }
