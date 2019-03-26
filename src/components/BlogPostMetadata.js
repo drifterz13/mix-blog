@@ -9,7 +9,7 @@ import Badge from "./Badge"
 const IconContainer = styled("div")`
   display: flex;
   align-items: center;
-  :nth-child(2) {
+  :nth-of-type(2) {
     margin: 0 ${rhythm(1)};
   }
 `

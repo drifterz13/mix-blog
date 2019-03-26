@@ -26,7 +26,7 @@ export default ({ tag }) => {
         align-items: center;
         background: ${getBackgroundFromTag(tag)};
         color: #fff;
-        :nth-child(2) {
+        :nth-of-type(2) {
             margin-left: 5px;
         }
       `}
