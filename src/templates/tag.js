@@ -3,14 +3,12 @@ import { graphql, Link } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from "../utils/typography"
 
 export default ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  const tagHeader = `${tag.toUpperCase()} Tags (${totalCount} total)`
 
   return (
     <Layout>
@@ -18,10 +16,28 @@ export default ({ pageContext, data }) => {
         css={css`
           max-width: 780px;
           margin: ${rhythm(2)} auto 0 auto;
+          @media (max-width: 480px) {
+            margin: auto;
+          }
         `}
       >
-        <h1>{tagHeader}</h1>
-        <ul>
+        <h1
+          css={css`
+            margin-top: 0;
+          `}
+        >
+          {tagHeader}
+        </h1>
+
+        <ul
+          css={css`
+            list-style-position: inside;
+            margin-bottom: ${rhythm(2)};
+            @media (max-width: 480px) {
+              list-style-position: unset;
+            }
+          `}
+        >
           {edges.map(({ node }) => {
             const { slug } = node.fields
             const { title } = node.frontmatter
@@ -32,7 +48,7 @@ export default ({ pageContext, data }) => {
             )
           })}
         </ul>
-        <Link to="/tags">All tags</Link>
+        <Link to="/tags">All tags >></Link>
       </div>
     </Layout>
   )
