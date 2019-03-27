@@ -1,21 +1,31 @@
 import React from "react"
+import { css } from "@emotion/core"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Blog from "../components/Blog"
 
+import { rhythm } from '../utils/typography'
+
 const IndexPage = ({ data }) => (
   <Layout>
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <Blog
-        key={node.id}
-        title={node.frontmatter.title}
-        excerpt={node.excerpt}
-        slug={node.fields.slug}
-        tags={node.frontmatter.tags}
-        timeToRead={node.timeToRead}
-        date={node.frontmatter.date}
-      />
-    ))}
+    <div
+      css={css`
+        max-width: 780px;
+        margin: ${rhythm(2)} auto 0 auto;
+      `}
+    >
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <Blog
+          key={node.id}
+          title={node.frontmatter.title}
+          excerpt={node.excerpt}
+          slug={node.fields.slug}
+          tags={node.frontmatter.tags}
+          timeToRead={node.timeToRead}
+          date={node.frontmatter.date}
+        />
+      ))}
+    </div>
   </Layout>
 )
 

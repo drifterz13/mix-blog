@@ -42,9 +42,7 @@ export default ({ date, timeToRead, tags }) => {
         `}
       >
         {tags.map((tag, idx) => (
-          <Badge tag={tag} key={idx.toString()}>
-            {tag}
-          </Badge>
+          <Badge tag={tag} key={idx.toString()} />
         ))}
       </div>
     </div>
