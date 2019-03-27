@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { css } from "@emotion/core"
 
 function getBackgroundFromTag(tag) {
@@ -25,13 +26,23 @@ export default ({ tag }) => {
         justify-content: center;
         align-items: center;
         background: ${getBackgroundFromTag(tag)};
-        color: #fff;
         :nth-of-type(2) {
-            margin-left: 5px;
+          margin-left: 5px;
         }
       `}
     >
-      {`# ${tag}`}
+      <Link
+        to={`/tags/${tag}`}
+        css={css`
+          text-decoration: none;
+          color: #fff;
+          &:hover {
+            text-decoration: none;
+          }
+        `}
+      >
+        {`# ${tag}`}
+      </Link>
     </div>
   )
 }

@@ -69,5 +69,11 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-lodash`,
+      options: {
+        disabledFeatures: [],
+      },
+    },
   ],
 }
