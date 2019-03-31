@@ -56,9 +56,12 @@ const NavItem = styled("li")`
   padding: 8px 10px;
   height: 37px;
   margin: 0 ${rhythm(0.5)};
-  &:hover {
-    color: #f34a4a;
-    cursor: pointer;
+  > a {
+    color: #2a2a2a;
+    &:hover {
+      color: #f34a4a;
+      cursor: pointer;
+    }
   }
   @media (max-width: 780px) {
     margin: auto;
@@ -84,8 +87,12 @@ const Header = ({ isShowSideNav, onToggle }) => {
             </Link>
           </LogoContainer>
           <NavContainer>
-            <NavItem>About</NavItem>
-            <NavItem>Contact</NavItem>
+            <NavItem>
+              <Link to="/about">About</Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/contact">Contact</Link>
+            </NavItem>
           </NavContainer>
           <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
         </Container>
