@@ -18,7 +18,6 @@ const Footer = () => {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        letter-spacing: 1.8px;
       `}
     >
       <div>
