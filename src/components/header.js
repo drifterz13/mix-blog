@@ -5,8 +5,6 @@ import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Hamburger from "./Hamburger"
 
-const stacks = ["React", "Node.js", "Javascript", "Html", "CSS"]
-
 const Container = styled("div")`
   width: calc(100% - 150px);
   margin: 0 auto;
@@ -86,9 +84,8 @@ const Header = ({ isShowSideNav, onToggle }) => {
             </Link>
           </LogoContainer>
           <NavContainer>
-            {stacks.map((stack, index) => (
-              <NavItem key={index.toString()}>{stack}</NavItem>
-            ))}
+            <NavItem>About</NavItem>
+            <NavItem>Contact</NavItem>
           </NavContainer>
           <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
         </Container>

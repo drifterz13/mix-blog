@@ -2,8 +2,6 @@ import React from "react"
 import styled from "@emotion/styled"
 import { rhythm } from "../utils/typography"
 
-const stacks = ["React", "Node.js", "Javascript", "Html", "CSS"]
-
 const SideNavContainer = styled("div")`
   height: 100%;
   width: 70%;
@@ -31,8 +29,7 @@ const SideNavItem = styled("a")`
 
 export default ({ isShowSideNav }) => (
   <SideNavContainer isShowSideNav={isShowSideNav}>
-    {stacks.map((stack, index) => (
-      <SideNavItem key={index.toString()}>{stack}</SideNavItem>
-    ))}
+    <SideNavItem>About</SideNavItem>
+    <SideNavItem>Contact</SideNavItem>
   </SideNavContainer>
 )
