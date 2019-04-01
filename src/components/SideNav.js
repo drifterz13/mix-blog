@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { rhythm } from "../utils/typography"
 
@@ -18,7 +19,7 @@ const SideNavContainer = styled("div")`
   padding-top: ${rhythm(2)};
 `
 
-const SideNavItem = styled("a")`
+const SideNavItem = styled(Link)`
   padding: ${rhythm(0.5)} ${rhythm(1)};
   text-decoration: none;
   color: #2a2a2a;
@@ -29,7 +30,7 @@ const SideNavItem = styled("a")`
 
 export default ({ isShowSideNav }) => (
   <SideNavContainer isShowSideNav={isShowSideNav}>
-    <SideNavItem>About</SideNavItem>
-    <SideNavItem>Contact</SideNavItem>
+    <SideNavItem to="/about">About</SideNavItem>
+    <SideNavItem to="/contact">Contact</SideNavItem>
   </SideNavContainer>
 )
