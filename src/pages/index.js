@@ -12,6 +12,9 @@ const IndexPage = ({ data }) => (
       css={css`
         max-width: 780px;
         margin: ${rhythm(2)} auto 0 auto;
+        @media (max-width: 480px) {
+          margin: 0 auto;
+        }
       `}
     >
       {data.allMarkdownRemark.edges.map(({ node }) => (
