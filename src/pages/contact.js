@@ -1,24 +1,54 @@
 import React from "react"
 import { css } from "@emotion/core"
+import { FaPhone, FaFacebook } from "react-icons/fa"
+import { MdEmail } from "react-icons/md"
 
 import Layout from "../components/layout"
 import { rhythm } from "../utils/typography"
+
+const listStyles = css`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  > span {
+    margin-left: ${rhythm(1)};
+  }
+`
 
 export default () => (
   <Layout>
     <div
       css={css`
         max-width: 780px;
-        margin: ${rhythm(2)} auto 0 auto;
+        margin: ${rhythm(2)} auto;
+        > h1 {
+          margin-top: 0;
+        }
+        @media (max-width: 480px) {
+          margin: 0 auto;
+        }
       `}
     >
-      <h1
+      <h1>CONTACT</h1>
+      <ul
         css={css`
-          text-align: center;
+          margin-left: 0;
+          list-style: none;
         `}
       >
-        CONTACT
-      </h1>
+        <li css={listStyles}>
+          <FaPhone size={22} />
+          <span>Tel: 094-545-1858</span>
+        </li>
+        <li css={listStyles}>
+          <MdEmail size={22} />
+          <span>devnothing@gmail.com</span>
+        </li>
+        <li css={listStyles}>
+          <FaFacebook size={22} />
+          <span>facebook.com/devnothing</span>
+        </li>
+      </ul>
     </div>
   </Layout>
 )
