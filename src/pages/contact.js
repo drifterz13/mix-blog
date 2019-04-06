@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { FaPhone, FaFacebook } from "react-icons/fa"
-import { MdEmail } from "react-icons/md"
+import { FaFacebook } from "react-icons/fa"
+import { IoMdCall, IoMdMail } from 'react-icons/io'
 
 import Layout from "../components/layout"
 import { rhythm } from "../utils/typography"
@@ -37,11 +37,11 @@ export default () => (
         `}
       >
         <li css={listStyles}>
-          <FaPhone size={22} />
+          <IoMdCall size={22} />
           <span>Tel: 094-545-1858</span>
         </li>
         <li css={listStyles}>
-          <MdEmail size={22} />
+          <IoMdMail size={22} />
           <span>devnothing@gmail.com</span>
         </li>
         <li css={listStyles}>
