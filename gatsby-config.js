@@ -3,7 +3,7 @@ module.exports = {
     title: `codenothing`,
     description: `Blog for Javascript developer.`,
     author: `@codenothing`,
-    siteUrl: `www.codenothing.co`,
+    siteUrl: `https://www.codenothing.co`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -70,7 +70,8 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-catch-links`,
-    // `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-lodash`,
       options: {

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 
 const SHORTNAME = "codenothing"
-const WEBSITE_URL = "https://codenothing.netlify.com"
+const WEBSITE_URL = "https://www.codenothing.co"
 const DISQUS_SCRIPT = `https://${SHORTNAME}.disqus.com/embed.js`
 
 function injectDisqusScript() {
