@@ -30,7 +30,7 @@ const LogoText = styled("h2")`
   display: flex;
   flex-direction: column;
   border: 5px solid #639ee2;
-  border-radius: 2px;
+  border-radius: 14px;
   padding: 8px;
 `
 
