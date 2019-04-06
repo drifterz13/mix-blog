@@ -3,7 +3,7 @@ module.exports = {
     title: `codenothing`,
     description: `Blog for Javascript developer.`,
     author: `@codenothing`,
-    siteUrl: `www.codenothing.com`,
+    siteUrl: `www.codenothing.co`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
