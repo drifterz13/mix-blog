@@ -8,6 +8,10 @@ function getBackgroundFromTag(tag) {
       return `#f29300`
     case "css":
       return `#639ee2`
+    case "react":
+      return `#61dafb`
+    case "javascript":
+      return `#e29ced`
     default:
       break
   }
@@ -20,7 +24,8 @@ export default ({ tag }) => {
         padding: 0 12px;
         border-radius: 50px;
         font-size: 14px;
-        width: 64px;
+        font-weight: bold;
+        width: auto;
         height: 24px;
         display: flex;
         justify-content: center;
