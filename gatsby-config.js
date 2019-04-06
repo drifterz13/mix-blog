@@ -70,6 +70,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-catch-links`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-lodash`,
       options: {
