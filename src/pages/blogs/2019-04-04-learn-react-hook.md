@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Some thing from nothing vol.1 | React Hook
+description: อัพเกรด React component ของคุณด้วย React Hook
 date: 2019-04-04T16:33:18.499Z
 tags: ["react", "javascript"]
 ---

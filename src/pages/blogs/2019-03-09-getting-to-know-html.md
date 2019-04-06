@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: เริ่มต้นเขียนเว็บ | ทำความรู้จัก HTML
+description: เริ่มต้นเขียนเว็บไซต์ด้วย HTML
 date: 2019-03-09T12:45:12.281Z
 tags: ["html"]
 ---
