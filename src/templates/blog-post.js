@@ -9,11 +9,19 @@ import {
   SocialShareMobile,
 } from "../components/SocialShare"
 import BlogPostMetadata from "../components/BlogPostMetadata"
+import Metatags from "../components/MetaTags"
 
 export default ({ data, location }) => {
   const post = data.markdownRemark
+  const { siteUrl } = data.site.siteMetadata
   return (
     <Layout>
+      <Metatags
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        url={siteUrl}
+        path={location.pathname}
+      />
       <SocialShareDesktop location={location} />
       <div
         css={css`
@@ -56,8 +64,14 @@ export const query = graphql`
       timeToRead
       frontmatter {
         title
+        description
         date(formatString: "YYYY-MM-DD")
         tags
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
