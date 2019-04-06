@@ -20,6 +20,6 @@ export default ({ title, excerpt, slug, tags, timeToRead, date }) => (
     </h1>
     <BlogPostMetadata tags={tags} timeToRead={timeToRead} date={date} />
     <p>{excerpt}</p>
-    <Link to={slug}>อ่านต่อ >></Link>
+    <Link css={css`padding: 4px;`} to={slug}>อ่านต่อ >></Link>
   </div>
 )
