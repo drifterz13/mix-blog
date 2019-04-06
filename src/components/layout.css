@@ -23,6 +23,10 @@ ul li {
   list-style-position: inside;
 }
 
+pre > code {
+  font-size: 16px;
+}
+
 .hidden {
   display: none;
 }
