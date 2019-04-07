@@ -4,10 +4,17 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Blog from "../components/Blog"
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from "../utils/typography"
+import Metatags from "../components/MetaTags"
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, location }) => (
   <Layout>
+    <Metatags
+      title={data.site.siteMetadata.title}
+      description={data.site.siteMetadata.description}
+      url={data.site.siteMetadata.siteUrl}
+      location={location.pathname}
+    />
     <div
       css={css`
         max-width: 780px;
@@ -49,6 +56,13 @@ export const query = graphql`
             tags
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
       }
     }
   }
