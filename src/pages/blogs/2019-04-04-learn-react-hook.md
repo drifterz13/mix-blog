@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Some thing from nothing vol.1 | React Hook
+title: React Hook in 3 minutes.
 description: อัพเกรด React component ของคุณด้วย React Hook
 date: 2019-04-04T16:33:18.499Z
 tags: ["react", "javascript"]
@@ -14,11 +14,11 @@ tags: ["react", "javascript"]
 - Unlearn Lifecycle and useEffect :fire:
 - Make custom hook :fire:
 
-#สิ่งที่คุณจะได้รับจากบทความนี้
+#สิ่งที่จะได้รับจากบทความนี้
 
 - Basic knowledge of React Hook. :white_check_mark:
 - How to replace setState with useState. :white_check_mark:
-- How to replace some React lifecycle with useEffect :white_check_mark:
+- How to replace some React lifecycle with useEffect. :white_check_mark:
 
 ##Unlearn setState and useState :fire:
 
