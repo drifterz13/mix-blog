@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import { FaFacebook, FaTwitterSquare, FaLinkedin } from "react-icons/fa"
+import { FaFacebook, FaTwitterSquare, FaGithub } from "react-icons/fa"
 
 const iconStyles = css`
   margin: 0 12px;
@@ -30,7 +30,7 @@ const Footer = () => {
         >
           <FaFacebook css={iconStyles} size="28" />
           <FaTwitterSquare css={iconStyles} size="28" />
-          <FaLinkedin css={iconStyles} size="28" />
+          <FaGithub css={iconStyles} size="28" />
         </div>
       </div>
     </footer>
