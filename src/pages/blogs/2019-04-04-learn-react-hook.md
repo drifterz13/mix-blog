@@ -142,7 +142,7 @@ useEffect(() => {
 
 ## Make custom hook :fire:
 
-จากหัวข้อที่ผ่านมาเราได้ทำให้ Functional component ของเราใช้ state และ lifecycle ที่ก่อนหน้านี้สามารทำได้แต่ใน Class component ได้โดยใช้ความสามารถของ React Hook แต่เรายังสามารถทำการ refactor ออกมาเป็นฟังก์ชัน `useController` ซึ่งสามารถนำไปใช้กับ component อื่นๆ ได้อีกด้วยครับ
+จากหัวข้อที่ผ่านมาเราได้ทำให้ Functional component ของเราใช้ state และ lifecycle ที่ก่อนหน้านี้สามารทำได้แต่ใน Class component ได้โดยใช้ความสามารถของ React Hook แต่เรายังสามารถทำการ refactor ออกมาเป็นฟังก์ชัน `useCarController` ซึ่งสามารถนำไปใช้กับ component อื่นๆ ได้อีกด้วยครับ
 
 ```jsx
 function useCarController(gas) {
@@ -171,7 +171,7 @@ const Car = ({ gas }) => {
   const { speed, setSpeed } = useCarController(gas)
   return (
     <div>
-      <h2>speed: {speed} km/hrs</h2>
+      <h2>speed: {speed} km/hr</h2>
       <h2>gas: {gas} %</h2>
       <button onClick={() => setSpeed(speed + 10)}>+10 speed</button>
     </div>
