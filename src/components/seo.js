@@ -1,8 +1,9 @@
 import favicon16 from "../../favicon/favicon-16x16.png"
 import favicon32 from "../../favicon/favicon-32x32.png"
+import manifest from "../../favicon/site.webmanifest"
+import appleTouchIcon from "../../favicon/apple-touch-icon.png"
 
 import React from "react"
-import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -80,6 +81,8 @@ function SEO({ description, lang, meta, keywords, title }) {
       link={[
         { rel: "icon", type: "image/png", size: "16x16", href: `${favicon16}` },
         { rel: "icon", type: "image/png", size: "32x32", href: `${favicon32}` },
+        { rel: "manifest", href: `${manifest}` },
+        { rel: "apple-touch-icon", size: "180x180", href: `${appleTouchIcon}` },
       ]}
     />
   )
@@ -88,15 +91,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+  keywords: ['html','css','javascript','react'],
 }
 
 export default SEO
