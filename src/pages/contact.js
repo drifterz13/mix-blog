@@ -42,11 +42,11 @@ export default () => (
         </li>
         <li css={listStyles}>
           <IoMdMail size={22} />
-          <span>devnothing@gmail.com</span>
+          <span>codenothing.dev@gmail.com</span>
         </li>
         <li css={listStyles}>
           <FaFacebook size={22} />
-          <span>facebook.com/devnothing</span>
+          <span>facebook.com/codenothing</span>
         </li>
       </ul>
     </div>
