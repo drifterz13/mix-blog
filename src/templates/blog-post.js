@@ -72,7 +72,7 @@ export const query = graphql`
         tags
         thumbnail {
           childImageSharp {
-            resize(width: 1200, height: 620) {
+            resize(width: 1280, height: 620) {
               src
             }
             fluid(maxWidth: 1080, maxHeight: 620, quality: 100) {
