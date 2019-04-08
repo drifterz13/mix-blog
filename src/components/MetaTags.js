@@ -34,7 +34,7 @@ function Metatags(props) {
 
         {
           property: "og:image:width",
-          content: "1080",
+          content: "1200",
         },
 
         {
