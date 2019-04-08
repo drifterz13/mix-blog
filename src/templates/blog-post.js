@@ -15,35 +15,17 @@ import Metatags from "../components/MetaTags"
 export default ({ data, location }) => {
   const post = data.markdownRemark
   const { siteUrl } = data.site.siteMetadata
-  const thumbnail = (
-    <Img
-      fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
-      css={css`
-        display: none;
-        @media (max-width: 480px) {
-          display: block;
-        }
-      `}
-    />
-  )
 
   return (
-    <Layout mobileThumbnail={thumbnail}>
+    <Layout>
       <Metatags
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         url={siteUrl}
         pathname={location.pathname}
       />
-      <Img
-        fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
-        css={css`
-          @media (max-width: 480px) {
-            display: none;
-          }
-        `}
-      />
       <SocialShareDesktop location={location} />
+      <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
       <div
         css={css`
           max-width: 780px;
