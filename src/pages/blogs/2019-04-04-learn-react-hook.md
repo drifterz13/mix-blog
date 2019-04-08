@@ -147,7 +147,9 @@ useEffect(() => {
 
 ## Make custom hook :fire:
 
-จากหัวข้อที่ผ่านมาเราได้ทำให้ Functional component ของเราใช้ state และ lifecycle ที่ก่อนหน้านี้สามารทำได้แต่ใน Class component ได้โดยใช้ความสามารถของ React Hook แต่เรายังสามารถทำการ refactor ออกมาเป็นฟังก์ชัน `useCarController` ซึ่งสามารถนำไปใช้กับ component อื่นๆ ได้อีกด้วยครับ
+จากหัวข้อที่ผ่านมาเราได้อัพเกรด Functional component ของเราให้มีความสามารถเทียบเท่ากับ Class component โดยเพิ่มการจัดการ state และ lifecycle ด้วย api ของ **React Hook** นั่นเอง 
+
+นอกจากนี้เรายังสามารถทำการแยก implementation details ต่างๆออกมาเป็นฟังก์ชัน `useCarController` ซึ่งสามารถนำไปใช้กับ component อื่นๆ ได้อีกด้วยครับ
 
 ```jsx
 function useCarController(gas) {
