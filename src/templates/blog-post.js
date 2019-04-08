@@ -20,7 +20,7 @@ export default ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         url={siteUrl}
-        path={location.pathname}
+        pathname={location.pathname}
       />
       <SocialShareDesktop location={location} />
       <div

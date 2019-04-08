@@ -23,7 +23,7 @@ const iconStyle = css`
 const SocialShare = ({ location }) => {
   const siteUrl =
     process.env.NODE_ENV === "development"
-      ? `${location.href}`.replace("localhost:8000", "codenothing.netlify.com")
+      ? `${location.href}`.replace("localhost:8000", "codenothing.co")
       : location.href
   return (
     <>
