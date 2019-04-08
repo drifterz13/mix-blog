@@ -43,7 +43,7 @@ function Metatags(props) {
         },
         {
           property: "og:locale",
-          content: "en",
+          content: "th",
         },
         { name: "twitter:card", content: "summary_large_image" },
 
@@ -60,11 +60,11 @@ function Metatags(props) {
         { property: "og:type", content: "website" },
         { name: "robots", content: "index, follow" },
 
-        { name: "twitter:creator", content: "@saigowthamr" },
-        { property: "og:site_name", content: "yoursitename" },
+        { name: "twitter:creator", content: "@codenothing" },
+        { property: "og:site_name", content: "Codenothing" },
       ]}
     >
-      <html lang="en" />
+      <html lang="th" />
     </Helmet>
   )
 }
