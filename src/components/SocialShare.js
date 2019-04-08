@@ -45,6 +45,7 @@ export const SocialShareDesktop = ({ location }) => (
     css={css`
       position: fixed;
       left: 0;
+      z-index: 10;
       @media (max-width: 480px) {
         display: none;
       }

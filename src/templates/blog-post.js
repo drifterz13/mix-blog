@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
@@ -14,13 +15,33 @@ import Metatags from "../components/MetaTags"
 export default ({ data, location }) => {
   const post = data.markdownRemark
   const { siteUrl } = data.site.siteMetadata
+  const thumbnail = (
+    <Img
+      fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+      css={css`
+        display: none;
+        @media (max-width: 480px) {
+          display: block;
+        }
+      `}
+    />
+  )
+
   return (
-    <Layout>
+    <Layout mobileThumbnail={thumbnail}>
       <Metatags
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         url={siteUrl}
         pathname={location.pathname}
+      />
+      <Img
+        fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+        css={css`
+          @media (max-width: 480px) {
+            display: none;
+          }
+        `}
       />
       <SocialShareDesktop location={location} />
       <div
@@ -67,6 +88,13 @@ export const query = graphql`
         description
         date(formatString: "YYYY-MM-DD")
         tags
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 1080, maxHeight: 620, quality: 100) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
       }
     }
     site {

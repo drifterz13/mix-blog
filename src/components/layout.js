@@ -27,7 +27,7 @@ const MainContainer = styled("div")`
   padding-top: 0;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, mobileThumbnail = null }) => {
   const [isShowSideNav, toggle] = useState(false)
   return (
     <StaticQuery
@@ -54,6 +54,7 @@ const Layout = ({ children }) => {
                 isShowSideNav={isShowSideNav}
                 onToggle={toggle}
               />
+              {mobileThumbnail}
               <MainContainer>
                 <main>{children}</main>
               </MainContainer>

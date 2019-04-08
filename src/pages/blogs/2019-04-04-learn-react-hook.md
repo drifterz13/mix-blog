@@ -4,6 +4,7 @@ title: React Hook in 3 minutes.
 description: อัพเกรด React component ของคุณด้วย React Hook
 date: 2019-04-04T16:33:18.499Z
 tags: ["react", "javascript"]
+thumbnail: /react-hook-thumbnail.png
 ---
 
 ในตอนนี้เราต้องยอมรับเลยว่ากระแส **React Hook** นั้นมาแรงมากๆครับ การมาของ **React Hook** นั้นทำให้เราสามารถเปลี่ยน **Class component** ของเราเป็น **Functional component** ได้แบบง่ายๆ และนอกจากนี้ **React Hook** ยังทำให้เกิดรูปแบบการเขียน React แบบใหม่ขึ้นมาอีกมากมายครับ ซึ่งเราจะได้เห็นตัวอย่างจากบทความนี้เช่นกันครับ :blush:
