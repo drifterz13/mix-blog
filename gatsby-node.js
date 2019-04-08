@@ -3,16 +3,6 @@ const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
-exports.onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPlugin({
-    name: "babel-plugin-import",
-    options: {
-      libraryName: "antd",
-      style: true,
-    },
-  })
-}
-
 exports.onCreateNode = ({ node, getNode, actions }) => {
   fmImagesToRelative(node)
   const { createNodeField } = actions
