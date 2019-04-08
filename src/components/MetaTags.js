@@ -34,12 +34,12 @@ function Metatags(props) {
 
         {
           property: "og:image:width",
-          content: "1200",
+          content: "1080",
         },
 
         {
           property: "og:image:height",
-          content: "630",
+          content: "620",
         },
         {
           property: "og:locale",

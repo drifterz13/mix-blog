@@ -15,7 +15,6 @@ import Metatags from "../components/MetaTags"
 export default ({ data, location }) => {
   const post = data.markdownRemark
   const { siteUrl } = data.site.siteMetadata
-
   return (
     <Layout>
       <Metatags
@@ -23,6 +22,7 @@ export default ({ data, location }) => {
         description={post.frontmatter.description}
         url={siteUrl}
         pathname={location.pathname}
+        thumbnail={siteUrl + post.frontmatter.thumbnail.childImageSharp.resize.src}
       />
       <SocialShareDesktop location={location} />
       <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
@@ -72,6 +72,9 @@ export const query = graphql`
         tags
         thumbnail {
           childImageSharp {
+            resize(width: 1080, height: 620) {
+              src
+            }
             fluid(maxWidth: 1080, maxHeight: 620, quality: 100) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
