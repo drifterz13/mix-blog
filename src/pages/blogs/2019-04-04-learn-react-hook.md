@@ -10,15 +10,15 @@ tags: ["react", "javascript"]
 
 #เนื้อหา
 
-- Unlearn setState and useState :fire:
-- Unlearn Lifecycle and useEffect :fire:
-- Make custom hook :fire:
+- Unlearn setState and useState
+- Unlearn Lifecycle and useEffect
+- Make custom hook
 
 #สิ่งที่จะได้รับจากบทความนี้
 
-- Basic knowledge of React Hook. :white_check_mark:
-- How to replace setState with useState. :white_check_mark:
-- How to replace some React lifecycle with useEffect. :white_check_mark:
+- Basic knowledge of React Hook.
+- How to replace setState with useState.
+- How to replace some React lifecycle with useEffect.
 
 ##Unlearn setState and useState :fire:
 
@@ -28,6 +28,7 @@ tags: ["react", "javascript"]
 import React from "react"
 
 const Car = () => {
+  // highlight-next-line
   const [speed, setSpeed] = React.useState(0)
 
   return (
@@ -42,7 +43,7 @@ const Car = () => {
 ##Unlearn Lifecycle and useEffect :fire:
 สำหรับ Lifecycle ที่แต่เดิมมีอยู่แค่ใน Class component ตอนนี้เราสามารถทำให้ Functional component ของเรามี Lifecycle ในตัวได้ โดยการใช้ **useEffect** นั่นเอง
 
-ก่อนที่เราจะแทนที่ Lifecycle ด้วย **useEffect** นั้น เราอยากให้ทุกคนมองทุกอย่างเป็น **effect** โดยการเปลี่ยนแปลงที่เกิดขึ้นใน Component ของเราล้วนเป็น **effect** ทั้งสิ้น
+ก่อนที่เราจะแทนที่ Lifecycle เดิมด้วย **useEffect** นั้น เราอยากให้ทุกคนมองทุกอย่างเป็น **effect** โดยการเปลี่ยนแปลงที่เกิดขึ้นใน Component ของเราล้วนเป็น **effect** ทั้งสิ้น
 
 ### Replace componentDidMount
 
@@ -63,12 +64,14 @@ function mockFetch() {
 
 const Car = () => {
   const [speed, setSpeed] = React.useState(0)
+  // highlight-next-line
   useEffect(() => {
     const getInitialSpeed = async () => {
       const result = await mockFetch()
       setSpeed(result)
     }
     getInitialSpeed()
+    // highlight-next-line
   }, [])
 
   return (
@@ -110,6 +113,7 @@ const Car = ({ gas }) => {
     if (gas <= 0) {
       setSpeed(0)
     }
+    // highlight-next-line
   }, [])
 
   return (
@@ -126,8 +130,7 @@ const Car = ({ gas }) => {
 
 <iframe src="https://giphy.com/embed/2kTIBd9BjgppUshNsc" width="380" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/2kTIBd9BjgppUshNsc"></a></p>
 
-วิธีที่ถูกต้องก็คือ กำหนดค่าของ `props` ที่เราต้องการให้เกิด **effect** ดังนี้ :fire: 
-
+วิธีที่ถูกต้องก็คือ กำหนดค่าของ `props` ที่เราต้องการให้เกิด **effect** ดังนี้ :fire:
 
 ```jsx
 // ...
@@ -135,8 +138,9 @@ useEffect(() => {
   if (gas <= 0) {
     setSpeed(0)
   }
+  // highlight-next-line
 }, [gas])
-``` 
+```
 
 <iframe src="https://giphy.com/embed/2kNxjHAzuh9EgIn5wB" width="380" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/2kNxjHAzuh9EgIn5wB"></a></p>
 
