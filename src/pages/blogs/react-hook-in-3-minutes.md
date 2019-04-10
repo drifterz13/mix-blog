@@ -7,7 +7,7 @@ tags: ["react", "javascript"]
 thumbnail: /01-react-hook-thumbnail.png
 ---
 
-ในตอนนี้เราต้องยอมรับเลยว่ากระแส **React Hook** นั้นมาแรงมากๆครับ การมาของ **React Hook** นั้นทำให้เราสามารถเปลี่ยน **Class component** ของเราเป็น **Functional component** ได้แบบง่ายๆ และนอกจากนี้ **React Hook** ยังทำให้เกิดรูปแบบการเขียน React แบบใหม่ขึ้นมาอีกมากมายครับ ซึ่งเราจะได้เห็นตัวอย่างจากบทความนี้เช่นกันครับ :blush:
+ในตอนนี้เราต้องยอมรับเลยว่ากระแส **React Hook** นั้นมาแรงมากๆครับ การมาของ **React Hook** นั้นทำให้เราสามารถเปลี่ยน **Class component** ของเราเป็น **Functional component** ได้แบบง่ายๆ และนอกจากนี้ **React Hook** ยังทำให้เกิดรูปแบบการเขียน **React** แบบใหม่ขึ้นมาอีกมากมายครับ ซึ่งเราจะได้เห็นตัวอย่างจากบทความนี้เช่นกันครับ :blush:
 
 #เนื้อหา
 
@@ -17,9 +17,9 @@ thumbnail: /01-react-hook-thumbnail.png
 
 #สิ่งที่จะได้รับจากบทความนี้
 
-- Basic knowledge of React Hook.
-- How to replace setState with useState.
-- How to replace some React lifecycle with useEffect.
+- สามารถนำ React Hook ไปใช้ได้
+- สามารถแทนที่การใช้ setState ด้วย useState.
+- สามารถแทนที่การใช้ React lifecycle ด้วย useEffect.
 
 ##Unlearn setState and useState :fire:
 
@@ -189,6 +189,6 @@ const Car = ({ gas }) => {
 ดูตัวอย่างโค้ดทั้งหมดได้[ที่นี่](https://codesandbox.io/s/2rj04xpxy)
 
 #สรุปปิดท้าย
-ทั้งหมดนี้คือสิ่งที่ผมได้จากการลองใช้ **React Hook** มาคร่าวๆ ส่วนตัวผมมองว่า **React Hook** ทำให้การเขียน React ง่าย และมีประสิทธิภาพมากยิ่งขึ้น จากการลดการใช้งาน Class component แล้วเปลี่ยนมาใช้ Functional component อย่างไรก็ตาม **React Hook** ยังมีอีกหลาย api ที่น่าสนใจ เช่น **useReducer**, **useMemo** เป็นต้น หากใครสนใจศึกษาเพิ่มเติมสามารถหาอ่านได้จากเว็บไซต์ของ React ได้โดยตรงเลยครับ
+จากการลองใช้ **React Hook** มาคร่าวๆ ส่วนตัวผมมองว่า **React Hook** ทำให้การเขียน **React** ง่าย และมีประสิทธิภาพมากยิ่งขึ้น จากการลดการใช้งาน Class component แล้วเปลี่ยนมาใช้ Functional component อย่างไรก็ตาม **React Hook** ยังมีอีกหลาย api ที่น่าสนใจ เช่น **useReducer**, **useMemo**, **useCallback** เป็นต้น หากใครอยากศึกษาเพิ่มเติมสามารถหาอ่านได้จากเว็บไซต์ของ [React](https://reactjs.org/) ได้โดยตรงเลยครับ
 
 สุดท้ายนี้หากมีข้อผิดพลาดตรงไหนก็ขออภัยเป็นอย่างสูง น้อมรับคำติชมด้วยความยินดีครับ :sob: หวังว่าทุกคนจะได้ความรู้จากบทความนี้ไม่มากก็น้อย ขอบคุณทุกท่านที่ติดตามครับ :pray:
