@@ -3,8 +3,12 @@ import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { FaFacebook, FaTwitterSquare, FaGithub } from "react-icons/fa"
 
+const FACEBOOK_URL = "http://www.facebook.com/codenothing13"
+const TWITTER_URL = "http://www.twitter.com/codenothing13"
+
 const iconStyles = css`
   margin: 0 12px;
+  color: white;
 `
 
 const Footer = () => {
@@ -28,8 +32,12 @@ const Footer = () => {
             justify-content: center;
           `}
         >
-          <FaFacebook css={iconStyles} size="28" />
-          <FaTwitterSquare css={iconStyles} size="28" />
+          <a href={FACEBOOK_URL} css={iconStyles} >
+            <FaFacebook size="28" />
+          </a>
+          <a href={TWITTER_URL} css={iconStyles}>
+            <FaTwitterSquare size="28" />
+          </a>
           <FaGithub css={iconStyles} size="28" />
         </div>
       </div>

@@ -46,7 +46,7 @@ export default () => (
         </li>
         <li css={listStyles}>
           <FaFacebook size={22} />
-          <span>facebook.com/codenothing</span>
+          <span>facebook.com/codenothing13</span>
         </li>
       </ul>
     </div>
