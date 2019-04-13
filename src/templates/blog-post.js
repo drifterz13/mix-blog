@@ -4,13 +4,14 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import DisqusThread from "../components/DisqusThread"
+// import DisqusThread from "../components/DisqusThread"
 import {
   SocialShareDesktop,
   SocialShareMobile,
 } from "../components/SocialShare"
 import BlogPostMetadata from "../components/BlogPostMetadata"
 import Metatags from "../components/MetaTags"
+import GithubComment from "../components/GithubComment";
 
 export default ({ data, location }) => {
   const post = data.markdownRemark
@@ -46,11 +47,12 @@ export default ({ data, location }) => {
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <SocialShareMobile location={location} />
-        <DisqusThread
+        <GithubComment />
+        {/* <DisqusThread
           id={post.id}
           title={post.frontmatter.title}
           path={post.fields.slug}
-        />
+        /> */}
       </div>
     </Layout>
   )
