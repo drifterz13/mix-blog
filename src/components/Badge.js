@@ -12,6 +12,8 @@ function getBackgroundFromTag(tag) {
       return `#61dafb`
     case "javascript":
       return `#e29ced`
+    case "story":
+      return `#62eaae`
     default:
       break
   }
