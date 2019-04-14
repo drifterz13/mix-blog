@@ -32,10 +32,10 @@ const Footer = () => {
             justify-content: center;
           `}
         >
-          <a href={FACEBOOK_URL} css={iconStyles} >
+          <a aria-label="go to facebook.com/codenothing13" href={FACEBOOK_URL} css={iconStyles} >
             <FaFacebook size="28" />
           </a>
-          <a href={TWITTER_URL} css={iconStyles}>
+          <a aria-label="go to twitter/codenothing13" href={TWITTER_URL} css={iconStyles}>
             <FaTwitterSquare size="28" />
           </a>
           <FaGithub css={iconStyles} size="28" />

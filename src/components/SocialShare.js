@@ -27,13 +27,25 @@ const SocialShare = ({ location }) => {
       : location.href
   return (
     <>
-      <FacebookShareButton url={`${siteUrl}`} css={iconStyle}>
+      <FacebookShareButton
+        additionalProps={{ "aria-label": "facebook-share-button" }}
+        url={siteUrl}
+        css={iconStyle}
+      >
         <FacebookIcon size={40} />
       </FacebookShareButton>
-      <TwitterShareButton url={`${siteUrl}`} css={iconStyle}>
+      <TwitterShareButton
+        additionalProps={{ "aria-label": "twitter-share-button" }}
+        url={siteUrl}
+        css={iconStyle}
+      >
         <TwitterIcon size={40} />
       </TwitterShareButton>
-      <LinkedinShareButton url={`${siteUrl}`} css={iconStyle}>
+      <LinkedinShareButton
+        additionalProps={{ "aria-label": "linkedin-share-button" }}
+        url={siteUrl}
+        css={iconStyle}
+      >
         <LinkedinIcon size={40} />
       </LinkedinShareButton>
     </>
