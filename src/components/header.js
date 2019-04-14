@@ -58,6 +58,7 @@ const NavItem = styled("li")`
   margin: 0 ${rhythm(0.5)};
   > a {
     color: #2a2a2a;
+    text-decoration: none;
     &:hover {
       color: #f34a4a;
       cursor: pointer;
