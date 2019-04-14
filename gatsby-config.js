@@ -1,9 +1,11 @@
+const SITE_URL = `https://www.codenothing.co`
+
 module.exports = {
   siteMetadata: {
     title: `codenothing`,
     description: `Blog for Javascript developer.`,
     author: `@codenothing`,
-    siteUrl: `https://www.codenothing.co`,
+    siteUrl: SITE_URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -82,6 +84,21 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-137822837-1",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: SITE_URL,
+        sitemap: `${SITE_URL}/sitemap.xml`,
+        env: {
+          development: {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+          },
+          production: {
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
       },
     },
   ],
