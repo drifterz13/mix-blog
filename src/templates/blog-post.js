@@ -4,14 +4,13 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-// import DisqusThread from "../components/DisqusThread"
 import {
   SocialShareDesktop,
   SocialShareMobile,
 } from "../components/SocialShare"
 import BlogPostMetadata from "../components/BlogPostMetadata"
 import Metatags from "../components/MetaTags"
-import GithubComment from "../components/GithubComment";
+import GithubComment from "../components/GithubComment"
 
 export default ({ data, location }) => {
   const post = data.markdownRemark
@@ -23,10 +22,23 @@ export default ({ data, location }) => {
         description={post.frontmatter.description}
         url={siteUrl}
         pathname={location.pathname}
-        thumbnail={siteUrl + post.frontmatter.thumbnail.childImageSharp.resize.src}
+        thumbnail={
+          siteUrl + post.frontmatter.thumbnail.childImageSharp.resize.src
+        }
       />
       <SocialShareDesktop location={location} />
       <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
+      <div
+        css={css`
+          text-align: center;
+          margin-top: ${rhythm(0.5)};
+        `}
+      >
+        Original photo by{" "}
+        <a href={post.frontmatter.thumbnail_credit_link}>
+          {post.frontmatter.thumbnail_credit}
+        </a>
+      </div>
       <div
         css={css`
           max-width: 780px;
@@ -48,11 +60,6 @@ export default ({ data, location }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <SocialShareMobile location={location} />
         <GithubComment />
-        {/* <DisqusThread
-          id={post.id}
-          title={post.frontmatter.title}
-          path={post.fields.slug}
-        /> */}
       </div>
     </Layout>
   )
@@ -82,6 +89,8 @@ export const query = graphql`
             }
           }
         }
+        thumbnail_credit
+        thumbnail_credit_link
       }
     }
     site {
