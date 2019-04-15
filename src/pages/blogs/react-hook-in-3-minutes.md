@@ -16,12 +16,13 @@ thumbnail_credit_link: "https://unsplash.com/@rcrazy"
 - Unlearn setState and useState
 - Unlearn Lifecycle and useEffect
 - Make custom hook
+- Want context useContext (update 15/04/2562)
 
 #สิ่งที่จะได้รับจากบทความนี้
 
 - สามารถนำ React Hook ไปใช้ได้
-- สามารถแทนที่การใช้ setState ด้วย useState.
-- สามารถแทนที่การใช้ React lifecycle ด้วย useEffect.
+- สามารถแทนที่การใช้ setState ด้วย useState
+- สามารถแทนที่การใช้ React lifecycle ด้วย useEffect
 
 ##Unlearn setState and useState :fire:
 
@@ -149,7 +150,7 @@ useEffect(() => {
 
 ## Make custom hook :fire:
 
-จากหัวข้อที่ผ่านมาเราได้อัพเกรด Functional component ของเราให้มีความสามารถเทียบเท่ากับ Class component โดยเพิ่มการจัดการ state และ lifecycle ด้วย api ของ **React Hook** นั่นเอง 
+จากหัวข้อที่ผ่านมาเราได้อัพเกรด Functional component ของเราให้มีความสามารถเทียบเท่ากับ Class component โดยเพิ่มการจัดการ state และ lifecycle ด้วย api ของ **React Hook** นั่นเอง
 
 นอกจากนี้เรายังสามารถทำการแยก implementation details ต่างๆออกมาเป็นฟังก์ชัน `useCarController` ซึ่งสามารถนำไปใช้กับ component อื่นๆ ได้อีกด้วยครับ
 
@@ -187,6 +188,37 @@ const Car = ({ gas }) => {
   )
 }
 ```
+
+# อัพเดทเนื้อหา 15/04/2562
+
+## Want Context useContext :fire:
+
+เราจะมาลองใช้ Hook API ที่ทรงพลังมากๆ อีกตัวนั่นก็คือ **useContext** ครับ :triumph: เริ่มแรกเลยเราจะมาสร้าง **context** ที่ชื่อว่า `driverContext` ซึ่งจะมีข้อมูลรายชื่อคนขับแล้วทำการ `export` เพื่อจะนำไปใช้ต่อในอนาคตครับ
+
+```jsx
+// context.js
+import React from "react"
+
+export const driverContext = React.createContext({
+  drivers: ["Tony", "Thor"],
+})
+```
+
+จากนั้นด้วยความสามารถของ **useContext** เราสามรถนำ **context** ที่เราประกาศมาใช้ได้ราวกับเวทย์มนต์เลยครับ :sunglasses:
+
+```jsx
+// Car.js
+// highlight-next-line
+import { driverContext } from './context'
+
+function useCarController(gas) {
+  const [speed, setSpeed] = React.useState(0);
+  // highlight-next-line
+  const { drivers } = React.useContext(driverContext) // output -> ['Tony', 'Thor']
+  // ...
+```
+
+แค่นี้เราก็สามารถนำ **context** ที่เราประกาศไปใช้กับ Component ไหนก็ได้เพียงแค่ใช้สเต็ปง่ายๆ ตามที่ได้กล่าวมาข้างต้นครับ :blush:
 
 ดูตัวอย่างโค้ดทั้งหมดได้[ที่นี่](https://codesandbox.io/s/2rj04xpxy)
 
