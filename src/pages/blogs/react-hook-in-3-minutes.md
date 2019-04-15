@@ -132,7 +132,7 @@ const Car = ({ gas }) => {
 
 จากโค้ดด้านบนเราได้ส่ง `props` ชื่อ **gas** ให้กับ component Car แต่จะสังเกตได้ว่าในกรณีนี้หากเราคลิกปุ่ม `- gas 25` จน gas เหลือ 0 ค่าของ **speed** ที่ควรจะถูก set เป็น 0 กลับไม่ถูกเปลี่ยนเพราะเราไม่ได้กำหนดค่าที่จะให้ **useEffect** ใช้ track การเปลี่ยนแปลงนั่นเอง
 
-<iframe src="https://giphy.com/embed/2kTIBd9BjgppUshNsc" width="380" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/2kTIBd9BjgppUshNsc"></a></p>
+<iframe src="https://giphy.com/embed/2kTIBd9BjgppUshNsc" width="380" height="240" frameBorder="0" style="margin-bottom: 0;" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/2kTIBd9BjgppUshNsc"></a></p>
 
 วิธีที่ถูกต้องก็คือ กำหนดค่าของ `props` ที่เราต้องการให้เกิด **effect** ดังนี้ :fire:
 
@@ -146,7 +146,7 @@ useEffect(() => {
 }, [gas])
 ```
 
-<iframe src="https://giphy.com/embed/2kNxjHAzuh9EgIn5wB" width="380" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/2kNxjHAzuh9EgIn5wB"></a></p>
+<iframe src="https://giphy.com/embed/2kNxjHAzuh9EgIn5wB" width="380" height="240" frameBorder="0" style="margin-bottom: 0;" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/2kNxjHAzuh9EgIn5wB"></a></p>
 
 ## Make custom hook :fire:
 
