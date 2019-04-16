@@ -204,7 +204,7 @@ export const driverContext = React.createContext({
 })
 ```
 
-จากนั้นด้วยความสามารถของ **useContext** เราสามรถนำ **context** ที่เราประกาศมาใช้ได้ราวกับเวทย์มนต์เลยครับ :sunglasses:
+จากนั้นด้วยความสามารถของ **useContext** เราสามารถนำ **context** ที่เราประกาศมาใช้ได้ราวกับเวทย์มนต์เลยครับ :sunglasses:
 
 ```jsx
 // Car.js
