@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { rhythm } from "../utils/typography"
 
@@ -12,7 +13,7 @@ const SideNavContainer = styled("div")`
   z-index: 999;
   top: 0;
   left: 30%;
-  background-color: #f9f9f9;
+  background-color: ${props => (props.darkMode ? `#131315` : `#f9f9f9`)};
   overflow-x: hidden;
   transition: transform 0.3s;
   will-change: transform;
@@ -22,15 +23,30 @@ const SideNavContainer = styled("div")`
 const SideNavItem = styled(Link)`
   padding: ${rhythm(0.5)} ${rhythm(1)};
   text-decoration: none;
-  color: #2a2a2a;
   display: block;
   transition: transform 0.3s;
   will-change: transform;
 `
 
-export default ({ isShowSideNav }) => (
-  <SideNavContainer isShowSideNav={isShowSideNav}>
-    <SideNavItem to="/about">About</SideNavItem>
-    <SideNavItem to="/contact">Contact</SideNavItem>
-  </SideNavContainer>
-)
+export default ({ isShowSideNav, darkMode }) => {
+  return (
+    <SideNavContainer darkMode={darkMode} isShowSideNav={isShowSideNav}>
+      <SideNavItem
+        css={css`
+          color: ${darkMode ? `#00f9e6` : `#2a2a2a`};
+        `}
+        to="/about"
+      >
+        About
+      </SideNavItem>
+      <SideNavItem
+        css={css`
+          color: ${darkMode ? `#00f9e6` : `#2a2a2a`};
+        `}
+        to="/contact"
+      >
+        Contact
+      </SideNavItem>
+    </SideNavContainer>
+  )
+}

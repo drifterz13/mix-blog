@@ -3,7 +3,10 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
+import { MdWbSunny } from "react-icons/md"
 import Hamburger from "./Hamburger"
+
+import { ThemeContext } from "../utils/theme"
 
 const Container = styled("div")`
   width: calc(100% - 150px);
@@ -29,9 +32,10 @@ const LogoText = styled("h2")`
   margin: 0;
   display: flex;
   flex-direction: column;
-  border: 5px solid #639ee2;
+  border: 5px solid ${props => (props.darkMode ? `#00f9e6` : `#639ee2`)};
   border-radius: 14px;
   padding: 8px;
+  color: ${props => (props.darkMode ? "#00f9e6" : "auto")};
 `
 
 const NavContainer = styled("ul")`
@@ -57,7 +61,7 @@ const NavItem = styled("li")`
   height: 37px;
   margin: 0 ${rhythm(0.5)};
   > a {
-    color: #2a2a2a;
+    color: ${props => (props.darkMode ? "#00f9e6" : "#2a2a2a")};
     text-decoration: none;
     &:hover {
       color: #f34a4a;
@@ -70,11 +74,13 @@ const NavItem = styled("li")`
 `
 
 const Header = ({ isShowSideNav, onToggle }) => {
+  const { darkMode, setTheme } = React.useContext(ThemeContext)
+
   return (
     <React.Fragment>
       <header
         css={css`
-          background: #fff;
+          background: ${darkMode ? "#0a0a0a" : "#fff"};
           height: 150px;
           color: #2a2a2a;
         `}
@@ -82,20 +88,49 @@ const Header = ({ isShowSideNav, onToggle }) => {
         <Container>
           <LogoContainer>
             <Link to="/" style={{ textDecoration: "none" }}>
-              <LogoText>
+              <LogoText darkMode={darkMode}>
                 CODE<span>NOTHING</span>
               </LogoText>
             </Link>
           </LogoContainer>
           <NavContainer>
-            <NavItem>
+            <NavItem darkMode={darkMode}>
               <Link to="/about">About</Link>
             </NavItem>
-            <NavItem>
+            <NavItem darkMode={darkMode}>
               <Link to="/contact">Contact</Link>
             </NavItem>
+            <NavItem>
+              <MdWbSunny
+                onClick={() => setTheme(darkMode ? "light" : "dark")}
+                size={28}
+                css={css`
+                  margin: 0 15px;
+                  color: ${darkMode ? `#fff` : `#2a2a2a`};
+                `}
+              />
+            </NavItem>
           </NavContainer>
-          <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
+          <div
+            css={css`
+              align-self: flex-start;
+              display: flex;
+            `}
+          >
+            <MdWbSunny
+              onClick={() => setTheme(darkMode ? "light" : "dark")}
+              size={28}
+              css={css`
+                margin: 0 15px;
+                color: ${darkMode ? `#fff` : `#2a2a2a`};
+                display: none;
+                @media (max-width: 480px) {
+                  display: block;
+                }
+              `}
+            />
+            <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
+          </div>
         </Container>
       </header>
     </React.Fragment>

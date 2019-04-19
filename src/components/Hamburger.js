@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { ThemeContext } from "../utils/theme"
 
 const Container = styled("div")`
   align-self: flex-start;
@@ -36,10 +37,10 @@ const Bar = styled("div")`
   display: block;
   width: 26px;
   height: 3px;
-  background: #2a2a2a;
   margin: 5px auto;
   transition: 0.3s ease all;
   will-change: transform;
+  background: ${props => (props.darkMode ? `#00f9e6` : `#2a2a2a`)};
 `
 
 const BarTop = styled(Bar)``
@@ -48,13 +49,16 @@ const BarBottom = styled(Bar)``
 
 const BarMiddle = styled(Bar)``
 
-export default ({ onToggle, isShowSideNav }) => (
-  <Container
-    isShowSideNav={isShowSideNav}
-    onClick={() => onToggle(!isShowSideNav)}
-  >
-    <BarTop />
-    <BarMiddle />
-    <BarBottom />
-  </Container>
-)
+export default ({ onToggle, isShowSideNav }) => {
+  const { darkMode } = React.useContext(ThemeContext)
+  return (
+    <Container
+      isShowSideNav={isShowSideNav}
+      onClick={() => onToggle(!isShowSideNav)}
+    >
+      <BarTop darkMode={darkMode} />
+      <BarMiddle darkMode={darkMode} />
+      <BarBottom darkMode={darkMode} />
+    </Container>
+  )
+}
