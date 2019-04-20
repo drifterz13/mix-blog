@@ -17,9 +17,15 @@ const Wrapper = styled("div")`
   overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
   height: ${props => (props.isShowSideNav ? `100vh` : `100%`)};
   background: ${props => (props.darkMode ? `#131315` : `auto`)};
-  color: ${props => (props.darkMode ? `#fff` : `auto`)};
-  h1 {
+  color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
+  h1,
+  h2,
+  h3 {
     color: ${props => (props.darkMode ? `#00f9e6` : `auto`)};
+  }
+  blockquote {
+    color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
+    border-left-color: ${props => (props.darkMode ? `#00f9e6` : `auto`)};
   }
 `
 
