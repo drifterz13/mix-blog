@@ -33,7 +33,7 @@ export default ({ tag }) => {
         justify-content: center;
         align-items: center;
         background: ${getBackgroundFromTag(tag)};
-        :nth-of-type(2) {
+        :not(:first-of-type) {
           margin-left: 5px;
         }
       `}
