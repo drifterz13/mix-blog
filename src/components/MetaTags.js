@@ -1,17 +1,31 @@
 import React from "react"
 import Helmet from "react-helmet"
+import { useStaticQuery } from 'gatsby'
 
 function Metatags(props) {
+  const { site: { siteMetadata: { title, description } } } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+          }
+        }
+      }
+    `
+  )
   return (
     <Helmet
       title={props.title}
       meta={[
         { name: "title", content: props.title },
 
-        { name: "description", content: props.description },
+        { name: "description", content: props.description || description },
         {
           property: "og:title",
-          content: props.title,
+          content: props.title || title,
         },
         {
           property: "og:url",
@@ -29,7 +43,7 @@ function Metatags(props) {
 
         {
           property: "og:description",
-          content: props.description,
+          content: props.description || description,
         },
 
         {
@@ -47,11 +61,11 @@ function Metatags(props) {
         },
         { name: "twitter:card", content: "summary_large_image" },
 
-        { name: "twitter:title", content: props.title },
+        { name: "twitter:title", content: props.title || title },
 
         {
           name: "twitter:description",
-          content: props.description,
+          content: props.description || description,
         },
         {
           name: "twitter:image",
