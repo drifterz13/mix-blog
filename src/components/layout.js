@@ -44,7 +44,7 @@ const useDarkMode = () => {
   const initialState =
     typeof window !== "undefined"
       ? localStorage.getItem(CODE_NOTHING_THEME)
-      : false
+      : "light"
   const [theme, setTheme] = useState(initialState)
   const isDarkMode = theme === "dark"
 

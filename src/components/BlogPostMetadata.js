@@ -39,6 +39,7 @@ export default ({ date, timeToRead, tags }) => {
       <div
         css={css`
           display: flex;
+          flex-flow: row wrap;
         `}
       >
         {tags.map((tag, idx) => (
