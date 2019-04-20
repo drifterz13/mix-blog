@@ -35,7 +35,10 @@ const MainContainer = styled("div")`
 const CODE_NOTHING_THEME = "CODE_NOTHING_THEME"
 
 const Layout = ({ children }) => {
-  const initialState = localStorage.getItem(CODE_NOTHING_THEME)
+  const initialState =
+    typeof window !== "undefined"
+      ? localStorage.getItem(CODE_NOTHING_THEME)
+      : false
   const [isShowSideNav, toggle] = useState(false)
   const [theme, setTheme] = useState(initialState)
   const isDarkMode = theme === "dark"
