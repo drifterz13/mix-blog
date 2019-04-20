@@ -40,18 +40,24 @@ const MainContainer = styled("div")`
 
 const CODE_NOTHING_THEME = "CODE_NOTHING_THEME"
 
-const Layout = ({ children }) => {
+const useDarkMode = () => {
   const initialState =
     typeof window !== "undefined"
       ? localStorage.getItem(CODE_NOTHING_THEME)
       : false
-  const [isShowSideNav, toggle] = useState(false)
   const [theme, setTheme] = useState(initialState)
   const isDarkMode = theme === "dark"
 
   React.useEffect(() => {
     localStorage.setItem(CODE_NOTHING_THEME, theme)
   }, [theme])
+
+  return { isDarkMode, setTheme }
+}
+
+const Layout = ({ children }) => {
+  const [isShowSideNav, toggle] = useState(false)
+  const { isDarkMode, setTheme } = useDarkMode()
 
   return (
     <StaticQuery
