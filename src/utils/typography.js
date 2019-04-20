@@ -12,7 +12,7 @@ sutroTheme.googleFonts = [
   },
   {
     name: "Montserrat",
-    styles: ["400", "600"],
+    styles: ["500", "700"],
   },
 ]
 
