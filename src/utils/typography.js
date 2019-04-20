@@ -3,7 +3,7 @@ import Typography from "typography"
 import sutroTheme from "typography-theme-sutro"
 
 sutroTheme.headerFontFamily = ["Source Sans Pro", "sans-serif"]
-sutroTheme.bodyFontFamily = ["Lato", "sans-serif"]
+sutroTheme.bodyFontFamily = ["Montserrat", "sans-serif"]
 sutroTheme.baseFontSize = "18px"
 sutroTheme.googleFonts = [
   {
@@ -11,8 +11,8 @@ sutroTheme.googleFonts = [
     styles: ["400", "700"],
   },
   {
-    name: "Lato",
-    styles: ["400", "700"],
+    name: "Montserrat",
+    styles: ["400", "600"],
   },
 ]
 
