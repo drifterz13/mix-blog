@@ -8,7 +8,7 @@ import { rhythm } from "../utils/typography"
 import Metatags from "../components/MetaTags"
 
 const IndexPage = ({ data, location }) => (
-  <Layout>
+  <Layout yellow>
     <Metatags
       title={data.site.siteMetadata.title}
       description={data.site.siteMetadata.description}

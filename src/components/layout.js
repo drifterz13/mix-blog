@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styled from "@emotion/styled"
+import { Global, css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
@@ -16,17 +17,9 @@ const Wrapper = styled("div")`
   overflow-x: hidden;
   overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
   height: ${props => (props.isShowSideNav ? `100vh` : `100%`)};
-  background: ${props => (props.darkMode ? `#131315` : `auto`)};
+  background: ${props =>
+    props.darkMode ? `#131315` : props.yellow ? `#639ee2` : `#f9f9fa`};
   color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
-  h1,
-  h2,
-  h3 {
-    color: ${props => (props.darkMode ? `#00f9e6` : `auto`)};
-  }
-  blockquote {
-    color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
-    border-left-color: ${props => (props.darkMode ? `#00f9e6` : `auto`)};
-  }
 `
 
 const MainContainer = styled("div")`
@@ -55,7 +48,7 @@ const useDarkMode = () => {
   return { isDarkMode, setTheme }
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, yellow }) => {
   const [isShowSideNav, toggle] = useState(false)
   const { isDarkMode, setTheme } = useDarkMode()
 
@@ -78,8 +71,26 @@ const Layout = ({ children }) => {
               darkMode: isDarkMode,
             }}
           >
+            <Global
+              styles={css`
+                h1,
+                h2,
+                h3 {
+                  color: ${props => (props.darkMode ? `#00f9e6` : `auto`)};
+                }
+                blockquote {
+                  color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
+                  border-left-color: ${props =>
+                    props.darkMode ? `#00f9e6` : `auto`};
+                }
+              `}
+            />
             <div>
-              <Wrapper darkMode={isDarkMode} isShowSideNav={isShowSideNav}>
+              <Wrapper
+                yellow={yellow}
+                darkMode={isDarkMode}
+                isShowSideNav={isShowSideNav}
+              >
                 <DarkBackground
                   onClickOutside={toggle}
                   isShowSideNav={isShowSideNav}

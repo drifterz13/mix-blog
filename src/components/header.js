@@ -32,8 +32,8 @@ const LogoText = styled("h2")`
   margin: 0;
   display: flex;
   flex-direction: column;
-  border: 5px solid ${props => (props.darkMode ? `#00f9e6` : `#639ee2`)};
-  border-radius: 14px;
+  border: 6px solid ${props => (props.darkMode ? `#00f9e6` : `#f92300`)};
+  border-radius: 5px;
   padding: 8px;
   color: ${props => (props.darkMode ? "#00f9e6" : "auto")};
 `
@@ -75,12 +75,13 @@ const NavItem = styled("li")`
 
 const Header = ({ isShowSideNav, onToggle }) => {
   const { darkMode, setTheme } = React.useContext(ThemeContext)
+  const showThemeToggle = typeof window !== "undefined" && window.localStorage
 
   return (
     <React.Fragment>
       <header
         css={css`
-          background: ${darkMode ? "#0a0a0a" : "#fff"};
+          background: ${darkMode ? "#0a0a0a" : "#ffff55"};
           height: 150px;
           color: #2a2a2a;
         `}
@@ -101,14 +102,16 @@ const Header = ({ isShowSideNav, onToggle }) => {
               <Link to="/contact">Contact</Link>
             </NavItem>
             <NavItem>
-              <MdWbSunny
-                onClick={() => setTheme(darkMode ? "light" : "dark")}
-                size={28}
-                css={css`
-                  margin: 0 15px;
-                  color: ${darkMode ? `#fff` : `#2a2a2a`};
-                `}
-              />
+              {showThemeToggle && (
+                <MdWbSunny
+                  onClick={() => setTheme(darkMode ? "light" : "dark")}
+                  size={28}
+                  css={css`
+                    margin: 0 15px;
+                    color: ${darkMode ? `#fff` : `#2a2a2a`};
+                  `}
+                />
+              )}
             </NavItem>
           </NavContainer>
           <div
@@ -117,18 +120,21 @@ const Header = ({ isShowSideNav, onToggle }) => {
               display: flex;
             `}
           >
-            <MdWbSunny
-              onClick={() => setTheme(darkMode ? "light" : "dark")}
-              size={28}
-              css={css`
-                margin: 0 15px;
-                color: ${darkMode ? `#fff` : `#2a2a2a`};
-                display: none;
-                @media (max-width: 480px) {
-                  display: block;
-                }
-              `}
-            />
+            {showThemeToggle && (
+              <MdWbSunny
+                onClick={() => setTheme(darkMode ? "light" : "dark")}
+                size={28}
+                css={css`
+                  margin: 0 15px;
+                  padding: 2px;
+                  color: ${darkMode ? `#fff` : `#2a2a2a`};
+                  display: none;
+                  @media (max-width: 480px) {
+                    display: block;
+                  }
+                `}
+              />
+            )}
             <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
           </div>
         </Container>

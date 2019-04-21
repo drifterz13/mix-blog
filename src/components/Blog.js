@@ -11,6 +11,10 @@ export default ({ title, excerpt, slug, tags, timeToRead, date }) => {
     <div
       css={css`
         margin-bottom: ${rhythm(1)};
+        padding: ${rhythm(1)};
+        border: 5px solid #0a0a0a;
+        border-radius: 2px;
+        background: ${darkMode ? `#1f1f1f` : `#fafafa`};
       `}
     >
       <h1
@@ -22,7 +26,7 @@ export default ({ title, excerpt, slug, tags, timeToRead, date }) => {
         {title}
       </h1>
       <BlogPostMetadata tags={tags} timeToRead={timeToRead} date={date} />
-      <p>{excerpt}</p>
+      {/* <p>{excerpt}</p> */}
       <Link
         css={css`
           padding: 4px;

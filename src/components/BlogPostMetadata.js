@@ -26,6 +26,7 @@ export default ({ date, timeToRead, tags }) => {
         flex-flow: row wrap;
         align-items: center;
         margin-bottom: ${rhythm(1)};
+        font-size: 16px;
       `}
     >
       <IconContainer>
