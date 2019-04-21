@@ -126,6 +126,8 @@ const NestedChild = () => {
 
 มาถึงจุดนี้แล้วเพื่อนๆ คงพอจะเข้าใจการทำงานของ CSS in JS กันคร่าวๆ แล้วนะครับ ลำดับต่อไปเราจะมาลองทำ Dark mode กัน เริ่มแรกเราจะมาสร้าง **custom hook** ที่ชื่อว่า **useTheme** เพื่อใช้สำหรับการควบคุม theme ของเราระหว่าง **light mode** กับ **dark mode** ครับ :first_quarter_moon:
 
+**ผมใช้ Ract Context เพื่อแก้ปัญหาความซ้ำซ้อนในการส่งต่อ props ไปให้ component ลูกที่อยู่ลึกๆ ใน DOM tree ของเรา โดยใช้ useContext ครับ _แต่ขอไม่ยกตัวอย่างในบทความนี้ เพื่อความกระชับของเนื้อหาครับ_**
+
 สำหรับคนที่ยังไม่คุ้นกับ **React Hook** สามารถหาอ่านเพิ่มเติมจาก[บทความนี้](https://www.codenothing.co/blogs/react-hook-in-3-minutes/)ได้เลยครับ :blush:
 
 ```jsx
