@@ -17,8 +17,7 @@ const Wrapper = styled("div")`
   overflow-x: hidden;
   overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
   height: ${props => (props.isShowSideNav ? `100vh` : `100%`)};
-  background: ${props =>
-    props.darkMode ? `#131315` : props.yellow ? `#f34a4a` : `#f9f9fa`};
+  background: ${props => (props.darkMode ? `#131315` : `#f6f7f9`)};
   color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
 `
 
@@ -48,7 +47,7 @@ const useDarkMode = () => {
   return { isDarkMode, setTheme }
 }
 
-const Layout = ({ children, yellow }) => {
+const Layout = ({ children }) => {
   const [isShowSideNav, toggle] = useState(false)
   const { isDarkMode, setTheme } = useDarkMode()
 
@@ -76,11 +75,7 @@ const Layout = ({ children, yellow }) => {
                 h1,
                 h2,
                 h3 {
-                  color: ${isDarkMode
-                    ? `#00f9e6`
-                    : yellow
-                    ? `auto`
-                    : `#f92300`};
+                  color: ${isDarkMode ? `#00f9e6` : `#auto`};
                 }
                 blockquote {
                   color: ${isDarkMode ? `#fafafa` : `auto`};
@@ -93,11 +88,7 @@ const Layout = ({ children, yellow }) => {
               `}
             />
             <div>
-              <Wrapper
-                yellow={yellow}
-                darkMode={isDarkMode}
-                isShowSideNav={isShowSideNav}
-              >
+              <Wrapper darkMode={isDarkMode} isShowSideNav={isShowSideNav}>
                 <DarkBackground
                   onClickOutside={toggle}
                   isShowSideNav={isShowSideNav}

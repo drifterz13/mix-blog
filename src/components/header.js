@@ -81,7 +81,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
     <React.Fragment>
       <header
         css={css`
-          background: ${darkMode ? "#0a0a0a" : "#ffff55"};
+          background: ${darkMode ? "#0a0a0a" : "#fff"};
           height: 150px;
           color: #2a2a2a;
         `}
