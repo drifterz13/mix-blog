@@ -76,11 +76,15 @@ const Layout = ({ children, yellow }) => {
                 h1,
                 h2,
                 h3 {
-                  color: ${isDarkMode ? `#00f9e6` : `auto`};
+                  color: ${isDarkMode
+                    ? `#00f9e6`
+                    : yellow
+                    ? `auto`
+                    : `#f92300`};
                 }
                 blockquote {
                   color: ${isDarkMode ? `#fafafa` : `auto`};
-                  border-left-color: ${isDarkMode ? `#00f9e6` : `auto`};
+                  border-left-color: ${isDarkMode ? `#00f9e6` : `#f92300`};
                 }
                 :not(pre) > code[class*="language-"] {
                   background: ${isDarkMode ? `#00f9e6` : `#f5f2f0`};
