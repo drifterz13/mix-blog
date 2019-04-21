@@ -18,7 +18,7 @@ const Wrapper = styled("div")`
   overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
   height: ${props => (props.isShowSideNav ? `100vh` : `100%`)};
   background: ${props =>
-    props.darkMode ? `#131315` : props.yellow ? `darkslateblue` : `#f9f9fa`};
+    props.darkMode ? `#131315` : props.yellow ? `#f34a4a` : `#f9f9fa`};
   color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
 `
 

@@ -12,7 +12,7 @@ export default ({ title, slug, tags, timeToRead, date }) => {
       css={css`
         margin-bottom: ${rhythm(1)};
         padding: ${rhythm(1)};
-        box-shadow: 0 0 12px rgba(0,0,0,0.625);
+        box-shadow: 0 0 12px rgba(0,0,0,0.225);
         border-radius: 2px;
         background: ${darkMode ? `#1f1f1f` : `#fafafa`};
       `}
