@@ -61,7 +61,7 @@ const NavItem = styled("li")`
   height: 37px;
   margin: 0 ${rhythm(0.5)};
   > a {
-    color: ${props => (props.darkMode ? "#00f9e6" : "#2a2a2a")};
+    color: ${props => (props.darkMode ? "#00f9e6" : "#f92300")};
     text-decoration: none;
     &:hover {
       color: #f34a4a;

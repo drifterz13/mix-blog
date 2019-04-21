@@ -5,14 +5,14 @@ import BlogPostMetadata from "./BlogPostMetadata"
 import { rhythm } from "../utils/typography"
 import { ThemeContext } from "../utils/theme"
 
-export default ({ title, excerpt, slug, tags, timeToRead, date }) => {
+export default ({ title, slug, tags, timeToRead, date }) => {
   const { darkMode } = React.useContext(ThemeContext)
   return (
     <div
       css={css`
         margin-bottom: ${rhythm(1)};
         padding: ${rhythm(1)};
-        border: 5px solid #0a0a0a;
+        border: 5px solid ${darkMode ? `#00f9e6` : `#0a0a0a`};
         border-radius: 2px;
         background: ${darkMode ? `#1f1f1f` : `#fafafa`};
       `}
@@ -26,7 +26,6 @@ export default ({ title, excerpt, slug, tags, timeToRead, date }) => {
         {title}
       </h1>
       <BlogPostMetadata tags={tags} timeToRead={timeToRead} date={date} />
-      {/* <p>{excerpt}</p> */}
       <Link
         css={css`
           padding: 4px;

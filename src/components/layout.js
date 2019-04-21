@@ -18,7 +18,7 @@ const Wrapper = styled("div")`
   overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
   height: ${props => (props.isShowSideNav ? `100vh` : `100%`)};
   background: ${props =>
-    props.darkMode ? `#131315` : props.yellow ? `#639ee2` : `#f9f9fa`};
+    props.darkMode ? `#131315` : props.yellow ? `#00f9e6` : `#f9f9fa`};
   color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
 `
 
@@ -76,12 +76,15 @@ const Layout = ({ children, yellow }) => {
                 h1,
                 h2,
                 h3 {
-                  color: ${props => (props.darkMode ? `#00f9e6` : `auto`)};
+                  color: ${isDarkMode ? `#00f9e6` : `auto`};
                 }
                 blockquote {
-                  color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
-                  border-left-color: ${props =>
-                    props.darkMode ? `#00f9e6` : `auto`};
+                  color: ${isDarkMode ? `#fafafa` : `auto`};
+                  border-left-color: ${isDarkMode ? `#00f9e6` : `auto`};
+                }
+                :not(pre) > code[class*="language-"] {
+                  background: ${isDarkMode ? `#00f9e6` : `#f5f2f0`};
+                  text-shadow: ${isDarkMode && `none`};
                 }
               `}
             />
