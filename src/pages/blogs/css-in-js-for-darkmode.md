@@ -55,7 +55,7 @@ const CustomButton = styled("button")`
 `
 ```
 
-สังเกตว่าเราจะใช้คำสั่ง ` styled(/*HTML element*/)`` ` และเขียน css ที่เราต้องการภายในเครื่องหมาย back tick สิ่งหนึ่งที่ผมชอบมากๆ ในการเขียน CSS in JS คือ เราสามารถเขียน function เพื่อทำการเปลี่ยนแปลง css ตาม props ที่เรากำหนดขึ้นมาได้ด้วยครับ :sunglasses:
+สังเกตว่าเราจะใช้คำสั่ง ` styled(/*HTML element*/)`` ` และเขียน css ที่เราต้องการภายในเครื่องหมาย back tick สิ่งหนึ่งที่ผมชอบมากๆ ในการเขียน CSS in JS คือ เราสามารถเขียน function เพื่อทำการเปลี่ยนแปลง css ตาม props ที่ส่งมาได้ด้วยครับ :sunglasses:
 
 ```jsx
 const colorSetting = props => {
@@ -90,8 +90,6 @@ const CustomButton = styled("button")`
 `
 ```
 
-จะสังเกตได้ว่าเราสามารถเขียน function ที่ทำหน้าที่เปลี่ยนแปลงค่า css ตาม props ที่ส่งมาครับ ซึ่งท่านี้ทำให้ชีวิตเราง่ายขึ้นมาก :grin:
-
 จากนั้นเราจะมาลองเขียน inline style โดยใช้ความสามารถของ **emotion** เช่นเดิมครับ
 
 ```jsx
@@ -122,7 +120,7 @@ const NestedChild = () => {
 }
 ```
 
-จะเห็นว่าเราสามารถเขียน inline style ได้เหมือนกันกับเขียนในไฟล์ css เลยครับ นอกจากนี้เรายังสามารถเขียน function เพื่อเปลี่ยนค่า css ได้เช่นเดียวกับการเขียนแบบ styled component ตามที่ได้กล่าวไปแล้วครับ
+จะเห็นว่าเราสามารถเขียน inline style ได้เหมือนกันกับเขียนในไฟล์ css เลยครับ นอกจากนี้เรายังสามารถเขียน function เพื่อเปลี่ยนค่า css ได้เช่นเดียวกับการเขียนแบบ styled component ตามที่ได้กล่าวไว้ข้างต้นครับ
 
 ## สร้าง Dark mode
 
@@ -215,7 +213,7 @@ const NestedChild = ({ setTheme }) => {
 
 เราจะได้ผลลัพธ์เท่ๆ ดังนี้ครับ ดูโค้ดตัวอย่างได้[ที่นี่](https://codesandbox.io/s/n7kpmo3l1l)
 
-<iframe src="https://giphy.com/embed/oX9sHD9hRQWvPeUjvn" width="480" height="268" style="margin-bottom: 0;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="https://giphy.com/embed/oX9sHD9hRQWvPeUjvn" width="380" height="268" style="margin-bottom: 0;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 # สรุปปิดท้าย
 
