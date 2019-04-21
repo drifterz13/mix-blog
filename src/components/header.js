@@ -75,7 +75,7 @@ const NavItem = styled("li")`
 
 const Header = ({ isShowSideNav, onToggle }) => {
   const { darkMode, setTheme } = React.useContext(ThemeContext)
-  const showThemeToggle = typeof window !== "undefined" && window.localStorage
+  const showThemeToggle = typeof window !== "undefined" && window.sessionStorage
 
   return (
     <React.Fragment>

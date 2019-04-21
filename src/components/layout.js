@@ -36,13 +36,13 @@ const CODE_NOTHING_THEME = "CODE_NOTHING_THEME"
 const useDarkMode = () => {
   const initialState =
     typeof window !== "undefined"
-      ? localStorage.getItem(CODE_NOTHING_THEME)
+      ? sessionStorage.getItem(CODE_NOTHING_THEME)
       : "light"
   const [theme, setTheme] = useState(initialState)
   const isDarkMode = theme === "dark"
 
   React.useEffect(() => {
-    localStorage.setItem(CODE_NOTHING_THEME, theme)
+    sessionStorage.setItem(CODE_NOTHING_THEME, theme)
   }, [theme])
 
   return { isDarkMode, setTheme }
