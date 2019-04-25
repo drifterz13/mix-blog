@@ -36,7 +36,7 @@ export default ({ title, slug, tags, timeToRead, date }) => {
         `}
         to={slug}
       >
-        อ่านต่อ >>
+        Read more >>
       </Link>
     </div>
   )

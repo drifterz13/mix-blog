@@ -32,7 +32,7 @@ const LogoText = styled("h2")`
   margin: 0;
   display: flex;
   flex-direction: column;
-  border: 6px solid ${props => (props.darkMode ? `#00f9e6` : `#f92300`)};
+  border: 6px solid ${props => (props.darkMode ? `#00f9e6` : `#639ee8`)};
   border-radius: 5px;
   padding: 8px;
   color: ${props => (props.darkMode ? "#00f9e6" : "auto")};
