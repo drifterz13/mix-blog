@@ -9,15 +9,15 @@ import Hamburger from "./Hamburger"
 import { ThemeContext } from "../utils/theme"
 
 const Container = styled("div")`
-  width: calc(100% - 150px);
+  width: 780px;
   margin: 0 auto;
-  padding: ${rhythm(1)};
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 480px) {
+  @media (max-width: 780px) {
+    padding: ${rhythm(1)} 1.0875rem;
     width: 100%;
   }
 `
