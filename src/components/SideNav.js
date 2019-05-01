@@ -13,7 +13,7 @@ const SideNavContainer = styled("div")`
   z-index: 999;
   top: 0;
   left: 30%;
-  background-color: ${props => (props.darkMode ? `#131315` : `#f9f9f9`)};
+  background: ${props => (props.darkMode ? `#131315` : `#dcdcdc`)};
   overflow-x: hidden;
   transition: transform 0.3s;
   will-change: transform;

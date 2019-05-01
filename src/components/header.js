@@ -32,10 +32,10 @@ const LogoText = styled("h2")`
   margin: 0;
   display: flex;
   flex-direction: column;
-  border: 6px solid ${props => (props.darkMode ? `#00f9e6` : `#639ee8`)};
+  border: 6px solid ${props => (props.darkMode ? `#00f9e6` : `yellow`)};
   border-radius: 5px;
   padding: 8px;
-  color: ${props => (props.darkMode ? "#00f9e6" : "auto")};
+  color: ${props => (props.darkMode ? "#00f9e6" : "yellow")};
 `
 
 const NavContainer = styled("ul")`
@@ -61,10 +61,10 @@ const NavItem = styled("li")`
   height: 37px;
   margin: 0 ${rhythm(0.5)};
   > a {
-    color: ${props => (props.darkMode ? "#00f9e6" : "#f92300")};
+    color: ${props => (props.darkMode ? "#00f9e6" : "#fff")};
     text-decoration: none;
     &:hover {
-      color: #f34a4a;
+      color: #accbf0;
       cursor: pointer;
     }
   }
@@ -81,7 +81,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
     <React.Fragment>
       <header
         css={css`
-          background: ${darkMode ? "#0a0a0a" : "#fff"};
+          background: ${darkMode ? "#0a0a0a" : "mediumslateblue"};
           height: 150px;
           color: #2a2a2a;
         `}
@@ -108,7 +108,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
                   size={28}
                   css={css`
                     margin: 0 15px;
-                    color: ${darkMode ? `#fff` : `#2a2a2a`};
+                    color: ${darkMode ? `mediumslateblue` : `#00f9e6`};
                   `}
                 />
               )}
@@ -127,7 +127,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
                 css={css`
                   margin: 0 15px;
                   padding: 2px;
-                  color: ${darkMode ? `#fff` : `#2a2a2a`};
+                  color: ${darkMode ? `mediumslateblue` : `#00f9e6`};
                   display: none;
                   @media (max-width: 480px) {
                     display: block;

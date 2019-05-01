@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <footer
       css={css`
-        background: ${darkMode ? `#222123` : `#639ee8`};
+        background: ${darkMode ? `#222123` : `mediumslateblue`};
         padding: ${rhythm(1)};
         height: 200px;
         color: #fff;

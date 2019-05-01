@@ -13,8 +13,8 @@ export default ({ title, slug, tags, timeToRead, date }) => {
         margin-bottom: ${rhythm(1)};
         padding: ${rhythm(1)};
         /* box-shadow: 0 0 12px rgba(0,0,0,0.225); */
-        box-shadow: 5px 6px 0 ${darkMode ? `#00f9e6` : `#1f1f1f`};
-        border: 1px solid ${darkMode ? `#00f9e6` : `#1f1f1f`};
+        box-shadow: 3px 4px 0 ${darkMode ? `#00f9e6` : `mediumslateblue`};
+        border: 2px solid ${darkMode ? `#00f9e6` : `mediumslateblue`};
         border-radius: 2px;
         background: ${darkMode ? `#1f1f1f` : `#fafafa`};
       `}
@@ -31,9 +31,9 @@ export default ({ title, slug, tags, timeToRead, date }) => {
       <Link
         css={css`
           padding: 4px;
-          color: ${darkMode ? `#00f9e6` : `auto`};
+          color: ${darkMode ? `#00f9e6` : `#639ee2`};
           :hover {
-            color: #f92300;
+            color: #accbf0;
           }
         `}
         to={slug}
