@@ -11,8 +11,10 @@ import {
 import BlogPostMetadata from "../components/BlogPostMetadata"
 import Metatags from "../components/MetaTags"
 import GithubComment from "../components/GithubComment"
+import ArrowLink from "../components/ArrowLink"
 
-export default ({ data, location }) => {
+export default ({ data, location, pageContext }) => {
+  const { prev, next } = pageContext
   const post = data.markdownRemark
   const { siteUrl } = data.site.siteMetadata
   return (
@@ -25,6 +27,7 @@ export default ({ data, location }) => {
         thumbnail={
           siteUrl + post.frontmatter.thumbnail.childImageSharp.resize.src
         }
+        keywords={post.frontmatter.tags}
       />
       <SocialShareDesktop location={location} />
       <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
@@ -59,6 +62,24 @@ export default ({ data, location }) => {
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <SocialShareMobile location={location} />
+        <div
+          css={css`
+            display: flex;
+            justify-content: space-between;
+            margin: ${rhythm(2)} 0 calc(${rhythm(2)} - 16px) 0;
+          `}
+        >
+          {prev && (
+            <ArrowLink left path={prev.fields.slug}>
+              <div>{prev.frontmatter.title}</div>
+            </ArrowLink>
+          )}
+          {next && (
+            <ArrowLink right path={next.fields.slug}>
+              <div>{next.frontmatter.title}</div>
+            </ArrowLink>
+          )}
+        </div>
         <GithubComment />
       </div>
     </Layout>
