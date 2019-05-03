@@ -74,7 +74,7 @@ export const SocialShareMobile = ({ location }) => (
       @media (max-width: 480px) {
         display: flex;
         justify-content: center;
-        margin: ${rhythm(1)} 0;
+        margin: ${rhythm(2)} 0;
       }
     `}
   >

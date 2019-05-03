@@ -109,6 +109,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
                   css={css`
                     margin: 0 15px;
                     color: ${darkMode ? `mediumslateblue` : `#00f9e6`};
+                    cursor: pointer;
                   `}
                 />
               )}
@@ -129,6 +130,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
                   padding: 2px;
                   color: ${darkMode ? `mediumslateblue` : `#00f9e6`};
                   display: none;
+                  cursor: pointer;
                   @media (max-width: 480px) {
                     display: block;
                   }
