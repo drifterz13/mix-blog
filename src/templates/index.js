@@ -10,13 +10,8 @@ import Metatags from "../components/MetaTags"
 const IndexPage = ({ pageContext }) => {
   const {
     group,
-    index,
-    first,
-    last,
     additionalContext: { site },
   } = pageContext
-  const prev = index - 1 === 1 ? "" : (index - 1).toString()
-  const next = (index + 1).toString()
 
   return (
     <Layout>
@@ -45,23 +40,6 @@ const IndexPage = ({ pageContext }) => {
             date={node.frontmatter.date}
           />
         ))}
-        <div
-          css={css`
-            display: flex;
-            justify-content: space-between;
-            margin-top: ${rhythm(2)};
-            a:only-child {
-              margin: 0 auto;
-            }
-          `}
-        >
-          {!first && (
-            <Link to={`/${prev}`} disabled={first}>{`← Previous Page`}</Link>
-          )}
-          {!last && (
-            <Link to={`/${next}`} disabled={last}>{`Next Page →`}</Link>
-          )}
-        </div>
       </div>
     </Layout>
   )
