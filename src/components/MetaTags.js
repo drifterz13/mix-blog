@@ -1,9 +1,13 @@
 import React from "react"
 import Helmet from "react-helmet"
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery } from "gatsby"
 
 function Metatags(props) {
-  const { site: { siteMetadata: { title, description } } } = useStaticQuery(
+  const {
+    site: {
+      siteMetadata: { title, description },
+    },
+  } = useStaticQuery(
     graphql`
       query {
         site {
@@ -23,6 +27,13 @@ function Metatags(props) {
         { name: "title", content: props.title },
 
         { name: "description", content: props.description || description },
+        {
+          name: "keywords",
+          content:
+            props.keywords && props.keywords.length > 0
+              ? props.keywords.join(", ")
+              : "javascript",
+        },
         {
           property: "og:title",
           content: props.title || title,
