@@ -71,12 +71,12 @@ export default ({ data, location, pageContext }) => {
         >
           {prev && (
             <ArrowLink left path={prev.fields.slug}>
-              <div>{prev.frontmatter.title}</div>
+              {prev.frontmatter.title}
             </ArrowLink>
           )}
           {next && (
             <ArrowLink right path={next.fields.slug}>
-              <div>{next.frontmatter.title}</div>
+              {next.frontmatter.title}
             </ArrowLink>
           )}
         </div>
