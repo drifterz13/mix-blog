@@ -44,6 +44,7 @@ export default ({ tag }) => {
           padding: 4px;
           &:hover {
             text-decoration: none;
+            color: #f9f9f9;
           }
         `}
       >
