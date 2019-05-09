@@ -105,9 +105,9 @@ const structedItem = items.reduce((result, item) => {
 }, {})
 ```
 
-#### ผลลัพธ์
-
 ```js
+// ผลลัพธ์
+
 const structedItem = {
   A001: { id: "A001", name: "Tony" },
   A002: { id: "A002", name: "Thor" },
@@ -119,21 +119,21 @@ const structedItem = {
 
 สมมติว่าเราต้องการ `A002` เราจะเอาของอันนี้ออกมายังไง ?
 
-#### กรณี Array
-
 ```js
+// กรณี Array
+
 const myItem = items.find(item => item.id === "A002") // { id: 'A002', name: 'Thor' }
 ```
 
-#### กรณี Object
-
 ```js
+// กรณี Object
+
 const myItem = structedItem["A002"] // { id: 'A002', name: 'Thor' }
 ```
 
 เราจะเห็นว่าถ้าเรารู้ `id` แล้วเราสามารถเข้าถึง data ได้เลยในกรณีของ **Object** แต่ในกรณีของ **Array** เราต้องทำการวนลูปเพื่อหาค่าที่ต้องการ ถึงตรงนี้ทุกคนอาจยังไม่ปักใจเชื่อว่าเจ้า `reduce` มันดียังไง? เราจะมาลองดูตัวอย่างการใช้งานจริงกันครับ
 
-สมมติว่าเรามี Array ชื่อ **people** ที่รวบรวมคนดีกับคนไม่ดีอยู่รวมกัน และ Array อีกชุดชื่อ **viliians** ถ้าเราต้องการเอา **villians** ออกจาก **people** เราจะทำยังไง ?
+สมมติว่าเรามี Array ชื่อ **people** ที่รวบรวมคนดีกับคนไม่ดีอยู่รวมกัน และ Array อีกชุดชื่อ **villians** ถ้าเราต้องการเอา **villians** ออกจาก **people** เราจะทำยังไง ?
 
 ```js
 const people = [
@@ -146,19 +146,21 @@ const people = [
 const villians = [{ id: "001", name: "Thanos" }, { id: "002", name: "Joker" }]
 ```
 
-#### Naive solution
-
-เราสามารถทำด้วยวิธีที่ง่ายที่สุดได้ดังนี้ แต่ผลลัพธ์ที่ได้จะไม่ดีนัก เพราเราต้องวนลูปสองชั้นเพื่อแก้ปัญหาดังกล่าว ดังนั้นค่า **Time complexity** ของวิธีนี้จะอยู่ที่ **O(n^2)**
+เราสามารถทำด้วยวิธีที่ง่ายที่สุดได้ดังนี้
 
 ```js
+// Naive solution
+
 const heroes = people.filter(
   person => !villians.some(villian => villian.id === person.id)
 )
 ```
 
-#### Good solution
+แต่ผลลัพธ์ที่ได้จะไม่ดีนัก เพราเราต้องวนลูปสองชั้นเพื่อแก้ปัญหาดังกล่าว ดังนั้นค่า **Time complexity** ของวิธีนี้จะอยู่ที่ **O(n^2)**
 
 ```js
+// Good solution
+
 const reducedPeople = people.reduce((result, person) => {
   result[person.id] = person
 
@@ -187,9 +189,9 @@ villians.forEach(villian => {
 })
 ```
 
-#### ผลลัพธ์
-
 ```js
+// ผลลัพธ์
+
 const reducedPeople = {
   "003": { id: "003", name: "Thor" },
   "004": { id: "004", name: "Tony" },
@@ -220,9 +222,9 @@ const goodPeople = Object.keys(reducedPeople).reduce((result, key) => {
 
 เพียงเท่านี้เราก็จะได้ data แบบที่เราต้องการเป็นที่เรียบร้อยแล้วครับ :grin:
 
-#### ผลลัพธ์
-
 ```js
+// ผลลัพธ์
+
 const goodPeople = [{ id: "003", name: "Thor" }, { id: "004", name: "Tony" }]
 ```
 
@@ -245,9 +247,9 @@ const categorizedGoods = goods.reduce((result, item) => {
 }, {})
 ```
 
-#### ผลลัพธ์
-
 ```js
+// ผลลัพธ์
+
 const categorizedGoods = {
   fruit: ["orange", "apple"],
   vegetable: ["carrot"],
