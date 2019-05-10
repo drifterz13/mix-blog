@@ -92,14 +92,14 @@ const newArr = arr.reduce((result, item) => {
 สำหรับ Pattern นี้เราจะมาลองเปลี่ยน Data structure จาก **Array** เป็น **Object** กันครับ
 
 ```js
-const items = [
+const heroes = [
   { id: "A001", name: "Tony" },
   { id: "A002", name: "Thor" },
   { id: "A003", name: "Bruce" },
 ]
 
-const structedItem = items.reduce((result, item) => {
-  result[item.id] = item
+const structuredHeroes = heroes.reduce((result, hero) => {
+  result[hero.id] = hero
 
   return result
 }, {})
@@ -108,7 +108,7 @@ const structedItem = items.reduce((result, item) => {
 ```js
 // ผลลัพธ์
 
-const structedItem = {
+const structuredHeroes = {
   A001: { id: "A001", name: "Tony" },
   A002: { id: "A002", name: "Thor" },
   A003: { id: "A003", name: "Bruce" },
@@ -122,13 +122,13 @@ const structedItem = {
 ```js
 // กรณี Array
 
-const myItem = items.find(item => item.id === "A002") // { id: 'A002', name: 'Thor' }
+const myHero = items.find(item => item.id === "A002") // { id: 'A002', name: 'Thor' }
 ```
 
 ```js
 // กรณี Object
 
-const myItem = structedItem["A002"] // { id: 'A002', name: 'Thor' }
+const myHero = structuredHeroes["A002"] // { id: 'A002', name: 'Thor' }
 ```
 
 เราจะเห็นว่าถ้าเรารู้ `id` แล้วเราสามารถเข้าถึง data ได้เลยในกรณีของ **Object** แต่ในกรณีของ **Array** เราต้องทำการวนลูปเพื่อหาค่าที่ต้องการ ถึงตรงนี้ทุกคนอาจยังไม่ปักใจเชื่อว่าเจ้า `reduce` มันดียังไง? เราจะมาลองดูตัวอย่างการใช้งานจริงกันครับ
@@ -220,7 +220,7 @@ const goodPeople = Object.keys(reducedPeople).reduce((result, key) => {
 }, [])
 ```
 
-เพียงเท่านี้เราก็จะได้ data แบบที่เราต้องการเป็นที่เรียบร้อยแล้วครับ :grin:
+จากตัวอย่างด้านบน เราใช้ `Object.keys` เพื่อเอา key ของ `reducedPeople` มาใช้แปลง Data structure กลับไปเป็น **Array** เพียงเท่านี้เราก็จะได้ data แบบที่เราต้องการเป็นที่เรียบร้อยแล้วครับ :grin:
 
 ```js
 // ผลลัพธ์
@@ -246,6 +246,8 @@ const categorizedGoods = goods.reduce((result, item) => {
   return result
 }, {})
 ```
+
+การทำงานของฟังก์ชันด้านบนคือ เราจะทำการเช็คชนิดของสินค้าก่อนว่ามีสินค้าชนิดนั้นไหม หากมีเราจะทำการเพิ่มสินค้าชนิดเดียวกันลงไป หากไม่มีเราจะทำการสร้างชนิดของสินค้านั้นขึ้นมา
 
 ```js
 // ผลลัพธ์
