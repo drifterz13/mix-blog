@@ -189,6 +189,8 @@ villians.forEach(villian => {
 })
 ```
 
+_**คำเตือน** [delete operation ทำให้การทำงานช้าลง](https://stackoverflow.com/questions/43594092/slow-delete-of-object-properties-in-js-in-v8/44008788) ในการใช้งานจริงจึงควรใช้ [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) แทน `Object` เพื่อทำการ **delete**_
+
 ```js
 // ผลลัพธ์
 
