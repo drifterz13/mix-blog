@@ -1,6 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 function Metatags(props) {
   const {
@@ -90,6 +90,16 @@ function Metatags(props) {
       ]}
     >
       <html lang="en" />
+      <script
+        async
+        src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
+      <script>
+        {` (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6434348615393592",
+    enable_page_level_ads: true
+  });`}
+      </script>
     </Helmet>
   )
 }
