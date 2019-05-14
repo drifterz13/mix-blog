@@ -268,6 +268,7 @@ export default Todo
 
 ```jsx
 // components/FilterPanel.js
+
 import React from "react"
 
 const FilterPanel = ({ setFilter }) => {
