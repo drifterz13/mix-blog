@@ -29,9 +29,9 @@ thumbnail_credit_link: "https://unsplash.com/@codytdavis"
 
 เราจะใช้ `mobx-state-tree` ในการสร้าง store ขึ้นมา และใช้ `mobx-react-lite` เพื่อช่วยให้เราสามารถใช้งาน `mobx` ร่วมกับ React Hook ได้ครับ สำหรับใครที่ยังไม่รู้จัก React Hook ผมแนะนำให้เริ่มอ่าน[บทความนี้](https://www.codenothing.co/blogs/react-hook-in-3-minutes/)ก่อนครับ :zap:
 
-## สร้าง Data layer โดยใช้ Mobx store
+## สร้าง Data layer โดยใช้ MobX store
 
-`mobx-state-tree` จะประกอบด้วย 3 ส่วนหลักๆที่สำคัญคือ `model`, `actions`, และ `views` โดย `model` ใช้สำหรับกำหนดหน้าตา (type) ของข้อมูล, `actions` ใช้สำหรับเปลี่ยนแปลงค่าของข้อมูลใน store, `views` เป็น pure function ที่เอาข้อมูลใน store มา compute เพื่อแสดงใน UI ของเรา
+`mobx-state-tree` จะประกอบด้วย 3 ส่วนหลักๆที่สำคัญคือ `model`, `actions`, และ `views` โดย `model` ใช้สำหรับกำหนดหน้าตา (type) ของข้อมูล, `actions` ใช้สำหรับเปลี่ยนแปลงค่าของข้อมูลใน store, `views` เป็น pure function ที่เอาข้อมูลใน store มา compute เพื่อแสดงใน ui ของเรา
 
 จากตัวอย่างด้านล่างเพื่อนๆจะสังเกตว่าเราไม่จำเป็นต้องแยกไฟล์ **reducer** หรือ **action** ออกจากกันเหมือนตอนที่เราใช้ **redux** แต่เราสามารถสร้าง **store**, **action**, และ **reducer** ขึ้นมาพร้อมๆกันในตัวได้เลย ซึ่งจุดนี้เป็นจุดที่ผมชอบมากๆครับ
 
@@ -284,6 +284,8 @@ export default FilterPanel
 ```
 
 โค้ดด้านบนเป็น component ที่มีหน้าที่ในการจัดการกับค่า `filter` ใน store ของเราผ่านการใช้ action `setFilter` นั่นเอง
+
+ทั้งหมดนี้ก็คือตัวอย่างสั้นๆในการใช้ `mobx` ร่วมกับ React Hook นะครับ เพื่อนๆสามารถดูตัวอย่าง[โค้ดทั้งหมดได้ที่นี่](https://codesandbox.io/s/8pk9p361v9)
 
 # สรุปปิดท้าย
 
