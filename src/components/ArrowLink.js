@@ -22,6 +22,9 @@ const ArrowLink = ({ left, path, children }) => {
             size={32}
             css={css`
               margin-right: ${rhythm(0.5)};
+              @media (max-width: 480px) {
+                height: 24px;
+              }
             `}
           />
           {children}
@@ -47,6 +50,9 @@ const ArrowLink = ({ left, path, children }) => {
             size={32}
             css={css`
               margin-left: ${rhythm(0.5)};
+              @media (max-width: 480px) {
+                height: 24px;
+              }
             `}
           />
         </div>

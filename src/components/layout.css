@@ -19,12 +19,12 @@ body {
   letter-spacing: 0.1px;
 }
 
-ul li {
+ul li, ol li {
   list-style-position: inside;
 }
 
 @media (max-width: 480px) {
-  ul li {
+  ul li, ol li {
     list-style-position: outside;
   }
 }
