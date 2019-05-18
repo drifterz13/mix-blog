@@ -9,7 +9,7 @@ import Badge from "./Badge"
 const IconContainer = styled("div")`
   display: flex;
   align-items: center;
-  margin-right: ${rhythm(1)}
+  margin-right: ${rhythm(1)};
 `
 
 const iconStyles = css`
@@ -25,6 +25,9 @@ export default ({ date, timeToRead, tags }) => {
         align-items: center;
         margin-bottom: ${rhythm(1)};
         font-size: 16px;
+        @media (max-width: 480px) {
+          font-size: 14px;
+        }
       `}
     >
       <IconContainer>

@@ -19,14 +19,6 @@ body {
   letter-spacing: 0.1px;
 }
 
-a {
-  color: #639ee2;
-}
-
-a:hover {
-  color: #accbf0;
-}
-
 ul li {
   list-style-position: inside;
 }

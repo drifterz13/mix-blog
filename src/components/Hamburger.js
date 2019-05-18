@@ -40,7 +40,7 @@ const Bar = styled("div")`
   margin: 5px auto;
   transition: 0.3s ease all;
   will-change: transform;
-  background: ${props => (props.darkMode ? `#00f9e6` : `yellow`)};
+  background: ${props => (props.darkMode ? `#fff` : `#222`)};
 `
 
 const BarTop = styled(Bar)``

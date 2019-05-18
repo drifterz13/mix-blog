@@ -5,6 +5,7 @@ import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { MdWbSunny } from "react-icons/md"
 import Hamburger from "./Hamburger"
+import Logo from "../../static/images/transparent-logo.png"
 
 import { ThemeContext } from "../utils/theme"
 
@@ -32,10 +33,13 @@ const LogoText = styled("h2")`
   margin: 0;
   display: flex;
   flex-direction: column;
-  border: 6px solid ${props => (props.darkMode ? `#00f9e6` : `yellow`)};
+  /* border: 6px solid ${props => (props.darkMode ? `#00f9e6` : `yellow`)}; */
   border-radius: 5px;
   padding: 8px;
-  color: ${props => (props.darkMode ? "#00f9e6" : "yellow")};
+  color: ${props => (props.darkMode ? "#fff" : "#222")};
+  @media (max-wdith: 480px) {
+    font-size: 24px;
+  }
 `
 
 const NavContainer = styled("ul")`
@@ -50,7 +54,8 @@ const NavContainer = styled("ul")`
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
-  min-width: 650px;
+  /* min-width: 650px; */
+  flex: 1;
   @media (max-width: 780px) {
     display: none;
   }
@@ -61,10 +66,10 @@ const NavItem = styled("li")`
   height: 37px;
   margin: 0 ${rhythm(0.5)};
   > a {
-    color: ${props => (props.darkMode ? "#00f9e6" : "#fff")};
+    color: ${props => (props.darkMode ? "#fff" : "#222")};
     text-decoration: none;
     &:hover {
-      color: #accbf0;
+      color: #f92300;
       cursor: pointer;
     }
   }
@@ -81,19 +86,29 @@ const Header = ({ isShowSideNav, onToggle }) => {
     <React.Fragment>
       <header
         css={css`
-          background: ${darkMode ? "#0a0a0a" : "mediumslateblue"};
+          background: ${darkMode ? "#2a2a2a" : "#fff"};
           height: 150px;
           color: #2a2a2a;
         `}
       >
         <Container>
-          <LogoContainer>
-            <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <LogoContainer>
+              <img
+                src={Logo}
+                alt="Codenothing logo"
+                css={css`
+                  margin-bottom: 0;
+                  @media (max-width: 480px) {
+                    height: 70px;
+                  }
+                `}
+              />
               <LogoText darkMode={darkMode}>
                 CODE<span>NOTHING</span>
               </LogoText>
-            </Link>
-          </LogoContainer>
+            </LogoContainer>
+          </Link>
           <NavContainer>
             <NavItem darkMode={darkMode}>
               <Link to="/about">About</Link>
@@ -108,14 +123,18 @@ const Header = ({ isShowSideNav, onToggle }) => {
                   size={28}
                   css={css`
                     margin: 0 15px;
-                    color: ${darkMode ? `mediumslateblue` : `#00f9e6`};
+                    color: ${darkMode ? `#fff` : `#222`};
                     cursor: pointer;
                   `}
                 />
               )}
             </NavItem>
           </NavContainer>
-          <div
+          <div>
+            <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
+          </div>
+
+          {/* <div
             css={css`
               align-self: flex-start;
               display: flex;
@@ -138,7 +157,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
               />
             )}
             <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
-          </div>
+          </div> */}
         </Container>
       </header>
     </React.Fragment>
