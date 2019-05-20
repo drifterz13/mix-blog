@@ -9,9 +9,9 @@ import {
   SocialShareMobile,
 } from "../components/SocialShare"
 import BlogPostMetadata from "../components/BlogPostMetadata"
-import Metatags from "../components/MetaTags"
 import GithubComment from "../components/GithubComment"
 import ArrowLink from "../components/ArrowLink"
+import MetaTagsWithAds from "../components/MetaTagsWithAds";
 
 export default ({ data, location, pageContext }) => {
   const { prev, next } = pageContext
@@ -19,7 +19,7 @@ export default ({ data, location, pageContext }) => {
   const { siteUrl } = data.site.siteMetadata
   return (
     <Layout>
-      <Metatags
+      <MetaTagsWithAds
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         url={siteUrl}
