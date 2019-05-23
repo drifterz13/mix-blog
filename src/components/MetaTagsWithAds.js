@@ -1,9 +1,9 @@
 import React from "react"
 import Metatags from "./MetaTags"
 
-export default () => {
+export default (props) => {
   return (
-    <Metatags>
+    <Metatags {...props}>
       <script
         async
         src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
