@@ -56,6 +56,9 @@ _คำเตือน เนื้อหาและภาพประกอบ
 # Useful Resources
 
 https://learncssgrid.com/
+
 https://css-tricks.com/clipping-masking-css/
+
 https://alligator.io/css/variable-fonts/
+
 https://tympanus.net/codrops/css_reference/mix-blend-mode/
