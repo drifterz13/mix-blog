@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Six things I learn about React Hook
+title: 6 things I've learned about React Hook
 description: เรื่องราวต่างที่ผมได้เรียนรู้เกี่ยวกับ React Hook หลังจากใช้งานมาซักพัก
 date: "2019-07-01T14:57:05.560Z"
 tags: ["react", "javascript"]
