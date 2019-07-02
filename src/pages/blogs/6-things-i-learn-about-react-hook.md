@@ -146,7 +146,7 @@ function Component2() {
 
 # 5. useRef :notes:
 
-ตอนแรกผมคิดว่า **useRef** คงเอาไว้ใช้ได้แค่เป็น reference ใน HTML element แต่จริงๆแล้ว **useRef** นั้นสามารถใช้เป็น mutable object ใน component ของเราได้ หากเพื่อนๆเตยประสบปัญหาอยากเก็บค่าตัวแปรที่ไม่เปลี่ยนแปลงไปตามกาลเวลาแม้ว่า component ของเราจะ re-render ซ้ำแล้วซ้ำอีก ... **useRef** ช่วยเราได้ครับ :grin: เรามาลองดูตัวอย่างกันครับ
+ตอนแรกผมคิดว่า **useRef** คงเอาไว้ใช้ได้แค่เป็น reference ใน HTML element แต่จริงๆแล้ว **useRef** นั้นสามารถใช้เป็น mutable object ใน component ของเราได้ หากเพื่อนๆเคยประสบปัญหาอยากเก็บค่าตัวแปรที่ไม่เปลี่ยนแปลงไปตามกาลเวลาแม้ว่า component ของเราจะ re-render ซ้ำแล้วซ้ำอีก ... **useRef** ช่วยเราได้ครับ :grin: เรามาลองดูตัวอย่างกันครับ
 
 ```jsx
 // example-05.jsx
@@ -168,13 +168,15 @@ function Component1() {
 }
 ```
 
-สมมติว่าผมอยากเก็บค่าตัวแปร `myCount` ที่จะเพิ่มทุกครั้งที่ component เรามีการ re-render ผมเลือกใช้ `let` แบบสามัญชนที่ไม่รู้ตาสีตาสา ผลปรากฏว่าค่าที่ได้จาก log นั้นเป็น 1 ตลอด :cry: คราวนี้เปลี่ยนใหม่ เราจะมาลองใช้ **useREf** กัน :fire:
+สมมติว่าผมอยากเก็บค่าตัวแปร `myCount` ที่จะเพิ่มทุกครั้งที่ component เรามีการ re-render ผมเลือกใช้ `let` แบบสามัญชนที่ไม่รู้ตาสีตาสา ผลปรากฏว่าค่าที่ได้จาก log นั้นเป็น 1 ตลอด :cry: คราวนี้เปลี่ยนใหม่ เราจะมาลองใช้ **useRef** กัน :fire:
 
 ```jsx
 const myCount = useRef(0)
 myCount.current++
 console.log(myCount.current) // => log 1, 2, 3, .. times component render
 ```
+
+เพียงเท่านี้เราก็จะมีค่าตัวแปรที่ไม่ถูกเปลี่ยนเวลา component เกิดการ re-render ขึ้นแล้วครับ :smile:
 
 # Conclusion :panda_face:
 
