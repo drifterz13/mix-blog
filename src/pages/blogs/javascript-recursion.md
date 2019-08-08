@@ -13,7 +13,7 @@ thumbnail_credit_link: "https://unsplash.com/photos/HlWctEa8YH0"
 
 # ทำความรู้จัก Recursion
 
-หากเราลองค้นหาใน google ดูเราก็จะเห็นความหายของ Recursion ดังนี้
+หากเราลองค้นหาใน google ดูเราก็จะเห็นความหมายของ Recursion ดังนี้
 
 > Recursion in computer science is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem (as opposed to iteration).
 
@@ -94,4 +94,4 @@ nestedSum(o1) --> 19
 
 # สรุปปิดท้าย
 
-ผ่านไปสำหรับสองตัวอย่างการเขียน recursion function นะครับ หวังว่าคงจะไม่โหดหรือไม่ง่ายเกินไปสำหรับเพื่อนๆ นะครับ สุดท้ายนี้ขอขอบคุณทุกคนมากๆ เลยที่ติดตามกันมา จะพยายามเขียนบทความขึ้นมาบ่อยๆ ดังเดิมนะครับ สำหรับวันนี้ขอฝากไว้เท่านี้ :pray: **Happy Coding** ครับ
+ผ่านไปสำหรับสองตัวอย่างการเขียน recursive function นะครับ หวังว่าคงจะไม่โหดหรือไม่ง่ายเกินไปสำหรับเพื่อนๆ นะครับ สุดท้ายนี้ขอขอบคุณทุกคนมากๆ เลยที่ติดตามกันมา จะพยายามเขียนบทความขึ้นมาบ่อยๆ ดังเดิมนะครับ สำหรับวันนี้ขอฝากไว้เท่านี้ :pray: **Happy Coding** ครับ
