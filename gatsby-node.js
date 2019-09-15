@@ -41,6 +41,24 @@ exports.createPages = ({ graphql, actions }) => {
 
     const posts = result.data.allMarkdownRemark.edges
 
+    // pagination
+    const postsPerPage = 7
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/blog/1` : `/blog/${i + 1}`,
+        component: path.resolve("./src/templates/index.js"),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+    //
+
     posts.forEach(({ node }, index) => {
       const prev = index === 0 ? false : posts[index - 1].node
       const next = index === posts.length - 1 ? false : posts[index + 1].node

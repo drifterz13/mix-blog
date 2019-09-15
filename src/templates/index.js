@@ -7,19 +7,16 @@ import Blog from "../components/Blog"
 import { rhythm } from "../utils/typography"
 import Metatags from "../components/MetaTags"
 
-const IndexPage = ({ pageContext }) => {
-  const {
-    group,
-    additionalContext: { site },
-  } = pageContext
+export default ({ pageContext, data }) => {
+  const { currentPage, numPages } = pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage - 1 === 1 ? "/blog/1" : `/blog/${currentPage - 1}`
+  const nextPage = `/blog/${currentPage + 1}`
+  const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
-      <Metatags
-        title={site.siteMetadata.title}
-        description={site.siteMetadata.description}
-        url={site.siteMetadata.siteUrl}
-      />
       <div
         css={css`
           max-width: 780px;
@@ -29,7 +26,7 @@ const IndexPage = ({ pageContext }) => {
           }
         `}
       >
-        {group.map(({ node }) => (
+        {posts.map(({ node }) => (
           <Blog
             key={node.id}
             title={node.frontmatter.title}
@@ -40,8 +37,63 @@ const IndexPage = ({ pageContext }) => {
             date={node.frontmatter.date}
           />
         ))}
+        <div
+          css={css`
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          `}
+        >
+          {!isFirst && (
+            <Link to={prevPage} rel="prev">
+              ← Previous Page
+            </Link>
+          )}
+          {!isLast && (
+            <Link to={nextPage} rel="next">
+              Next Page →
+            </Link>
+          )}
+        </div>
       </div>
     </Layout>
   )
 }
-export default IndexPage
+export const pageQuery = graphql`
+  query blogPageQuery($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          id
+          excerpt
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            description
+            date(formatString: "YYYY-MM-DD")
+            tags
+            thumbnail {
+              childImageSharp {
+                resize(width: 1200, height: 630) {
+                  src
+                }
+                fluid(maxWidth: 1080, maxHeight: 620, quality: 100) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
+            thumbnail_credit
+            thumbnail_credit_link
+          }
+        }
+      }
+    }
+  }
+`
