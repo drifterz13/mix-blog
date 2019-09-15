@@ -11,7 +11,7 @@ import {
 import BlogPostMetadata from "../components/BlogPostMetadata"
 import GithubComment from "../components/GithubComment"
 import ArrowLink from "../components/ArrowLink"
-import MetaTagsWithAds from "../components/MetaTagsWithAds";
+import MetaTagsWithAds from "../components/MetaTagsWithAds"
 
 export default ({ data, location, pageContext }) => {
   const { prev, next } = pageContext
@@ -71,12 +71,28 @@ export default ({ data, location, pageContext }) => {
         >
           {prev && (
             <ArrowLink left path={prev.fields.slug}>
-              {prev.frontmatter.title}
+              <span
+                css={css`
+                  @media (max-width: 480px) {
+                    width: 100px;
+                  }
+                `}
+              >
+                {prev.frontmatter.title}
+              </span>
             </ArrowLink>
           )}
           {next && (
             <ArrowLink right path={next.fields.slug}>
-              {next.frontmatter.title}
+              <span
+                css={css`
+                  @media (max-width: 480px) {
+                    width: 100px;
+                  }
+                `}
+              >
+                {next.frontmatter.title}
+              </span>
             </ArrowLink>
           )}
         </div>

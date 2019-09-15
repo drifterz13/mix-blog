@@ -13,7 +13,7 @@ const SideNavContainer = styled("div")`
   z-index: 999;
   top: 0;
   left: 30%;
-  background: ${props => (props.darkMode ? `#131315` : `#fff`)};
+  background: #fff;
   overflow-x: hidden;
   transition: transform 0.3s;
   will-change: transform;
@@ -28,12 +28,12 @@ const SideNavItem = styled(Link)`
   will-change: transform;
 `
 
-export default ({ isShowSideNav, darkMode }) => {
+export default ({ isShowSideNav }) => {
   return (
-    <SideNavContainer darkMode={darkMode} isShowSideNav={isShowSideNav}>
+    <SideNavContainer isShowSideNav={isShowSideNav}>
       <SideNavItem
         css={css`
-          color: ${darkMode ? `#fff` : `#2a2a2a`};
+          color: #2a2a2a;
         `}
         to="/about"
       >
@@ -41,7 +41,7 @@ export default ({ isShowSideNav, darkMode }) => {
       </SideNavItem>
       <SideNavItem
         css={css`
-          color: ${darkMode ? `#fff` : `#2a2a2a`};
+          color: #2a2a2a;
         `}
         to="/contact"
       >

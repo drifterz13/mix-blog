@@ -8,7 +8,6 @@ import DarkBackground from "./DarkBackground"
 import SideNav from "./SideNav"
 import Footer from "./Footer"
 
-import { ThemeContext } from "../utils/theme"
 import "./layout.css"
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 
@@ -17,8 +16,7 @@ const Wrapper = styled("div")`
   overflow-x: hidden;
   overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
   height: ${props => (props.isShowSideNav ? `100vh` : `100%`)};
-  background: ${props => (props.darkMode ? `#2d2d2f` : `#fafafa`)};
-  color: ${props => (props.darkMode ? `#fafafa` : `auto`)};
+  background: #fafafa;
 `
 
 const MainContainer = styled("div")`
@@ -30,26 +28,8 @@ const MainContainer = styled("div")`
   padding-top: 0;
 `
 
-const CODE_NOTHING_THEME = "CODE_NOTHING_THEME"
-
-const useDarkMode = () => {
-  const initialState =
-    typeof window !== "undefined"
-      ? sessionStorage.getItem(CODE_NOTHING_THEME)
-      : "light"
-  const [theme, setTheme] = useState(initialState)
-  const isDarkMode = theme === "dark"
-
-  React.useEffect(() => {
-    sessionStorage.setItem(CODE_NOTHING_THEME, theme)
-  }, [theme])
-
-  return { isDarkMode, setTheme }
-}
-
 const Layout = ({ children }) => {
   const [isShowSideNav, toggle] = useState(false)
-  const { isDarkMode, setTheme } = useDarkMode()
 
   return (
     <StaticQuery
@@ -64,52 +44,34 @@ const Layout = ({ children }) => {
       `}
       render={data => (
         <React.Fragment>
-          <ThemeContext.Provider
-            value={{
-              setTheme,
-              darkMode: isDarkMode,
-            }}
-          >
-            <Global
-              styles={css`
-                h1,
-                h2,
-                h3 {
-                  color: ${isDarkMode ? `#f5f592` : `#auto`};
-                }
-                blockquote {
-                  color: ${isDarkMode ? `#fafafa` : `auto`};
-                  border-left-color: ${isDarkMode ? `#f5f592` : `#f92300`};
-                }
-                :not(pre) > code[class*="language-"] {
-                  background: ${isDarkMode ? `#f5f592` : `#f5f2f0`};
-                  text-shadow: ${isDarkMode && `none`};
-                }
-              `}
-            />
-            <div>
-              <Wrapper darkMode={isDarkMode} isShowSideNav={isShowSideNav}>
-                <DarkBackground
-                  onClickOutside={toggle}
-                  isShowSideNav={isShowSideNav}
-                />
-                <SideNav
-                  darkMode={isDarkMode}
-                  onToggle={toggle}
-                  isShowSideNav={isShowSideNav}
-                />
-                <Header
-                  siteTitle={data.site.siteMetadata.title}
-                  isShowSideNav={isShowSideNav}
-                  onToggle={toggle}
-                />
-                <MainContainer>
-                  <main>{children}</main>
-                </MainContainer>
-                <Footer />
-              </Wrapper>
-            </div>
-          </ThemeContext.Provider>
+          <Global
+            styles={css`
+              blockquote {
+                border-left-color: #f92300;
+              }
+              :not(pre) > code[class*="language-"] {
+                background: #f5f2f0;
+              }
+            `}
+          />
+          <div>
+            <Wrapper isShowSideNav={isShowSideNav}>
+              <DarkBackground
+                onClickOutside={toggle}
+                isShowSideNav={isShowSideNav}
+              />
+              <SideNav onToggle={toggle} isShowSideNav={isShowSideNav} />
+              <Header
+                siteTitle={data.site.siteMetadata.title}
+                isShowSideNav={isShowSideNav}
+                onToggle={toggle}
+              />
+              <MainContainer>
+                <main>{children}</main>
+              </MainContainer>
+              <Footer />
+            </Wrapper>
+          </div>
         </React.Fragment>
       )}
     />

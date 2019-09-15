@@ -7,8 +7,6 @@ import { MdWbSunny } from "react-icons/md"
 import Hamburger from "./Hamburger"
 import Logo from "../../static/images/transparent-logo.png"
 
-import { ThemeContext } from "../utils/theme"
-
 const Container = styled("div")`
   width: 780px;
   margin: 0 auto;
@@ -33,10 +31,9 @@ const LogoText = styled("h2")`
   margin: 0;
   display: flex;
   flex-direction: column;
-  /* border: 6px solid ${props => (props.darkMode ? `#00f9e6` : `yellow`)}; */
   border-radius: 5px;
   padding: 8px;
-  color: ${props => (props.darkMode ? "#fff" : "#222")};
+  color: #222;
   @media (max-wdith: 480px) {
     font-size: 24px;
   }
@@ -54,7 +51,6 @@ const NavContainer = styled("ul")`
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
-  /* min-width: 650px; */
   flex: 1;
   @media (max-width: 780px) {
     display: none;
@@ -66,7 +62,7 @@ const NavItem = styled("li")`
   height: 37px;
   margin: 0 ${rhythm(0.5)};
   > a {
-    color: ${props => (props.darkMode ? "#fff" : "#222")};
+    color: #222;
     text-decoration: none;
     &:hover {
       color: #f92300;
@@ -79,14 +75,11 @@ const NavItem = styled("li")`
 `
 
 const Header = ({ isShowSideNav, onToggle }) => {
-  const { darkMode, setTheme } = React.useContext(ThemeContext)
-  const showThemeToggle = typeof window !== "undefined" && window.sessionStorage
-
   return (
     <React.Fragment>
       <header
         css={css`
-          background: ${darkMode ? "#2a2a2a" : "#fff"};
+          background: #fff;
           height: 150px;
           color: #2a2a2a;
         `}
@@ -104,60 +97,22 @@ const Header = ({ isShowSideNav, onToggle }) => {
                   }
                 `}
               />
-              <LogoText darkMode={darkMode}>
+              <LogoText>
                 CODE<span>NOTHING</span>
               </LogoText>
             </LogoContainer>
           </Link>
           <NavContainer>
-            <NavItem darkMode={darkMode}>
+            <NavItem>
               <Link to="/about">About</Link>
             </NavItem>
-            <NavItem darkMode={darkMode}>
-              <Link to="/contact">Contact</Link>
-            </NavItem>
             <NavItem>
-              {showThemeToggle && (
-                <MdWbSunny
-                  onClick={() => setTheme(darkMode ? "light" : "dark")}
-                  size={28}
-                  css={css`
-                    margin: 0 15px;
-                    color: ${darkMode ? `#fff` : `#222`};
-                    cursor: pointer;
-                  `}
-                />
-              )}
+              <Link to="/contact">Contact</Link>
             </NavItem>
           </NavContainer>
           <div>
             <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
           </div>
-
-          {/* <div
-            css={css`
-              align-self: flex-start;
-              display: flex;
-            `}
-          >
-            {showThemeToggle && (
-              <MdWbSunny
-                onClick={() => setTheme(darkMode ? "light" : "dark")}
-                size={28}
-                css={css`
-                  margin: 0 15px;
-                  padding: 2px;
-                  color: ${darkMode ? `mediumslateblue` : `#00f9e6`};
-                  display: none;
-                  cursor: pointer;
-                  @media (max-width: 480px) {
-                    display: block;
-                  }
-                `}
-              />
-            )}
-            <Hamburger onToggle={onToggle} isShowSideNav={isShowSideNav} />
-          </div> */}
         </Container>
       </header>
     </React.Fragment>

@@ -11,7 +11,6 @@ const ArrowLink = ({ left, path, children }) => {
         <div
           css={css`
             display: flex;
-            width: 250px;
             @media (max-width: 480px) {
               font-size: 14px;
               width: auto;
@@ -37,8 +36,6 @@ const ArrowLink = ({ left, path, children }) => {
         <div
           css={css`
             display: flex;
-            width: 250px;
-            text-align: right;
             @media (max-width: 480px) {
               font-size: 14px;
               width: auto;

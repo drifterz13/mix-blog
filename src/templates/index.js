@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import Blog from "../components/Blog"
 
 import { rhythm } from "../utils/typography"
-import Metatags from "../components/MetaTags"
 
 export default ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext

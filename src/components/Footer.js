@@ -2,7 +2,6 @@ import React from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { FaFacebook, FaTwitterSquare, FaGithub } from "react-icons/fa"
-import { ThemeContext } from "../utils/theme"
 
 const FACEBOOK_URL = "http://www.facebook.com/codenothing13"
 const TWITTER_URL = "http://www.twitter.com/codenothing13"
@@ -13,11 +12,10 @@ const iconStyles = css`
 `
 
 const Footer = () => {
-  const { darkMode } = React.useContext(ThemeContext)
   return (
     <footer
       css={css`
-        background: ${darkMode ? `#222123` : `#222123`};
+        background: #222123;
         padding: ${rhythm(1)};
         height: 200px;
         color: #fff;
