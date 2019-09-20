@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import { MdWbSunny } from "react-icons/md"
+// import { MdWbSunny } from "react-icons/md"
 import Hamburger from "./Hamburger"
 import Logo from "../../static/images/transparent-logo.png"
 

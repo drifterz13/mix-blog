@@ -2,16 +2,16 @@ import Typography from "typography"
 
 import sutroTheme from "typography-theme-sutro"
 
-sutroTheme.headerFontFamily = ["Source Sans Pro", "sans-serif"]
-sutroTheme.bodyFontFamily = ["Montserrat", "sans-serif"]
+sutroTheme.headerFontFamily = ["Roboto", "sans-serif"]
+sutroTheme.bodyFontFamily = ["Roboto Mono", "sans-serif"]
 sutroTheme.baseFontSize = "18px"
 sutroTheme.googleFonts = [
   {
-    name: "Source Sans Pro",
+    name: "Roboto",
     styles: ["400", "700"],
   },
   {
-    name: "Montserrat",
+    name: "Roboto Mono",
     styles: ["500", "700"],
   },
 ]

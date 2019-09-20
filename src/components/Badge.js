@@ -41,14 +41,13 @@ export default ({ tag }) => {
         css={css`
           text-decoration: none;
           color: #fff;
-          padding: 4px;
           &:hover {
             text-decoration: none;
             color: #f9f9f9;
           }
         `}
       >
-        {`# ${tag}`}
+        {`#${tag}`}
       </Link>
     </div>
   )
