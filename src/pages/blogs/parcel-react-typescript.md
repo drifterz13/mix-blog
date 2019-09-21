@@ -82,9 +82,8 @@ render(<h1>Hello World!</h1>, document.getElementById("app"))
 จากนั้นเราจะมาเขียน **scripts** ที่ใช้ในการ run project ของเรากันครับ
 
 **_package.json_**
-```json
+```json{2}
   "scripts": {
-  // highlight-next-line
     "dev": "parcel index.html",
   },
 ```
@@ -109,22 +108,20 @@ render(<h1>Hello World!</h1>, document.getElementById("app"))
 
 จากนั้นเราจะได้ไฟล์ `jest.config.js` ให้เราเปลี่ยน **testEnvironment** จาก **node** เป็น **jsdom** เพื่อใช้สำหรับเทส React component ของเราครับ
 
-```javascript
+```javascript{5}
 // jest.config.js
 
 module.exports = {
   preset: "ts-jest",
-  // highlight-next-line
   testEnvironment: "jsdom",
 }
 ```
 
 จากนั้นให้สร้าง script สำหรับ run test ในไฟล์ `package.json`
 
-```json
+```json{3}
   "scripts": {
     "dev": "parcel index.html",
-    // highlight-next-line
     "test": "yarn jest",
   },
 ```
@@ -150,14 +147,13 @@ const Counter = () => {
 export default Counter
 ```
 
-```jsx
+```jsx{7}
 // index.tsx
 
 import * as React from "react"
 import { render } from "react-dom"
 import Counter from "./Counter"
 
-// highlight-next-line
 render(<Counter />, document.getElementById("app"))
 ```
 

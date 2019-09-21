@@ -14,6 +14,10 @@ sutroTheme.googleFonts = [
     name: "Roboto Mono",
     styles: ["500", "700"],
   },
+  {
+    name: "Monaco",
+    styles: ["400", "700"],
+  },
 ]
 
 const typography = new Typography(sutroTheme)

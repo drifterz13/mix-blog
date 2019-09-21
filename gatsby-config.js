@@ -1,3 +1,4 @@
+const path = require("path")
 const SITE_URL = `https://www.codenothing.co`
 
 module.exports = {
@@ -37,12 +38,23 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              colorTheme: "SynthWave '84",
+              extensions: [
+                {
+                  identifier: "RobbOwen.synthwave-vscode",
+                  version: "0.0.7",
+                },
+              ],
+              injectStyles: true,
+              extensionDataDirectory: path.resolve("extensions"),
+              logLevel: "error",
+            },
           },
           {
-            resolve: "gatsby-remark-emoji", // <-- this adds emoji
+            resolve: "gatsby-remark-emoji",
             options: {
-              // default emojiConversion --> shortnameToUnicode
               emojiConversion: "shortnameToUnicode",
             },
           },
@@ -101,6 +113,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
   ],
 }

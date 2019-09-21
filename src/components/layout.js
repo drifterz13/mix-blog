@@ -52,6 +52,13 @@ const Layout = ({ children }) => {
               :not(pre) > code[class*="language-"] {
                 background: #f5f2f0;
               }
+              code {
+                font-family: 'Monaco';
+              }
+              .vscode-highlight .vscode-highlight-line-highlighted {
+                background-color: #000;
+                box-shadow: inset 2px 0 0 0 rgba(255, 255, 255, 0.5);
+              }
             `}
           />
           <div>

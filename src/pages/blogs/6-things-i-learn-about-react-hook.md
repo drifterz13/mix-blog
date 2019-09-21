@@ -56,12 +56,11 @@ API 2 ตัวนี้ของ React Hook ค่อนข้าง tricky ม
 
 เราจะมี use case ที่สำคัญๆ ซึ่งเราจะเลือกใช้ 2 API นี้มาใช้ก็คือเมื่อ dependency ใน **useEffect** ของเราไม่ใช่ primitive value (object/array/function/etc.)
 
-```jsx
+```jsx{5}
 // example-03.jsx
 
 function Counter() {
   const [count, setCount] = useState(0)
-  //highlight-next-line
   const fn1 = () => console.log("Hello")
   const fn2 = () => {
     const result = doHundredOperation() // do expensive operation
@@ -148,11 +147,10 @@ function Component2() {
 
 ตอนแรกผมคิดว่า **useRef** คงเอาไว้ใช้ได้แค่เป็น reference ใน HTML element แต่จริงๆแล้ว **useRef** นั้นสามารถใช้เป็น mutable object ใน component ของเราได้ หากเพื่อนๆเคยประสบปัญหาอยากเก็บค่าตัวแปรที่ไม่เปลี่ยนแปลงไปตามกาลเวลาแม้ว่า component ของเราจะ re-render ซ้ำแล้วซ้ำอีก ... **useRef** ช่วยเราได้ครับ :grin: เรามาลองดูตัวอย่างกันครับ
 
-```jsx
+```jsx{4}
 // example-05.jsx
 
 function Component1() {
-  // highlight-next-line
   let myCount = 0
   myCount++
   console.log(myCount) // => always log 1

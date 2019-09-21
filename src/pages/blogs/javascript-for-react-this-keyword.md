@@ -50,7 +50,7 @@ myObj.displayA() // 3
 
 เราจะมาเริ่มดูตัวอย่างการใช้งาน **this** ที่ advance ขึ้นอีกนิดกันครับ ก่อนหน้านี้เราเคยบอกไว้ว่า **this** สามารถบอกถึง context ที่ function เราถูกเรียกใช้ได้ แต่ถ้าหากเราต้องการผูกค่า **this** ของเรากับ context อื่นแทน เราจะสามารถทำได้ยังไง?
 
-```js
+```js{12}
 var a = 2
 
 function displayA() {
@@ -62,7 +62,6 @@ const myObj = {
   displayA: displayA,
 }
 
-// highlight-next-line
 displayA.call(myObj) // 3
 
 const bindedDisplayA = displayA.bind(myObj)
@@ -80,12 +79,11 @@ bindedDisplayA() // 3
 
 สมัยที่เราเขียน React แรกๆ ผมเชื่อว่าเพื่อนๆ น่าจะเคยสงสัยว่าเวลาเราจะใส่ function ใน event listener ทำไมเราต้องจับมันไป `bind` ซะทุกครั้งเลยตามตัวอย่างด้านล่าง
 
-```jsx
+```jsx{5}
 class Counter extends React.Component {
   constructor(props) {
     super(props)
 
-    // highlight-next-line
     this.increment = this.increment.bind(this)
 
     this.state = {

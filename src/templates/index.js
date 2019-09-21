@@ -1,9 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import Blog from "../components/Blog"
-
 import { rhythm } from "../utils/typography"
 
 export default ({ pageContext, data }) => {
@@ -68,7 +67,6 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt
           timeToRead
           fields {
             slug

@@ -28,11 +28,10 @@ thumbnail_credit_link: "https://unsplash.com/@rcrazy"
 
 เราจะเริ่มทำความรู้จักกับ **useState** กันก่อนเลย โดย Hook API ตัวนี้ทำหน้าที่เหมือน **setState** ที่เราคุ้นเคยกันนั่นเอง แต่ด้วยคุณสมบัติของ **useState** ทำให้ Functional component ของเราสามารถมี **state** ในตัวได้ ดูตัวอย่างจากโค้ดด้านล่างได้เลย
 
-```jsx
+```jsx{4}
 import React from "react"
 
 const Car = () => {
-  // highlight-next-line
   const [speed, setSpeed] = React.useState(0)
 
   return (
@@ -53,7 +52,7 @@ const Car = () => {
 
 เราจะมาประเดิมเปลี่ยน **componentDidMount** ของเราโดยใช้ **useEffect** กันครับ
 
-```jsx
+```jsx{15,21}
 // Car.js
 
 import React, { useEffect } from "react"
@@ -68,14 +67,12 @@ function mockFetch() {
 
 const Car = () => {
   const [speed, setSpeed] = React.useState(0)
-  // highlight-next-line
   useEffect(() => {
     const getInitialSpeed = async () => {
       const result = await mockFetch()
       setSpeed(result)
     }
     getInitialSpeed()
-    // highlight-next-line
   }, [])
 
   return (
@@ -110,14 +107,13 @@ const CarEngine = () => {
 }
 ```
 
-```jsx
+```jsx{7}
 const Car = ({ gas }) => {
   // ...
   useEffect(() => {
     if (gas <= 0) {
       setSpeed(0)
     }
-    // highlight-next-line
   }, [])
 
   return (
@@ -136,13 +132,12 @@ const Car = ({ gas }) => {
 
 วิธีที่ถูกต้องก็คือ กำหนดค่าของ `props` ที่เราต้องการให้เกิด **effect** ดังนี้ :fire:
 
-```jsx
+```jsx{6}
 // ...
 useEffect(() => {
   if (gas <= 0) {
     setSpeed(0)
   }
-  // highlight-next-line
 }, [gas])
 ```
 
@@ -206,14 +201,12 @@ export const driverContext = React.createContext({
 
 จากนั้นด้วยความสามารถของ **useContext** เราสามารถนำ **context** ที่เราประกาศมาใช้ได้ราวกับเวทย์มนต์เลยครับ :sunglasses:
 
-```jsx
+```jsx{2,6}
 // Car.js
-// highlight-next-line
 import { driverContext } from './context'
 
 function useCarController(gas) {
   const [speed, setSpeed] = React.useState(0);
-  // highlight-next-line
   const { drivers } = React.useContext(driverContext) // output -> ['Tony', 'Thor']
   // ...
 ```

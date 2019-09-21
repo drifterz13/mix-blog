@@ -1,4 +1,5 @@
-require("prismjs/themes/prism.css")
+require('gatsby-remark-vscode/styles.css');
+require('gatsby-remark-vscode/styles.css');
 
 exports.onRouteUpdate = () => {
   if (typeof window !== `undefined`) {
