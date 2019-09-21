@@ -9,7 +9,6 @@ import SideNav from "./SideNav"
 import Footer from "./Footer"
 
 import "./layout.css"
-require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 
 const Wrapper = styled("div")`
   position: relative;
