@@ -81,7 +81,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`,
