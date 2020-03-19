@@ -6,7 +6,7 @@ import ClockIcon from "./icons/ClockIcon"
 
 export default function BlogPostMetadata({ date, timeToRead, tags }) {
   return (
-    <div className="flex items-center mb-8">
+    <div className="flex items-center mb-8 font-semibold">
       <div className="flex items-center mr-6">
         <CalendarIcon className="mr-2" />
         <span>{date}</span>
@@ -16,8 +16,8 @@ export default function BlogPostMetadata({ date, timeToRead, tags }) {
         <span>{`${timeToRead} นาที`}</span>
       </div>
       <div className="flex">
-        {tags.map((tag, idx) => (
-          <Badge tag={tag} key={idx.toString()} />
+        {tags.map(tag => (
+          <Badge tag={tag} key={tag} />
         ))}
       </div>
     </div>

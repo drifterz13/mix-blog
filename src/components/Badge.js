@@ -1,54 +1,37 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { css } from "@emotion/core"
 
 function getBackgroundFromTag(tag) {
   switch (tag) {
     case "html":
-      return `#f29300`
+      return `bg-ember-500`
     case "css":
-      return `#639ee2`
+      return `bg-indigo-500`
     case "react":
-      return `#61dafb`
+      return `bg-blue-300`
     case "javascript":
-      return `#e29ced`
+      return `bg-pink-500`
     case "story":
-      return `#62eaae`
+      return `bg-green-400`
     default:
       break
   }
 }
 
-export default ({ tag }) => {
+export default function Badge({ tag }) {
   return (
-    <div
-      css={css`
-        padding: 0 12px;
-        border-radius: 50px;
-        font-size: 14px;
-        font-weight: bold;
-        width: auto;
-        height: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: ${getBackgroundFromTag(tag)};
-        margin-right: 5px;
-      `}
+    <Link
+      className={`text-white hover:text-gray-100 px-6 rounded-lg font-semibold flex justify-center items-center mr-4 bg-green-200 ${getBackgroundFromTag(
+        tag
+      )}`}
+      to={`/tags/${tag}`}
     >
-      <Link
-        to={`/tags/${tag}`}
-        css={css`
-          text-decoration: none;
-          color: #fff;
-          &:hover {
-            text-decoration: none;
-            color: #f9f9f9;
-          }
-        `}
-      >
-        {`#${tag}`}
-      </Link>
-    </div>
+      {`#${tag}`}
+    </Link>
   )
+}
+
+Badge.propTypes = {
+  tag: PropTypes.string.isRequired,
 }

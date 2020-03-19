@@ -6,7 +6,7 @@ import Logo from "../../static/images/transparent-logo.png"
 
 export default function Header({ isShowSideNav, onToggle }) {
   return (
-    <header className="bg-indigo-500 text-white h-32">
+    <header className="bg-blue-500 text-white h-32">
       <div className="flex items-center justify-between w-4/5 lg:w-3/5 xl:w-3/5 h-full my-0 mx-auto">
         <Link to="/" className="no-underline">
           <div className="flex items-center self-center">
