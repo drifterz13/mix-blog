@@ -42,43 +42,24 @@ const Layout = ({ children }) => {
         }
       `}
       render={data => (
-        <React.Fragment>
-          <Global
-            styles={css`
-              blockquote {
-                border-left-color: #f92300;
-              }
-              :not(pre) > code[class*="language-"] {
-                background: #f5f2f0;
-              }
-              code {
-                font-family: 'Monaco';
-              }
-              .vscode-highlight .vscode-highlight-line-highlighted {
-                background-color: #000;
-                box-shadow: inset 2px 0 0 0 rgba(255, 255, 255, 0.5);
-              }
-            `}
-          />
-          <div>
-            <Wrapper isShowSideNav={isShowSideNav}>
-              <DarkBackground
-                onClickOutside={toggle}
-                isShowSideNav={isShowSideNav}
-              />
-              <SideNav onToggle={toggle} isShowSideNav={isShowSideNav} />
-              <Header
-                siteTitle={data.site.siteMetadata.title}
-                isShowSideNav={isShowSideNav}
-                onToggle={toggle}
-              />
-              <MainContainer>
-                <main>{children}</main>
-              </MainContainer>
-              <Footer />
-            </Wrapper>
+        <div>
+          <div className="bg-gray-100">
+            <DarkBackground
+              onClickOutside={toggle}
+              isShowSideNav={isShowSideNav}
+            />
+            <SideNav onToggle={toggle} isShowSideNav={isShowSideNav} />
+            <Header
+              siteTitle={data.site.siteMetadata.title}
+              isShowSideNav={isShowSideNav}
+              onToggle={toggle}
+            />
+            <MainContainer>
+              <main>{children}</main>
+            </MainContainer>
+            <Footer />
           </div>
-        </React.Fragment>
+        </div>
       )}
     />
   )
