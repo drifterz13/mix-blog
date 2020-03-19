@@ -19,7 +19,7 @@ export default function IndexPage() {
             Articles
           </div>
         </Link>
-        <div className="mt-6 md:ml-12 lg:ml-12 md:mt-0 lg:mt-0 flex flex-col items-center justify-center shadow rounded h-40 w-56 md:w-1/4 lg:w-1/4 p-6 cursor-pointer">
+        <div className="mt-6 md:ml-12 lg:ml-12 md:mt-0 lg:mt-0 flex flex-col items-center justify-center shadow rounded h-40 w-56 md:w-1/4 lg:w-1/4 p-6">
           <MdBuild className="text-gray-800" size={40} />
           <div className="mt-6 text-lg font-semibold text-gray-800">
             Developing ...
