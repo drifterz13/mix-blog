@@ -1,62 +1,29 @@
 import React from "react"
-import styled from "@emotion/styled"
+import PropTypes from "prop-types"
 
-const Container = styled("div")`
-  align-self: flex-start;
-  display: none;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  transition: 0.3s ease all;
-  position: relative;
-  justify-content: right;
-  margin: 0;
-  z-index: 999;
-  @media (max-width: 780px) {
-    display: inline-block;
-  }
-  ${() => BarTop} {
-    transform: ${props =>
-      props.isShowSideNav
-        ? `rotateZ(45deg) translateX(25%) translateY(150%)`
-        : "none"};
-  }
-  ${() => BarMiddle} {
-    width: ${props => (props.isShowSideNav ? 0 : `auto`)};
-  }
-  ${() => BarBottom} {
-    transform: ${props =>
-      props.isShowSideNav
-        ? `rotateZ(-45deg) translateX(25%) translateY(-150%)`
-        : "none"};
-  }
-`
-
-const Bar = styled("div")`
-  display: block;
-  width: 26px;
-  height: 3px;
-  margin: 5px auto;
-  transition: 0.3s ease all;
-  will-change: transform;
-  background: #222;
-`
-
-const BarTop = styled(Bar)``
-
-const BarBottom = styled(Bar)``
-
-const BarMiddle = styled(Bar)``
-
-export default ({ onToggle, isShowSideNav }) => {
+export default function Hamburger({ onToggle, isShowSideNav }) {
   return (
-    <Container
-      isShowSideNav={isShowSideNav}
+    <div
+      className="hamburger__container"
       onClick={() => onToggle(!isShowSideNav)}
     >
-      <BarTop />
-      <BarMiddle />
-      <BarBottom />
-    </Container>
+      <div
+        className={`hamburger__bar hamburger__top-bar ${isShowSideNav &&
+          "--transform"}`}
+      />
+      <div
+        className={`hamburger__bar hamburger__middle-bar ${isShowSideNav &&
+          "--transform"}`}
+      />
+      <div
+        className={`hamburger__bar hamburger__bottom-bar ${isShowSideNav &&
+          "--transform"}`}
+      />
+    </div>
   )
+}
+
+Hamburger.propTypes = {
+  onToggle: PropTypes.func.isRequired,
+  isShowSideNav: PropTypes.bool.isRequired,
 }

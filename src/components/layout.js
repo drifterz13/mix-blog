@@ -21,23 +21,21 @@ export default function Layout({ children }) {
   `)
 
   return (
-    <div>
-      <div className="bg-gray-100">
-        <DarkBackground onClickOutside={toggle} isShowSideNav={isShowSideNav} />
-        <SideNav onToggle={toggle} isShowSideNav={isShowSideNav} />
-        <Header
-          siteTitle={data.site.siteMetadata.title}
-          isShowSideNav={isShowSideNav}
-          onToggle={toggle}
-        />
-        <main
-          style={{ maxWidth: "1080px" }}
-          className="mx-auto my-6 h-full min-h-screen pt-0 pb-5 px-4"
-        >
-          {children}
-        </main>
-        <Footer />
-      </div>
+    <div className="bg-gray-100">
+      <DarkBackground onClickOutside={toggle} isShowSideNav={isShowSideNav} />
+      <SideNav onToggle={toggle} isShowSideNav={isShowSideNav} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        isShowSideNav={isShowSideNav}
+        onToggle={toggle}
+      />
+      <main
+        style={{ maxWidth: "1080px" }}
+        className="mx-auto my-8 h-full min-h-screen pt-0 pb-5 px-4"
+      >
+        {children}
+      </main>
+      <Footer />
     </div>
   )
 }

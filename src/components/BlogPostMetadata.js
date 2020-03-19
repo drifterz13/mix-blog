@@ -6,7 +6,7 @@ import ClockIcon from "./icons/ClockIcon"
 
 export default function BlogPostMetadata({ date, timeToRead, tags }) {
   return (
-    <div className="flex items-center mb-8 font-semibold">
+    <div className="flex flex-wrap items-center mb-8 font-semibold">
       <div className="flex items-center mr-6">
         <CalendarIcon className="mr-2" />
         <span>{date}</span>
