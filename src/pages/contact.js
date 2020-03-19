@@ -1,54 +1,32 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { FaFacebook } from "react-icons/fa"
-import { IoMdCall, IoMdMail } from 'react-icons/io'
+import { IoMdCall, IoMdMail } from "react-icons/io"
 
 import Layout from "../components/layout"
-import { rhythm } from "../utils/typography"
 
-const listStyles = css`
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  > span {
-    margin-left: ${rhythm(1)};
-  }
-`
-
-export default () => (
-  <Layout>
-    <div
-      css={css`
-        max-width: 780px;
-        margin: ${rhythm(2)} auto;
-        > h1 {
-          margin-top: 0;
-        }
-        @media (max-width: 480px) {
-          margin: 0 auto;
-        }
-      `}
-    >
-      <h1>CONTACT</h1>
-      <ul
-        css={css`
-          margin-left: 0;
-          list-style: none;
-        `}
+export default function Contact() {
+  return (
+    <Layout>
+      <div
+        style={{ maxWidth: "780px" }}
+        className="my-0 mx-auto md:my-4 lg:my-4"
       >
-        <li css={listStyles}>
-          <IoMdCall size={22} />
-          <span>Tel: 094-545-1858</span>
-        </li>
-        <li css={listStyles}>
-          <IoMdMail size={22} />
-          <span>codenothing.dev@gmail.com</span>
-        </li>
-        <li css={listStyles}>
-          <FaFacebook size={22} />
-          <span>facebook.com/codenothing13</span>
-        </li>
-      </ul>
-    </div>
-  </Layout>
-)
+        <h1 className="mt-0">CONTACT</h1>
+        <ul className="ml-0 list-none">
+          <li className="flex justify-start items-center">
+            <IoMdCall size={22} />
+            <span className="ml-2">Tel: 094-545-1858</span>
+          </li>
+          <li className="flex justify-start items-center">
+            <IoMdMail size={22} />
+            <span className="ml-2">codenothing.dev@gmail.com</span>
+          </li>
+          <li className="flex justify-start items-center">
+            <FaFacebook size={22} />
+            <span className="ml-2">facebook.com/codenothing13</span>
+          </li>
+        </ul>
+      </div>
+    </Layout>
+  )
+}

@@ -1,43 +1,17 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { css } from "@emotion/core"
 import Layout from "../components/layout"
 
-import { rhythm } from "../utils/typography"
-
-export default ({ pageContext, data }) => {
+export default function Tag({ pageContext, data }) {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${tag.toUpperCase()} Tags (${totalCount} total)`
 
   return (
     <Layout>
-      <div
-        css={css`
-          max-width: 780px;
-          margin: ${rhythm(2)} auto 0 auto;
-          @media (max-width: 480px) {
-            margin: auto;
-          }
-        `}
-      >
-        <h1
-          css={css`
-            margin-top: 0;
-          `}
-        >
-          {tagHeader}
-        </h1>
-
-        <ul
-          css={css`
-            list-style-position: inside;
-            margin-bottom: ${rhythm(2)};
-            @media (max-width: 480px) {
-              list-style-position: unset;
-            }
-          `}
-        >
+      <div style={{ maxWidth: "780px" }} className="m-auto md:mt-4 lg:mt-4">
+        <h1 className="mt-0">{tagHeader}</h1>
+        <ul className="md:list-inside lg:list-inside mb-4">
           {edges.map(({ node }) => {
             const { slug } = node.fields
             const { title } = node.frontmatter
