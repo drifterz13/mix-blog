@@ -8,11 +8,11 @@ export default function BlogPostMetadata({ date, timeToRead, tags }) {
   return (
     <div className="flex flex-wrap items-center mb-8 font-semibold">
       <div className="flex items-center mr-6">
-        <CalendarIcon className="mr-2" />
+        <CalendarIcon className="mr-1" />
         <span>{date}</span>
       </div>
       <div className="flex items-center mr-6">
-        <ClockIcon className="mr-2" />
+        <ClockIcon className="mr-1" />
         <span>{`${timeToRead} นาที`}</span>
       </div>
       <div className="flex">

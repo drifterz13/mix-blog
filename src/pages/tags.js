@@ -10,7 +10,7 @@ export default function Tags({
 }) {
   return (
     <Layout>
-      <div style={{ maxWidth: "780px" }} className="m-auto md:mt-4 lg:mt-4">
+      <div style={{ maxWidth: "780px" }} className="m-auto md:mt-6 lg:mt-6">
         <h1 className="mt-0">All Tags</h1>
         <ul className="md:list-inside lg:list-inside">
           {group.map(tag => (

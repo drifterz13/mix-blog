@@ -9,9 +9,9 @@ export default function Tag({ pageContext, data }) {
 
   return (
     <Layout>
-      <div style={{ maxWidth: "780px" }} className="m-auto md:mt-4 lg:mt-4">
+      <div style={{ maxWidth: "780px" }} className="m-auto md:mt-6 lg:mt-6">
         <h1 className="mt-0">{tagHeader}</h1>
-        <ul className="md:list-inside lg:list-inside mb-4">
+        <ul className="md:list-inside lg:list-inside mb-6">
           {edges.map(({ node }) => {
             const { slug } = node.fields
             const { title } = node.frontmatter

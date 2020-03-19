@@ -7,10 +7,10 @@ export default function Abou() {
     <Layout>
       <div
         style={{ maxWidth: "780px" }}
-        className="my-0 mx-auto md:mt-4 lg:mt-4"
+        className="my-0 mx-auto md:mt-6 lg:mt-6"
       >
         <div>
-          <div classNam="mb-4">
+          <div classNam="mb-6">
             <h1 className="mt-0">OUR MISSION</h1>
             <p className="text-red-500">
               <b>CODENOTHING</b>{" "}
@@ -18,14 +18,14 @@ export default function Abou() {
               ประสบการณ์ และความชอบที่มีต่อ Javascript
             </p>
           </div>
-          <div className="mb-4">
+          <div className="mb-6">
             <h1 className="mt-0">OUR VIBE</h1>
             <p className="text-red-500">
               <b>CODENOTHING</b> รักในการพัฒนาเว็บไซต์โดยใช้ React.js และ
               Node.js
             </p>
           </div>
-          <div className="mb-4">
+          <div className="mb-6">
             <h1 className="mt-0">OUR PROMISE</h1>
             <p className="text-red-500">
               <b>CODENOTHING</b> จะเป็นส่วนหนึ่งในการช่วยให้คุณได้ความรู้

@@ -29,10 +29,10 @@ export default function BlogPost({ data, location, pageContext }) {
       />
       <SocialShareDesktop location={location} />
       <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
-      <div className="text-center mt-2">
+      <div className="text-center font-medium mt-2">
         Original photo by{" "}
         <a
-          className="text-red-500 font-medium"
+          className="text-red-500"
           href={post.frontmatter.thumbnail_credit_link}
         >
           {post.frontmatter.thumbnail_credit}
@@ -47,15 +47,23 @@ export default function BlogPost({ data, location, pageContext }) {
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <SocialShareMobile location={location} />
-        <div className="flex flex-wrap items-center justify-between my-6 text-red-500 font-medium">
+        <div className="flex flex-wrap items-center justify-between my-12 text-red-500 font-medium">
           {prev && (
             <ArrowLink left path={prev.fields.slug}>
-              <span>{prev.frontmatter.title}</span>
+              <span className="hidden md:block lg:block">
+                {prev.frontmatter.title}
+              </span>
+              <span className="block md:hidden lg:hidden text-base">
+                บทความก่อนหน้า
+              </span>
             </ArrowLink>
           )}
           {next && (
             <ArrowLink right path={next.fields.slug}>
-              <span>{next.frontmatter.title}</span>
+              <span className="hidden md:block lg:block">
+                {next.frontmatter.title}
+              </span>
+              <span className="block md:hidden lg:hidden text-base">บทความถัดไป</span>
             </ArrowLink>
           )}
         </div>

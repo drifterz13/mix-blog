@@ -8,21 +8,20 @@ export default function ArrowLink({ left, path, children }) {
     return (
       <Link to={path}>
         <div className="flex items-center text-sm md:text-base lg:text-base">
-          <FaLongArrowAltLeft className="mr-2" size={32} />
+          <FaLongArrowAltLeft className="mr-2" size={18} />
           {children}
-        </div>
-      </Link>
-    )
-  } else {
-    return (
-      <Link to={path}>
-        <div className="flex items-center text-sm md:text-base lg:text-base">
-          {children}
-          <FaLongArrowAltRight className="ml-2" size={32} />
         </div>
       </Link>
     )
   }
+  return (
+    <Link to={path}>
+      <div className="flex items-center text-sm md:text-base lg:text-base">
+        {children}
+        <FaLongArrowAltRight className="ml-2" size={18} />
+      </div>
+    </Link>
+  )
 }
 
 ArrowLink.propTypes = {

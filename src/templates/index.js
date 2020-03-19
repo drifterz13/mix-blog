@@ -14,7 +14,7 @@ export default ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <div style={{ maxWidth: "780px" }} className="mx-auto my-0 md:mt-4">
+      <div style={{ maxWidth: "780px" }} className="mx-auto my-0 md:mt-6">
         {posts.map(({ node }) => (
           <Blog
             key={node.id}

@@ -22,7 +22,7 @@ function getBackgroundFromTag(tag) {
 export default function Badge({ tag }) {
   return (
     <Link
-      className={`text-white hover:text-gray-100 px-6 rounded-lg font-semibold flex justify-center items-center mr-4 bg-green-200 ${getBackgroundFromTag(
+      className={`text-white hover:text-gray-100 px-4 rounded-lg font-semibold flex justify-center items-center mr-4 bg-green-200 ${getBackgroundFromTag(
         tag
       )}`}
       to={`/tags/${tag}`}

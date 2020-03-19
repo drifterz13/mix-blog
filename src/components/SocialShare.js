@@ -14,7 +14,7 @@ const SocialShare = ({ location }) => {
       ? `${location.href}`.replace("localhost:8000", "codenothing.co")
       : location.href
   return (
-    <>
+    <React.Fragment>
       <FacebookShareButton
         className="hover:opacity-75 focus:outline-none cursor-pointer"
         additionalProps={{ "aria-label": "facebook-share-button" }}
@@ -36,7 +36,7 @@ const SocialShare = ({ location }) => {
       >
         <LinkedinIcon size={40} />
       </LinkedinShareButton>
-    </>
+    </React.Fragment>
   )
 }
 
