@@ -54,7 +54,7 @@ export default function BlogPost({ data, location, pageContext }) {
                 {prev.frontmatter.title}
               </span>
               <span className="block md:hidden lg:hidden text-base">
-                บทความก่อนหน้า
+                Previous article
               </span>
             </ArrowLink>
           )}
@@ -63,7 +63,7 @@ export default function BlogPost({ data, location, pageContext }) {
               <span className="hidden md:block lg:block">
                 {next.frontmatter.title}
               </span>
-              <span className="block md:hidden lg:hidden text-base">บทความถัดไป</span>
+              <span className="block md:hidden lg:hidden text-base">Next article</span>
             </ArrowLink>
           )}
         </div>

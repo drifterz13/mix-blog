@@ -54,6 +54,10 @@ ol {
   @apply font-medium;
 }
 
+ul li, ol li {
+  @apply mb-6;
+}
+
 p {
   @apply mb-6;
   @apply font-medium;

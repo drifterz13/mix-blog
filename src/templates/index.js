@@ -26,7 +26,7 @@ export default ({ pageContext, data }) => {
             date={node.frontmatter.date}
           />
         ))}
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between mt-12">
           {!isFirst && (
             <Link className="text-red-500 font-medium" to={prevPage} rel="prev">
               ← Previous Page

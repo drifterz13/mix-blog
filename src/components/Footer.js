@@ -25,7 +25,7 @@ export default function Footer() {
             <FaTwitterSquare size="28" />
           </a>
           <a className="mx-4" href="_blank">
-            <FaGithub className="mx-4" size="28" />
+            <FaGithub size="28" />
           </a>
         </div>
       </div>
