@@ -1,11 +1,12 @@
 import React from "react"
+import PropTypes from 'prop-types'
 import { Link } from "gatsby"
 import Hamburger from "./Hamburger"
 import Logo from "../../static/images/transparent-logo.png"
 
-const Header = ({ isShowSideNav, onToggle }) => {
+export default function Header({ isShowSideNav, onToggle }) {
   return (
-    <header className="bg-indigo-700 text-white h-32">
+    <header className="bg-indigo-500 text-white h-32">
       <div className="flex items-center justify-between w-4/5 lg:w-3/5 xl:w-3/5 h-full my-0 mx-auto">
         <Link to="/" className="no-underline">
           <div className="flex items-center self-center">
@@ -37,4 +38,7 @@ const Header = ({ isShowSideNav, onToggle }) => {
   )
 }
 
-export default Header
+Header.propTypes = {
+  onToggle: PropTypes.func.isRequired,
+  isShowSideNav: PropTypes.bool.isRequired
+}

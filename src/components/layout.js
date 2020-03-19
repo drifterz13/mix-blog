@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import styled from "@emotion/styled"
-import { Global, css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
@@ -9,14 +8,6 @@ import SideNav from "./SideNav"
 import Footer from "./Footer"
 
 import "./layout.css"
-
-const Wrapper = styled("div")`
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: ${props => (props.isShowSideNav ? `hidden` : `auto`)};
-  height: ${props => (props.isShowSideNav ? `100vh` : `100%`)};
-  background: #fafafa;
-`
 
 const MainContainer = styled("div")`
   margin: ${rhythm(1)} auto;
