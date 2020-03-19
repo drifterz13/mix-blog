@@ -1,0 +1,31 @@
+.side-nav__container {
+  @apply pt-20;
+  height: 100%;
+  width: 70%;
+  transform: translateX(100%);
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 30%;
+  background: #fff;
+  overflow-x: hidden;
+  transition: transform 0.3s;
+  will-change: transform;
+  display: none;
+}
+
+.side-nav__container.--transform {
+  transform: translateX(0%);
+  display: block;
+}
+
+.side-nav__item {
+  @apply py-2;
+  @apply px-4;
+  @apply font-semibold;
+  @apply text-lg;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s;
+  will-change: transform;
+}

@@ -2,8 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
-import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
 import {
   SocialShareDesktop,
   SocialShareMobile,
@@ -13,7 +11,7 @@ import GithubComment from "../components/GithubComment"
 import ArrowLink from "../components/ArrowLink"
 import MetaTagsWithAds from "../components/MetaTagsWithAds"
 
-export default ({ data, location, pageContext }) => {
+export default function BlogPost({ data, location, pageContext }) {
   const { prev, next } = pageContext
   const post = data.markdownRemark
   const { siteUrl } = data.site.siteMetadata
@@ -31,30 +29,17 @@ export default ({ data, location, pageContext }) => {
       />
       <SocialShareDesktop location={location} />
       <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
-      <div
-        css={css`
-          text-align: center;
-          margin-top: ${rhythm(0.5)};
-        `}
-      >
+      <div className="text-center mt-2">
         Original photo by{" "}
-        <a href={post.frontmatter.thumbnail_credit_link}>
+        <a
+          className="text-red-500 font-medium"
+          href={post.frontmatter.thumbnail_credit_link}
+        >
           {post.frontmatter.thumbnail_credit}
         </a>
       </div>
-      <div
-        css={css`
-          max-width: 780px;
-          margin: ${rhythm(2)} auto 0 auto;
-        `}
-      >
-        <h1
-          css={css`
-            margin-bottom: 10px;
-          `}
-        >
-          {post.frontmatter.title}
-        </h1>
+      <div style={{ maxWidth: "780px" }} className="mx-auto mt-12 mb-0">
+        <h1 className="mb-6 text-4xl font-bold">{post.frontmatter.title}</h1>
         <BlogPostMetadata
           tags={post.frontmatter.tags}
           date={post.frontmatter.date}
@@ -62,37 +47,15 @@ export default ({ data, location, pageContext }) => {
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <SocialShareMobile location={location} />
-        <div
-          css={css`
-            display: flex;
-            justify-content: space-between;
-            margin: ${rhythm(2)} 0 calc(${rhythm(2)} - 16px) 0;
-          `}
-        >
+        <div className="flex flex-wrap items-center justify-between my-6 text-red-500 font-medium">
           {prev && (
             <ArrowLink left path={prev.fields.slug}>
-              <span
-                css={css`
-                  @media (max-width: 480px) {
-                    width: 100px;
-                  }
-                `}
-              >
-                {prev.frontmatter.title}
-              </span>
+              <span>{prev.frontmatter.title}</span>
             </ArrowLink>
           )}
           {next && (
             <ArrowLink right path={next.fields.slug}>
-              <span
-                css={css`
-                  @media (max-width: 480px) {
-                    width: 100px;
-                  }
-                `}
-              >
-                {next.frontmatter.title}
-              </span>
+              <span>{next.frontmatter.title}</span>
             </ArrowLink>
           )}
         </div>

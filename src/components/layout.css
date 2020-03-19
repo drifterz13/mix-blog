@@ -17,11 +17,28 @@ html {
   box-sizing: inherit;
 }
 body {
-  background: #f9f9fa;
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   color: hsla(0, 0%, 0%, 0.8);
   height: 100%;
+}
+
+h1 {
+  @apply text-3xl;
+  @apply font-semibold;
+  @apply mb-4;
+}
+
+h2 {
+  @apply text-2xl;
+  @apply font-semibold;
+  @apply mb-4;
+}
+
+h3 {
+  @apply text-xl;
+  @apply font-semibold;
+  @apply mb-4;
 }
 
 ul li,
@@ -29,11 +46,24 @@ ol li {
   list-style-position: inside;
 }
 
+p {
+  @apply mb-6;
+  @apply font-medium;
+  @apply text-lg;
+  @apply subpixel-antialiased;
+  @apply tracking-wide;
+}
+
 @media (max-width: 480px) {
   ul li,
   ol li {
     list-style-position: outside;
   }
+}
+
+pre,
+code {
+  @apply mb-6;
 }
 
 code[class*="language-"],
@@ -76,62 +106,18 @@ pre[class*="language-"] {
   background: hsla(0, 0%, 0%, 0.65);
 }
 
-.hamburger__bar {
-  display: block;
-  width: 26px;
-  height: 3px;
-  margin: 5px auto;
-  transition: 0.3s ease all;
-  will-change: transform;
-  background: #222;
-}
-
-.hamburger__top-bar {
-  transform: none;
-}
-
-.hamburger__top-bar.--transform {
-  transform: rotateZ(45deg) translateX(25%) translateY(150%);
-}
-
-.hamburger__middle-bar {
-  width: auto;
-}
-
-.hamburger__middle-bar.--transform {
-  width: 0;
-}
-
-.hamburger__bottom-bar {
-  transform: none;
-}
-
-.hamburger__bottom-bar.--transform {
-  transform: rotateZ(-45deg) translateX(25%) translateY(-150%);
-}
-
-.hamburger__container {
-  align-self: flex-start;
-  display: none;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  transition: 0.3s ease all;
-  position: relative;
-  justify-content: right;
-  margin: 0;
-  z-index: 999;
-}
-
-@media (max-width: 780px) {
-  .hamburger__container {
-    display: inline-block;
-  }
-}
-
 blockquote {
-  border-left-color: #f92300;
+  @apply italic;
+  @apply border-solid;
+  @apply border-red-500;
+  @apply border-l-4;
+  @apply font-semibold;
+  @apply text-gray-600;
+  @apply pl-6;
+  @apply my-12;
+  @apply text-xl;
 }
+
 :not(pre) > code[class*="language-"] {
   background: #f5f2f0;
 }
