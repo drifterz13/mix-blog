@@ -61,6 +61,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Roboto`],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -75,12 +81,12 @@ module.exports = {
         icon: `static/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`,
+    //   },
+    // },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`,
@@ -113,5 +119,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-postcss`,
   ],
 }
