@@ -1,53 +1,31 @@
 import React from "react"
-import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { MdAccessTime } from "react-icons/md"
-import { FaRegCalendarAlt } from "react-icons/fa"
-import { rhythm } from "../utils/typography"
+import PropTypes from "prop-types"
 import Badge from "./Badge"
+import CalendarIcon from "./icons/CalendarIcon"
+import ClockIcon from "./icons/ClockIcon"
 
-const IconContainer = styled("div")`
-  display: flex;
-  align-items: center;
-  margin-right: ${rhythm(1)};
-`
-
-const iconStyles = css`
-  margin-right: 8px;
-`
-
-export default ({ date, timeToRead, tags }) => {
+export default function BlogPostMetadata({ date, timeToRead, tags }) {
   return (
-    <div
-      css={css`
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        margin-bottom: ${rhythm(1)};
-        font-size: 16px;
-        @media (max-width: 480px) {
-          font-size: 14px;
-        }
-      `}
-    >
-      <IconContainer>
-        <FaRegCalendarAlt size={20} css={iconStyles} />
+    <div className="flex flex-wrap items-center mb-8 font-semibold">
+      <div className="flex items-center mr-6">
+        <CalendarIcon className="mr-1" />
         <span>{date}</span>
-      </IconContainer>
-      <IconContainer>
-        <MdAccessTime size={20} css={iconStyles} />
+      </div>
+      <div className="flex items-center mr-6">
+        <ClockIcon className="mr-1" />
         <span>{`${timeToRead} นาที`}</span>
-      </IconContainer>
-      <div
-        css={css`
-          display: flex;
-          flex-flow: row wrap;
-        `}
-      >
-        {tags.map((tag, idx) => (
-          <Badge tag={tag} key={idx.toString()} />
+      </div>
+      <div className="flex">
+        {tags.map(tag => (
+          <Badge tag={tag} key={tag} />
         ))}
       </div>
     </div>
   )
+}
+
+BlogPostMetadata.propTypes = {
+  date: PropTypes.string.isRequired,
+  timeToRead: PropTypes.number.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 }

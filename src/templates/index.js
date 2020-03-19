@@ -1,29 +1,20 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import Blog from "../components/Blog"
-import { rhythm } from "../utils/typography"
 
 export default ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "/blog/1" : `/blog/${currentPage - 1}`
+  const prevPage =
+    currentPage - 1 === 1 ? "/blog/1" : `/blog/${currentPage - 1}`
   const nextPage = `/blog/${currentPage + 1}`
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
-      <div
-        css={css`
-          max-width: 780px;
-          margin: ${rhythm(2)} auto 0 auto;
-          @media (max-width: 480px) {
-            margin: 0 auto;
-          }
-        `}
-      >
+      <div style={{ maxWidth: "780px" }} className="mx-auto my-0 md:mt-6">
         {posts.map(({ node }) => (
           <Blog
             key={node.id}
@@ -35,20 +26,14 @@ export default ({ pageContext, data }) => {
             date={node.frontmatter.date}
           />
         ))}
-        <div
-          css={css`
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-          `}
-        >
+        <div className="w-full flex justify-between mt-12">
           {!isFirst && (
-            <Link to={prevPage} rel="prev">
+            <Link className="text-red-500 font-medium" to={prevPage} rel="prev">
               ← Previous Page
             </Link>
           )}
           {!isLast && (
-            <Link to={nextPage} rel="next">
+            <Link className="text-red-500 font-medium" to={nextPage} rel="next">
               Next Page →
             </Link>
           )}

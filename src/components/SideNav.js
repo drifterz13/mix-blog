@@ -1,52 +1,22 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { css } from "@emotion/core"
-import styled from "@emotion/styled"
-import { rhythm } from "../utils/typography"
 
-const SideNavContainer = styled("div")`
-  height: 100%;
-  width: 70%;
-  transform: ${props =>
-    props.isShowSideNav ? "translateX(0%)" : "translateX(100%)"};
-  position: absolute;
-  z-index: 999;
-  top: 0;
-  left: 30%;
-  background: #fff;
-  overflow-x: hidden;
-  transition: transform 0.3s;
-  will-change: transform;
-  padding-top: ${rhythm(2)};
-`
+import './css/SideNav.css'
 
-const SideNavItem = styled(Link)`
-  padding: ${rhythm(0.5)} ${rhythm(1)};
-  text-decoration: none;
-  display: block;
-  transition: transform 0.3s;
-  will-change: transform;
-`
-
-export default ({ isShowSideNav }) => {
+export default function SideNav({ isShowSideNav }) {
   return (
-    <SideNavContainer isShowSideNav={isShowSideNav}>
-      <SideNavItem
-        css={css`
-          color: #2a2a2a;
-        `}
-        to="/about"
-      >
+    <div className={`side-nav__container ${isShowSideNav && "--transform"}`}>
+      <Link className="text-gray-900 side-nav__item" to="/about">
         About
-      </SideNavItem>
-      <SideNavItem
-        css={css`
-          color: #2a2a2a;
-        `}
-        to="/contact"
-      >
+      </Link>
+      <Link className="text-gray-900 side-nav__item" to="/contact">
         Contact
-      </SideNavItem>
-    </SideNavContainer>
+      </Link>
+    </div>
   )
+}
+
+SideNav.propTypes = {
+  isShowSideNav: PropTypes.bool,
 }

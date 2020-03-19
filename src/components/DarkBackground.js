@@ -1,23 +1,18 @@
 import React from "react"
-import styled from "@emotion/styled"
+import PropTypes from "prop-types"
 
-const calcStyles = props => (props.isShowSideNav ? "100%" : 0)
+export default function DarkBackground({ isShowSideNav, onClickOutside }) {
+  return (
+    <div
+      className={`fixed top-0 left-0 right-0 bottom-0 dark-background z-50 ${
+        isShowSideNav ? "h-full w-full" : "h-0 w-0"
+      }`}
+      onClick={() => onClickOutside(!isShowSideNav)}
+    />
+  )
+}
 
-const BackGroundElement = styled("div")`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: ${calcStyles};
-  width: ${calcStyles};
-  z-index: 998;
-  background: hsla(0, 0%, 0%, 0.65);
-`
-
-export default ({ isShowSideNav, onClickOutside }) => (
-  <BackGroundElement
-    onClick={() => onClickOutside(!isShowSideNav)}
-    isShowSideNav={isShowSideNav}
-  />
-)
+DarkBackground.propTypes = {
+  isShowSideNav: PropTypes.bool.isRequired,
+  onClickOutside: PropTypes.func.isRequired,
+}

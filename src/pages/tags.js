@@ -1,54 +1,30 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { Link, graphql } from "gatsby"
 import { kebabCase } from "lodash"
 import Layout from "../components/layout"
-import { rhythm } from "../utils/typography"
 
-export default ({
+export default function Tags({
   data: {
     allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
   },
-}) => (
-  <Layout>
-    <div
-      css={css`
-        max-width: 780px;
-        margin: ${rhythm(2)} auto 0 auto;
-        @media (max-width: 480px) {
-          margin: auto;
-        }
-      `}
-    >
-      <h1
-        css={css`
-          margin-top: 0;
-        `}
-      >
-        All Tags
-      </h1>
-      <ul
-        css={css`
-          list-style-position: inside;
-          @media (max-width: 480px) {
-            list-style-position: unset;
-          }
-        `}
-      >
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </Layout>
-)
+}) {
+  return (
+    <Layout>
+      <div style={{ maxWidth: "780px" }} className="m-auto md:mt-6 lg:mt-6">
+        <h1 className="mt-0">All Tags</h1>
+        <ul className="md:list-inside lg:list-inside">
+          {group.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query {

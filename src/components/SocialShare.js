@@ -1,5 +1,4 @@
 import React from "react"
-import { css } from "@emotion/core"
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -8,17 +7,6 @@ import {
   LinkedinShareButton,
   LinkedinIcon,
 } from "react-share"
-import { rhythm } from "../utils/typography"
-
-const iconStyle = css`
-  &:hover {
-    opacity: 0.7;
-  }
-  &:focus {
-    outline: none;
-  }
-  cursor: pointer;
-`
 
 const SocialShare = ({ location }) => {
   const siteUrl =
@@ -26,58 +14,40 @@ const SocialShare = ({ location }) => {
       ? `${location.href}`.replace("localhost:8000", "codenothing.co")
       : location.href
   return (
-    <>
+    <React.Fragment>
       <FacebookShareButton
+        className="hover:opacity-75 focus:outline-none cursor-pointer"
         additionalProps={{ "aria-label": "facebook-share-button" }}
         url={siteUrl}
-        css={iconStyle}
       >
         <FacebookIcon size={40} />
       </FacebookShareButton>
       <TwitterShareButton
+        className="hover:opacity-75 focus:outline-none cursor-pointer"
         additionalProps={{ "aria-label": "twitter-share-button" }}
         url={siteUrl}
-        css={iconStyle}
       >
         <TwitterIcon size={40} />
       </TwitterShareButton>
       <LinkedinShareButton
+        className="hover:opacity-75 focus:outline-none cursor-pointer"
         additionalProps={{ "aria-label": "linkedin-share-button" }}
         url={siteUrl}
-        css={iconStyle}
       >
         <LinkedinIcon size={40} />
       </LinkedinShareButton>
-    </>
+    </React.Fragment>
   )
 }
 
 export const SocialShareDesktop = ({ location }) => (
-  <div
-    css={css`
-      position: fixed;
-      left: 0;
-      z-index: 10;
-      @media (max-width: 480px) {
-        display: none;
-      }
-    `}
-  >
+  <div className="fixed left-0 z-10 hidden md:block lg:block">
     <SocialShare location={location} />
   </div>
 )
 
 export const SocialShareMobile = ({ location }) => (
-  <div
-    css={css`
-      display: none;
-      @media (max-width: 480px) {
-        display: flex;
-        justify-content: center;
-        margin: ${rhythm(2)} 0;
-      }
-    `}
-  >
+  <div className="flex justify-center my-4 md:hidden lg:hidden">
     <SocialShare location={location} />
   </div>
 )

@@ -1,61 +1,31 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { css } from "@emotion/core"
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa"
-import { rhythm } from "../utils/typography"
 
-const ArrowLink = ({ left, path, children }) => {
+export default function ArrowLink({ left, path, children }) {
   if (left) {
     return (
       <Link to={path}>
-        <div
-          css={css`
-            display: flex;
-            @media (max-width: 480px) {
-              font-size: 14px;
-              width: auto;
-            }
-          `}
-        >
-          <FaLongArrowAltLeft
-            size={32}
-            css={css`
-              margin-right: ${rhythm(0.5)};
-              @media (max-width: 480px) {
-                height: 24px;
-              }
-            `}
-          />
+        <div className="flex items-center text-sm md:text-base lg:text-base">
+          <FaLongArrowAltLeft className="mr-2" size={18} />
           {children}
-        </div>
-      </Link>
-    )
-  } else {
-    return (
-      <Link to={path}>
-        <div
-          css={css`
-            display: flex;
-            @media (max-width: 480px) {
-              font-size: 14px;
-              width: auto;
-            }
-          `}
-        >
-          {children}
-          <FaLongArrowAltRight
-            size={32}
-            css={css`
-              margin-left: ${rhythm(0.5)};
-              @media (max-width: 480px) {
-                height: 24px;
-              }
-            `}
-          />
         </div>
       </Link>
     )
   }
+  return (
+    <Link to={path}>
+      <div className="flex items-center text-sm md:text-base lg:text-base">
+        {children}
+        <FaLongArrowAltRight className="ml-2" size={18} />
+      </div>
+    </Link>
+  )
 }
 
-export default ArrowLink
+ArrowLink.propTypes = {
+  left: PropTypes.bool,
+  path: PropTypes.string.isRequired,
+  children: PropTypes.node,
+}
