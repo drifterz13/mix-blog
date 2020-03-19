@@ -41,6 +41,14 @@ h3 {
   @apply mb-4;
 }
 
+a {
+  @apply text-red-500;
+}
+
+ul, ol {
+  @apply mb-6;
+}
+
 ul li,
 ol li {
   list-style-position: inside;
