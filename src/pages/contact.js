@@ -8,8 +8,7 @@ export default function Contact() {
   return (
     <Layout>
       <div
-        style={{ maxWidth: "780px" }}
-        className="my-0 mx-auto md:my-4 lg:my-4"
+        className="max-w-screen-md my-0 mx-auto md:my-4 lg:my-4"
       >
         <h1 className="mt-0">CONTACT</h1>
         <ul className="ml-0 list-none">

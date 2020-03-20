@@ -38,7 +38,7 @@ export default function BlogPost({ data, location, pageContext }) {
           {post.frontmatter.thumbnail_credit}
         </a>
       </div>
-      <div style={{ maxWidth: "780px" }} className="mx-auto mt-12 mb-0">
+      <div className="max-w-screen-md mx-auto mt-12 mb-0">
         <h1 className="mb-6 text-4xl font-bold">{post.frontmatter.title}</h1>
         <BlogPostMetadata
           tags={post.frontmatter.tags}

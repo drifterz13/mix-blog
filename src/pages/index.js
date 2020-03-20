@@ -7,8 +7,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <div
-        style={{ maxWidth: "780px" }}
-        className="flex flex-col md:flex-row items-center lg:flex-row my-0 mx-auto md:my-4 lg:my-4"
+        className="max-w-screen-md flex flex-col items-center md:flex-row lg:flex-row my-0 mx-auto md:my-4 lg:my-4"
       >
         <Link
           to="/blog/1"

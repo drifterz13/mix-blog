@@ -29,10 +29,7 @@ export default function Layout({ children }) {
         isShowSideNav={isShowSideNav}
         onToggle={toggle}
       />
-      <main
-        style={{ maxWidth: "1080px" }}
-        className="mx-auto my-8 h-full min-h-screen pt-0 pb-5 px-4"
-      >
+      <main className="mx-auto my-8 h-full max-w-screen-md min-h-screen pt-0 pb-5 px-4">
         {children}
       </main>
       <Footer />

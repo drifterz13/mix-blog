@@ -6,8 +6,7 @@ export default function Abou() {
   return (
     <Layout>
       <div
-        style={{ maxWidth: "780px" }}
-        className="my-0 mx-auto md:mt-6 lg:mt-6"
+        className="max-w-screen-md my-0 mx-auto md:mt-6 lg:mt-6"
       >
         <div>
           <div classNam="mb-6">
