@@ -2,15 +2,18 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-import './css/SideNav.css'
+import styles from "./css/sideNav.module.css"
 
 export default function SideNav({ isShowSideNav }) {
   return (
-    <div className={`side-nav__container ${isShowSideNav && "--transform"}`}>
-      <Link className="text-gray-900 side-nav__item" to="/about">
+    <div
+      className={`${styles.container} ${isShowSideNav &&
+        styles.containerTransform}`}
+    >
+      <Link className={`text-gray-800 ${styles.item}`} to="/about">
         About
       </Link>
-      <Link className="text-gray-900 side-nav__item" to="/contact">
+      <Link className={`text-gray-800 ${styles.item}`} to="/contact">
         Contact
       </Link>
     </div>

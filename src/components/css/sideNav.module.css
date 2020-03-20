@@ -1,4 +1,4 @@
-.side-nav__container {
+.container {
   @apply pt-20;
   height: 100%;
   width: 70%;
@@ -14,12 +14,12 @@
   display: none;
 }
 
-.side-nav__container.--transform {
+.containerTransform {
   transform: translateX(0%);
   display: block;
 }
 
-.side-nav__item {
+.item {
   @apply py-2;
   @apply px-4;
   @apply font-semibold;

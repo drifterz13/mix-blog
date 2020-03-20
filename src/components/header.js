@@ -7,7 +7,7 @@ import Logo from "../../static/images/transparent-logo.png"
 export default function Header({ isShowSideNav, onToggle }) {
   return (
     <header className="bg-gray-100 h-32 shadow">
-      <div className="flex items-center justify-between w-4/5 lg:w-3/5 xl:w-3/5 h-full my-0 mx-auto">
+      <div className="flex items-center justify-between w-4/5 lg:w-3/5 xl:w-3/5 h-full my-0 mx-auto max-w-screen-md lg:max-w-screen-lg">
         <Link to="/" className="no-underline text-black">
           <div className="flex items-center self-center">
             <img className="mb-0 h-16 md:h-20 lg:h-20" src={Logo} alt="Codenothing logo" />

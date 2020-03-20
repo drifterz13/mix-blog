@@ -1,26 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import './css/Hamburger.css'
+import styles from "./css/hamburger.module.css"
 
 export default function Hamburger({ onToggle, isShowSideNav }) {
+  const topBarStyle = isShowSideNav ? styles.topBarAnimated : styles.topBar
+  const middleBarStyle = isShowSideNav
+    ? styles.middleBarAnimated
+    : styles.middleBar
+  const bottomBarStyle = isShowSideNav
+    ? styles.bottomBarAnimated
+    : styles.bottomBar
+
   return (
-    <div
-      className="hamburger__container"
-      onClick={() => onToggle(!isShowSideNav)}
-    >
-      <div
-        className={`hamburger__bar hamburger__top-bar ${isShowSideNav &&
-          "--transform"}`}
-      />
-      <div
-        className={`hamburger__bar hamburger__middle-bar ${isShowSideNav &&
-          "--transform"}`}
-      />
-      <div
-        className={`hamburger__bar hamburger__bottom-bar ${isShowSideNav &&
-          "--transform"}`}
-      />
+    <div className={styles.container} onClick={() => onToggle(!isShowSideNav)}>
+      <div className={`${styles.bar} ${topBarStyle}`} />
+      <div className={`${styles.bar} ${middleBarStyle}`} />
+      <div className={`${styles.bar} ${bottomBarStyle}`} />
     </div>
   )
 }

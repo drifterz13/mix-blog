@@ -1,0 +1,52 @@
+.bar {
+  @apply block;
+  @apply w-6;
+  @apply h-1;
+  @apply my-1;
+  @apply bg-gray-800;
+  transition: 0.3s ease all;
+  will-change: transform;
+}
+
+.topBar {
+  transform: none;
+}
+
+.topBarAnimated {
+  transform: rotateZ(45deg) translateX(25%) translateY(150%);
+}
+
+.middleBar {
+  width: auto;
+}
+
+.middleBarAnimated {
+  width: 0;
+}
+
+.bottomBar {
+  transform: none;
+}
+
+.bottomBarAnimated {
+  transform: rotateZ(-45deg) translateX(25%) translateY(-150%);
+}
+
+.container {
+  @apply self-start;
+  @apply hidden;
+  @apply w-6;
+  @apply h-6;
+  @apply cursor-pointer;
+  @apply relative;
+  @apply justify-end;
+  transition: 0.3s ease all;
+  margin: 0;
+  z-index: 999;
+}
+
+@media (max-width: 780px) {
+  .container {
+    display: inline-block;
+  }
+}
