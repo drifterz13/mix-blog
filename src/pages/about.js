@@ -11,7 +11,7 @@ export default function Abou() {
         <div>
           <div classNam="mb-6">
             <h1 className="mt-0">OUR MISSION</h1>
-            <p className="text-red-500">
+            <p>
               <b>CODENOTHING</b>{" "}
               เป็นส่วนหนึ่งของนักพัฒนาเว็บไซต์ไทยที่รักในการแบ่งปันความรู้
               ประสบการณ์ และความชอบที่มีต่อ Javascript
@@ -19,14 +19,14 @@ export default function Abou() {
           </div>
           <div className="mb-6">
             <h1 className="mt-0">OUR VIBE</h1>
-            <p className="text-red-500">
+            <p>
               <b>CODENOTHING</b> รักในการพัฒนาเว็บไซต์โดยใช้ React.js และ
               Node.js
             </p>
           </div>
           <div className="mb-6">
             <h1 className="mt-0">OUR PROMISE</h1>
-            <p className="text-red-500">
+            <p>
               <b>CODENOTHING</b> จะเป็นส่วนหนึ่งในการช่วยให้คุณได้ความรู้
               และไอเดียใหม่ๆไปใช้ในการพัฒนาเว็บไซต์ของคุณ
             </p>

@@ -58,21 +58,8 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            description
             date(formatString: "YYYY-MM-DD")
             tags
-            thumbnail {
-              childImageSharp {
-                resize(width: 1200, height: 630) {
-                  src
-                }
-                fluid(maxWidth: 1080, maxHeight: 620, quality: 100) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
-            thumbnail_credit
-            thumbnail_credit_link
           }
         }
       }

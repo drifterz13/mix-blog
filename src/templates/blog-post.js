@@ -47,7 +47,7 @@ export default function BlogPost({ data, location, pageContext }) {
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <SocialShareMobile location={location} />
-        <div className="flex flex-wrap items-center justify-between my-12 text-red-500 font-medium">
+        <div className="flex flex-wrap items-center justify-between my-12 font-medium">
           {prev && (
             <ArrowLink left path={prev.fields.slug}>
               <span className="hidden md:block lg:block">
@@ -93,7 +93,7 @@ export const query = graphql`
               src
             }
             fluid(maxWidth: 1080, maxHeight: 620, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
